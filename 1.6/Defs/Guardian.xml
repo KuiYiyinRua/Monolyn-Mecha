@@ -8,13 +8,14 @@
   <BodyDef><defName>MM_GuardianBody</defName><label>Guardian chassis</label><corePart><def>MM_GuardianCore</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
   <ThinkTreeDef>
     <defName>MM_GuardianThink</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
       <li Class="ThinkNode_QueuedJob"/><li Class="Monolyn.Mecha.JobGiver_Guardian"/>
-      <li Class="ThinkNode_Subtree"><treeDef>Mechanoid</treeDef></li>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Mechanoid</treeDef></li>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
   <ThinkTreeDef>
     <defName>MM_GuardianConstant</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
-      <li Class="ThinkNode_Subtree"><treeDef>MechConstant</treeDef></li><li Class="Monolyn.Mecha.JobGiver_Guardian"/>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>MechConstant</treeDef></li><li Class="Monolyn.Mecha.JobGiver_Guardian"/>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
   <ThingDef ParentName="MNConstruct">
@@ -49,9 +50,12 @@
     </comps>
   </ThingDef>
   <PawnKindDef ParentName="MNConstructKind">
-    <defName>MM_Guardian</defName><label>Guardian</label><race>MM_Guardian</race><isFighter>true</isFighter><combatPower>110</combatPower>
+    <defName>MM_Guardian</defName><label>Guardian</label><race>MM_Guardian</race><isFighter>true</isFighter><combatPower>180</combatPower>
     <allowInMechClusters>false</allowInMechClusters><defaultFactionType>RaphaelCult</defaultFactionType><weaponTags><li>MM_GuardianProjector</li></weaponTags>
     <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Guardian/Guardian</texPath><shaderType>Cutout</shaderType><graphicClass>Graphic_Multi</graphicClass><drawSize>1.2</drawSize></bodyGraphicData></li></lifeStages>
+    <canArriveManhunter>false</canArriveManhunter>
+    <maxPerGroup>3</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.12</selectionWeight><minRaidPoints>600</minRaidPoints></li></modExtensions>
   </PawnKindDef>
   <ThingDef ParentName="BaseGun">
     <defName>MM_GuardianProjector</defName><label>Guardian beam emitter</label><description>The Guardian's built-in emitter provides continuous fire or restores allied shields. It cannot attack and restore shields at the same time.</description>

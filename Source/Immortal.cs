@@ -22,6 +22,7 @@ namespace Monolyn.Mecha
         public Thing attackTarget;
         public int burstRemaining, shotClock, weaponClock, teleportCooldown;
         public bool autoFire = true;
+        public bool raidPrepared;
         public int shotsFired;
         MechaCombatAI combat;
         public MechaCombatAI Combat => combat ?? (combat = new MechaCombatAI(this));
@@ -147,8 +148,10 @@ namespace Monolyn.Mecha
             if (!Spawned || Receiver == null) return;
             foreach (var old in Receiver.cachedLightDistributors.ToArray())
                 if (old == null || !old.parent.Spawned || old.parent.Map != Map
+                    || Faction != Faction.OfPlayer
                     || !Position.InHorDistOf(old.parent.Position, old.Props.distributeRadius))
                     old?.UnregisterReceiver(Receiver);
+            if (Faction != Faction.OfPlayer) return;
             var nearest = LightNetwork.Covering(Map, Position);
             if (nearest != null && !Receiver.cachedLightDistributors.Contains(nearest)) nearest.RegisterReceiverNoSound(Receiver);
         }
@@ -165,6 +168,9 @@ namespace Monolyn.Mecha
                 || pawn.Faction != Faction || !pawn.RaceProps.Humanlike || !this.OccupiedRect().ExpandedBy(1).Contains(pawn.Position)) return false;
             pawn.DeSpawn();
             if (!pilots.TryAdd(pawn)) { GenSpawn.Spawn(pawn, Position, Map); return false; }
+            // DeSpawn alone retains Pawn.lord in 1.6. A seated pilot must no longer
+            // receive on-map duties; Eject adds the survivor back to the chassis' lord.
+            pawn.GetLord()?.Notify_PawnLost(pawn, PawnLostCondition.ExitedMap);
             jobs.StopAll();
             return true;
         }
@@ -182,6 +188,10 @@ namespace Monolyn.Mecha
             else if (Spawned)
             {
                 if (!pilots.TryDrop(pilot, Position, Map, ThingPlaceMode.Near, out _)) return false;
+                // The survivor remains part of the same raid instead of becoming an idle
+                // hostile pawn after the chassis is destroyed.
+                if (EnemyMechaRaids.IsHostileMonolyn(Faction) && pilot.Faction == Faction
+                    && !pilot.Dead && pilot.GetLord() == null) this.GetLord()?.AddPawn(pilot);
             }
             else return false;
             CancelWeapon();
@@ -211,6 +221,7 @@ namespace Monolyn.Mecha
             Scribe_Values.Look(ref weaponClock, "mmWeaponClock");
             Scribe_Values.Look(ref teleportCooldown, "mmTeleportCooldown");
             Scribe_Values.Look(ref autoFire, "mmAutoFire", true);
+            Scribe_Values.Look(ref raidPrepared, "mmRaidPrepared");
             Scribe_Values.Look(ref shotsFired, "mmShotsFired");
             Combat.ExposeData();
         }

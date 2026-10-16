@@ -10,9 +10,10 @@
   <ThinkTreeDef>
     <defName>MM_ImmortalThink</defName>
     <thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
       <li Class="ThinkNode_QueuedJob"/>
-      <li Class="ThinkNode_Subtree"><treeDef>LordDuty</treeDef></li>
       <li Class="Monolyn.Mecha.JobGiver_MechaCombat"/>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>LordDuty</treeDef></li>
       <li Class="Monolyn.Mecha.JobGiver_ImmortalIdle"/>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
@@ -55,9 +56,13 @@
     <researchPrerequisites><li>MM_ImmortalResearch</li></researchPrerequisites>
   </ThingDef>
   <PawnKindDef>
-    <defName>MM_Immortal</defName><label>Immortal</label><race>MM_Immortal</race><combatPower>400</combatPower><isFighter>true</isFighter>
+    <defName>MM_Immortal</defName><label>Immortal</label><race>MM_Immortal</race><combatPower>900</combatPower><isFighter>true</isFighter>
     <canArriveManhunter>false</canArriveManhunter>
     <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Immortal/Immortal</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize><drawOffsetNorth>(0,0,0.0303)</drawOffsetNorth><drawOffsetEast>(0.0191,0,0.0494)</drawOffsetEast><drawOffsetWest>(-0.0191,0,0.0494)</drawOffsetWest></bodyGraphicData></li></lifeStages>
+    <allowInMechClusters>false</allowInMechClusters>
+    <defaultFactionType>UrielCult</defaultFactionType>
+    <maxPerGroup>2</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.07</selectionWeight><minRaidPoints>2700</minRaidPoints><pilotKind>Monolyn_Rifleman</pilotKind></li></modExtensions>
   </PawnKindDef>
   <ThingDef ParentName="BaseBullet">
     <defName>MM_ImmortalMissile</defName><label>Immortal light missile</label><thingClass>Monolyn.Mecha.Projectile_ImmortalMissile</thingClass>

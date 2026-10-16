@@ -80,7 +80,7 @@ namespace Monolyn.Mecha
         }
 
         public bool Operational => Pawn.Spawned && !Pawn.Dead && !Pawn.Downed && !Pawn.InMentalState
-            && Pawn.Faction == Faction.OfPlayer && Pawn.IsColonyMechPlayerControlled
+            && ((Pawn.Faction == Faction.OfPlayer && Pawn.IsColonyMechPlayerControlled) || EnemyMechaRaids.IsHostileMonolyn(Pawn.Faction))
             && !Pawn.IsSelfShutdown() && !Pawn.IsCharging() && Pawn.Awake()
             && (Pawn.needs.energy == null || Pawn.needs.energy.CurLevelPercentage > 0.1f);
 
@@ -88,7 +88,9 @@ namespace Monolyn.Mecha
         {
             get
             {
-                if (!autoCombat || !Operational || Laser == null || Pawn.GetLord() != null) return false;
+                if (!Operational || Laser == null) return false;
+                if (EnemyMechaRaids.IsHostileMonolyn(Pawn.Faction)) return EnemyMechaRaids.MayFight(Pawn);
+                if (!autoCombat || Pawn.GetLord() != null) return false;
                 if (Pawn.CurJob?.playerForced == true && Pawn.CurJob.def != StalkerDefOf.MM_StalkerCombat) return false;
                 if (Pawn.jobs.jobQueue.AnyPlayerForced || Pawn.carryTracker.CarriedThing != null) return false;
                 var mode = Pawn.GetMechWorkMode();

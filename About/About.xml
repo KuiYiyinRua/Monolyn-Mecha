@@ -3,7 +3,7 @@
   <name>Monolyn: Mecha · 墨诺灵机甲</name>
   <author>尹怨怨</author>
   <packageId>local.monolyn.mecha</packageId>
-  <modVersion>0.6.3</modVersion>
+  <modVersion>0.7.0</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

@@ -34,9 +34,10 @@ namespace Monolyn.Mecha
         float RetreatStart => pawn.WeaponRange * .8f;
         float RetreatStop => pawn.WeaponRange * .9f;
         public MechaCombatAI(Pawn_Immortal pawn) { this.pawn = pawn; }
-        public bool MayHunt => Enabled && pawn.Spawned && !pawn.Dead && !pawn.Downed && !pawn.InMentalState
-            && pawn.Faction == Faction.OfPlayer && pawn.Driven && pawn.Powered && pawn.GetLord() == null
-            && !pawn.MovementLocked && !pawn.jobs.jobQueue.AnyPlayerForced
+        public bool MayHunt => pawn.Spawned && !pawn.Dead && !pawn.Downed && !pawn.InMentalState
+            && ((Enabled && pawn.Faction == Faction.OfPlayer && pawn.GetLord() == null) || EnemyMechaRaids.MayFight(pawn))
+            && pawn.Driven && pawn.Powered
+            && (!pawn.MovementLocked || EnemyMechaRaids.MayFight(pawn)) && !pawn.jobs.jobQueue.AnyPlayerForced
             && !(pawn.CurJob?.playerForced == true && pawn.CurJob.def != MechaCombatDefOf.MM_MechaCombat);
 
         public void ExposeData()

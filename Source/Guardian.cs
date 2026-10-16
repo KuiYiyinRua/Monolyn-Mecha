@@ -84,6 +84,9 @@ namespace Monolyn.Mecha
         public bool restoring;
         public int attackTicks, attackPulses, channelJobId = -1;
         public float restoreCredit, totalRestored, totalLightSpent;
+        // Native enemy constructs have no player-only mech energy need. This finite
+        // onboard reserve supplies their shield projector and persists across save/load.
+        public float raidSupportLight = 600f;
         int nextScan, nextSupportScan, nextDecision;
         MoteDualAttached beam;
         Sustainer sound;
@@ -105,13 +108,16 @@ namespace Monolyn.Mecha
         public Pawn Pawn => (Pawn)parent;
         public Verb_GuardianBeam Laser => Pawn.equipment?.PrimaryEq?.PrimaryVerb as Verb_GuardianBeam;
         public bool Operational => Pawn.Spawned && !Pawn.Dead && !Pawn.Downed && !Pawn.InMentalState
-            && Pawn.Faction == Faction.OfPlayer && Pawn.IsColonyMechPlayerControlled && Pawn.Awake()
-            && !Pawn.IsSelfShutdown() && !Pawn.IsCharging() && Pawn.needs.energy?.CurLevelPercentage > .1f;
+            && ((Pawn.Faction == Faction.OfPlayer && Pawn.IsColonyMechPlayerControlled) || EnemyMechaRaids.IsHostileMonolyn(Pawn.Faction))
+            && Pawn.Awake() && !Pawn.IsSelfShutdown() && !Pawn.IsCharging()
+            && (Pawn.needs.energy == null || Pawn.needs.energy.CurLevelPercentage > .1f);
         public bool MayAct
         {
             get
             {
-                if (!Operational || Pawn.GetLord() != null || (!autoCombat && !(autoRestore && Pawn.Drafted))) return false;
+                if (!Operational) return false;
+                if (EnemyMechaRaids.IsHostileMonolyn(Pawn.Faction)) return EnemyMechaRaids.MayFight(Pawn);
+                if (Pawn.GetLord() != null || (!autoCombat && !(autoRestore && Pawn.Drafted))) return false;
                 if (Pawn.CurJob?.playerForced == true && Pawn.CurJob.def != GuardianDefOf.MM_GuardianCombat) return false;
                 if (Pawn.jobs.jobQueue.AnyPlayerForced || Pawn.carryTracker.CarriedThing != null) return false;
                 var mode = Pawn.GetMechWorkMode();
@@ -122,7 +128,9 @@ namespace Monolyn.Mecha
         // Spending its already charged personal energy uses that exact conversion, never the colony pool.
         public float LightPerEnergy => Pawn.GetStatValue(MNMiscDefOf.ConstructConsumption) / 10f
             / (.35f * Mathf.Max(.01f, Pawn.GetStatValue(StatDefOf.MechEnergyUsageFactor)));
-        public float SpendableLight => Mathf.Max(0, (Pawn.needs.energy?.CurLevel ?? 0) - (Pawn.needs.energy?.MaxLevel ?? 100) * .1f) * LightPerEnergy;
+        public float SpendableLight => Pawn.needs.energy == null
+            ? (EnemyMechaRaids.IsHostileMonolyn(Pawn.Faction) ? Mathf.Max(0, raidSupportLight) : 0)
+            : Mathf.Max(0, Pawn.needs.energy.CurLevel - Pawn.needs.energy.MaxLevel * .1f) * LightPerEnergy;
         public bool ValidEnemy(Thing t) => t != null && !t.Destroyed && t.Spawned && t.Map == Pawn.Map && t.HostileTo(Pawn)
             && !t.Position.Fogged(Pawn.Map) && (!(t is Pawn p) || (!p.Dead && !p.Downed && !p.IsPsychologicallyInvisible()))
             && t is IAttackTarget a && !a.ThreatDisabled(Pawn);
@@ -279,7 +287,8 @@ namespace Monolyn.Mecha
             {
                 float restored = pool.Add(units);
                 float cost = restored * LightPerShield;
-                Pawn.needs.energy.CurLevel -= cost / LightPerEnergy;
+                if (Pawn.needs.energy != null) Pawn.needs.energy.CurLevel -= cost / LightPerEnergy;
+                else raidSupportLight = Mathf.Max(0, raidSupportLight - cost);
                 restoreCredit -= restored; totalRestored += restored; totalLightSpent += cost;
             }
             if (SpendableLight < LightPerShield || GuardianShield.Find(beamTarget) == null) { StopChannels(); return; }
@@ -335,6 +344,7 @@ namespace Monolyn.Mecha
         {
             base.PostExposeData();
             Scribe_Values.Look(ref autoCombat, "guardianAutoCombat", false); Scribe_Values.Look(ref autoRestore, "guardianAutoRestore", true);
+            Scribe_Values.Look(ref raidSupportLight, "guardianRaidSupportLight", 600f);
             Scribe_References.Look(ref enemy, "guardianEnemy"); Scribe_References.Look(ref restoreTarget, "guardianRestoreTarget"); Scribe_References.Look(ref beamTarget, "guardianBeamTarget");
             Scribe_Values.Look(ref restoring, "guardianRestoring"); Scribe_Values.Look(ref channelJobId, "guardianChannelJobId", -1);
             Scribe_Values.Look(ref attackTicks, "guardianAttackTicks"); Scribe_Values.Look(ref restoreCredit, "guardianRestoreCredit");

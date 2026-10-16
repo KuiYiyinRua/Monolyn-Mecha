@@ -140,7 +140,7 @@
     <defName>MM_Disruptor</defName>
     <label>Disruptor</label>
     <race>MM_Disruptor</race>
-    <combatPower>600</combatPower>
+    <combatPower>1100</combatPower>
     <isFighter>true</isFighter>
     <canArriveManhunter>false</canArriveManhunter>
     <lifeStages>
@@ -152,6 +152,10 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
+    <allowInMechClusters>false</allowInMechClusters>
+    <defaultFactionType>UrielCult</defaultFactionType>
+    <maxPerGroup>1</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.04</selectionWeight><minRaidPoints>3300</minRaidPoints><pilotKind>Monolyn_Rifleman</pilotKind></li></modExtensions>
   </PawnKindDef>
   <ResearchProjectDef>
     <defName>MM_DisruptorResearch</defName>

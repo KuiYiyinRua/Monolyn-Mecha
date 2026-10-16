@@ -8,14 +8,15 @@
   <BodyDef><defName>MM_StalkerBody</defName><label>Stalker chassis</label><corePart><def>MM_StalkerCore</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
   <ThinkTreeDef>
     <defName>MM_StalkerThink</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
       <li Class="ThinkNode_QueuedJob"/>
       <li Class="Monolyn.Mecha.JobGiver_StalkerCombat"/>
-      <li Class="ThinkNode_Subtree"><treeDef>Mechanoid</treeDef></li>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Mechanoid</treeDef></li>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
   <ThinkTreeDef>
     <defName>MM_StalkerConstant</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
-      <li Class="ThinkNode_Subtree"><treeDef>MechConstant</treeDef></li>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>MechConstant</treeDef></li>
       <li Class="Monolyn.Mecha.JobGiver_StalkerCombat"/>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
@@ -54,11 +55,14 @@
     </comps>
   </ThingDef>
   <PawnKindDef ParentName="MNConstructKind">
-    <defName>MM_Stalker</defName><label>Stalker</label><race>MM_Stalker</race><isFighter>true</isFighter><combatPower>240</combatPower>
+    <defName>MM_Stalker</defName><label>Stalker</label><race>MM_Stalker</race><isFighter>true</isFighter><combatPower>400</combatPower>
     <allowInMechClusters>false</allowInMechClusters><defaultFactionType>RaphaelCult</defaultFactionType>
     <weaponTags><li>MM_StalkerProjectors</li></weaponTags>
     <abilities><li>MM_StalkerBlink</li></abilities>
     <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Stalker/Stalker</texPath><shaderType>Cutout</shaderType><graphicClass>Graphic_Multi</graphicClass><drawSize>1.8</drawSize></bodyGraphicData></li></lifeStages>
+    <canArriveManhunter>false</canArriveManhunter>
+    <maxPerGroup>4</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.1</selectionWeight><minRaidPoints>1200</minRaidPoints></li></modExtensions>
   </PawnKindDef>
   <!-- Native constructs receive a permanent primary weapon via their PawnKind weapon tag.
        This also provides the standard ranged command, right-click fire and fire-at-will. -->

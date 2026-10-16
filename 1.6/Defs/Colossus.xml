@@ -44,8 +44,12 @@
     <researchPrerequisites><li>MM_ColossusResearch</li></researchPrerequisites>
   </ThingDef>
   <PawnKindDef>
-    <defName>MM_Colossus</defName><label>Colossus</label><race>MM_Colossus</race><combatPower>650</combatPower><isFighter>true</isFighter><canArriveManhunter>false</canArriveManhunter>
+    <defName>MM_Colossus</defName><label>Colossus</label><race>MM_Colossus</race><combatPower>1600</combatPower><isFighter>true</isFighter><canArriveManhunter>false</canArriveManhunter>
     <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Colossus/Colossus</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(3.6,5.6)</drawSize><drawOffset>(0,0,1.1)</drawOffset></bodyGraphicData></li></lifeStages>
+    <allowInMechClusters>false</allowInMechClusters>
+    <defaultFactionType>UrielCult</defaultFactionType>
+    <maxPerGroup>1</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.025</selectionWeight><minRaidPoints>4800</minRaidPoints><pilotKind>Monolyn_Rifleman</pilotKind></li></modExtensions>
   </PawnKindDef>
   <DamageDef>
     <defName>MM_ColossusBeam</defName><label>Colossus beam</label><workerClass>DamageWorker_AddInjury</workerClass><externalViolence>true</externalViolence>
