@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerBlink.label>Saut éclair</MM_StalkerBlink.label>
+  <MM_StalkerBlink.description>Se téléporter vers une case visible, praticable et inoccupée à moins de 20,9 cases. Recharge : 8 secondes. Si le saut automatique est activé, cette capacité est aussi utilisée pendant les déplacements à pied.</MM_StalkerBlink.description>
+</LanguageData>

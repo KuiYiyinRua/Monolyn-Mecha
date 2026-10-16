@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Guardian.label>Gardien</MM_Guardian.label>
+  <MM_Guardian.description>Une petite construction de défense et de soutien qui utilise 1 point de bande passante. Elle attaque avec un laser continu ou restaure les boucliers des unités et tourelles alliées, sans pouvoir faire les deux à la fois.\n\nLe soutien automatique est activé par défaut. Si le combat automatique est désactivé, ce soutien n’agit que pendant la mobilisation. Elle transporte aussi jusqu’à 40 kg, nettoie et éteint les incendies. Son bouclier possède 75 points et sa recharge consomme 20 unités de lumière par heure de jeu.</MM_Guardian.description>
+  <MM_Guardian.tools.0.label>griffes d’appui</MM_Guardian.tools.0.label>
+  <MM_GuardianProjector.label>émetteur de faisceau du Gardien</MM_GuardianProjector.label>
+  <MM_GuardianProjector.description>L’émetteur intégré du Gardien fournit un tir continu ou restaure les boucliers alliés. Il ne peut pas faire les deux à la fois.</MM_GuardianProjector.description>
+</LanguageData>

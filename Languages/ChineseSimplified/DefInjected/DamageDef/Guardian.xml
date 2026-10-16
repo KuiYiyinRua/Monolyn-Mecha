@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianBeam.label>守护者激光</MM_GuardianBeam.label>
+  <MM_GuardianBeam.deathMessage>{0}被守护者的激光杀死。</MM_GuardianBeam.deathMessage>
+</LanguageData>

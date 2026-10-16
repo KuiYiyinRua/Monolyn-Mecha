@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianAutoCombat>自動戦闘</MM_GuardianAutoCombat>
+  <MM_GuardianAutoCombatDesc>見える敵を追跡し、遮蔽物を探して射程25マスの外縁付近で戦う。自動シールド回復が有効なら味方の支援を優先する。手動命令が最優先。</MM_GuardianAutoCombatDesc>
+  <MM_GuardianAutoRestore>自動シールド回復</MM_GuardianAutoRestore>
+  <MM_GuardianAutoRestoreDesc>25マス以内の味方シールドを毎秒25回復する。1ポイントにつき蓄えた光を1消費し、10%のエネルギーを残す。自身のシールドは回復できず、シールド破壊やEMPによる復旧待ちも解除できない。自動戦闘が無効のときは徴兵中のみ機能する。</MM_GuardianAutoRestoreDesc>
+  <MM_GuardianRestore>シールド回復</MM_GuardianRestore>
+  <MM_GuardianRestoreDesc>味方ユニットやタレットに近づき、25マス以内からシールドを回復する。毎秒25回復し、1ポイントにつき蓄えた光を1消費する。10%のエネルギーを残す。全回復するか使用可能なエネルギーが尽きると停止。回復中は攻撃できない。</MM_GuardianRestoreDesc>
+  <MM_GuardianNotReady>ガーディアンが未制御、行動不能、または使用可能な光が不足している。</MM_GuardianNotReady>
+  <MM_GuardianPayload>ガーディアンの積載量：40 kg</MM_GuardianPayload>
+</LanguageData>

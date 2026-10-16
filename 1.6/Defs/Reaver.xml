@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <BodyPartDef>
+    <defName>MM_ReaverHull</defName>
+    <label>Reaver chassis</label>
+    <hitPoints>280</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>MovingLimbCore</li>
+      <li>MovingLimbSegment</li>
+      <li>MovingLimbDigit</li>
+      <li>ManipulationLimbCore</li>
+      <li>ManipulationLimbSegment</li>
+      <li>ManipulationLimbDigit</li>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BreathingSource</li>
+      <li>MetabolismSource</li>
+    </tags>
+  </BodyPartDef>
+  <BodyDef>
+    <defName>MM_ReaverBody</defName>
+    <label>Reaver chassis</label>
+    <corePart>
+      <def>MM_ReaverHull</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+    </corePart>
+  </BodyDef>
+  <ThingDef ParentName="BasePawn">
+    <defName>MM_Reaver</defName>
+    <label>Reaver</label>
+    <thingClass>Monolyn.Mecha.Pawn_Reaver</thingClass>
+    <size>(2,3)</size>
+    <description>A siege warframe piloted by one colonist that also carries heavy cargo. Its missiles deal triple damage to buildings, and explosions can hit allies. It cannot fire while moving.\n\nIts eight-round magazine starts empty. Automatic fabrication makes one missile every 5 seconds for 150 light, even without a pilot or during caravan travel. Carries 2000 kg and travels at 4 world tiles per day. It can teleport with its pilot within the light network on the same map.</description>
+    <uiIconPath>Things/Mecha/Reaver/Reaver_south</uiIconPath>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <graphicData>
+      <texPath>Things/Mecha/Reaver/Reaver</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>280</MaxHitPoints>
+      <MoveSpeed>4</MoveSpeed>
+      <Mass>1200</Mass>
+      <CarryingCapacity>2000</CarryingCapacity>
+      <MarketValue>14500</MarketValue>
+      <Flammability>0</Flammability>
+      <PainShockThreshold>999</PainShockThreshold>
+      <ArmorRating_Sharp>1.35</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicResistance>1</ToxicResistance>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount>
+      <LeatherAmount>0</LeatherAmount>
+      <FilthRate>0</FilthRate>
+      <Wildness>0</Wildness>
+      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
+    </statBases>
+    <race>
+      <intelligence>Animal</intelligence>
+      <body>MM_ReaverBody</body>
+      <fleshType>Mechanoid</fleshType>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeExpectancy>2500</lifeExpectancy>
+      <hasGenders>false</hasGenders>
+      <needsRest>false</needsRest>
+      <foodType>None</foodType>
+      <packAnimal>true</packAnimal>
+      <trainability>None</trainability>
+      <canBePredatorPrey>false</canBePredatorPrey>
+      <bloodDef>Filth_MachineBits</bloodDef>
+      <thinkTreeMain>MM_ImmortalThink</thinkTreeMain>
+      <renderTree>Animal</renderTree>
+      <lifeStageAges>
+        <li>
+          <def>MM_ImmortalFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <tools>
+      <li>
+        <label>armored feet</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="ASEL.CompProperties_LightStorage">
+        <maxLight>10000</maxLight>
+      </li>
+      <li Class="Monolyn.Mecha.CompProperties_MechaLightReceiver">
+        <minLighttoRecive>1</minLighttoRecive>
+        <targetOffset>(0,0.5,0)</targetOffset>
+      </li>
+      <li Class="ASEL.CompProperties_LightConsumer" />
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>1.8</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.6,0.6,0.6)</color>
+        <idlePulseSpeed>3</idlePulseSpeed>
+        <minIdleAlpha>0.05</minIdleAlpha>
+        <chargeDurationTicks>1800</chargeDurationTicks>
+        <disarmedByEmpForTicks>100</disarmedByEmpForTicks>
+        <activeSound>Broadshield_Ambience</activeSound>
+        <hitPoints>100</hitPoints>
+        <rechargeHitPointsIntervalTicks>180</rechargeHitPointsIntervalTicks>
+        <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+      </li>
+      <li Class="ASEL.CompProperties_PhaseShield" />
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable" />
+    </comps>
+    <butcherProducts>
+      <MNCalcirite>150</MNCalcirite>
+      <MNPneumaCircuit>3</MNPneumaCircuit>
+    </butcherProducts>
+    <researchPrerequisites>
+      <li>MM_ReaverResearch</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <PawnKindDef>
+    <defName>MM_Reaver</defName>
+    <label>Reaver</label>
+    <race>MM_Reaver</race>
+    <combatPower>600</combatPower>
+    <isFighter>true</isFighter>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mecha/Reaver/Reaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(2,3)</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  <ResearchProjectDef>
+    <defName>MM_ReaverResearch</defName>
+    <label>Reaver warframe</label>
+    <description>Unlocks construction of the Reaver, a siege warframe that manufactures its own missiles and carries heavy cargo.</description>
+    <tab>MonolynAE</tab>
+    <knowledgeCategory>Information</knowledgeCategory>
+    <knowledgeCost>26000</knowledgeCost>
+    <prerequisites>
+      <li>MM_ImmortalResearch</li>
+      <li>MNGravityControl</li>
+    </prerequisites>
+    <researchViewX>10</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+  <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
+    <defName>MM_PrintReaver</defName>
+    <label>Build: Reaver</label>
+    <thing>MM_Reaver</thing>
+    <pawnKindDef>MM_Reaver</pawnKindDef>
+    <description>Build a Reaver at a construct formator linked to a mechanitor. Its magazine starts empty; enable automatic fabrication to produce missiles. Uses no bandwidth.</description>
+    <recipeTime>240000</recipeTime>
+    <lightCost>50000</lightCost>
+    <costList>
+      <MNCalcirite>300</MNCalcirite>
+      <MNPneumaCircuit>6</MNPneumaCircuit>
+      <MN_Seed>50</MN_Seed>
+    </costList>
+    <researchPrerequisites>
+      <li>MM_ReaverResearch</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MNCalcirite</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MNPneumaCircuit</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MN_Seed</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <MM_Colossus>1</MM_Colossus>
+    </products>
+  </ASEL.MonolynRecipeDef>
+  <DamageDef ParentName="Bomb">
+    <defName>MM_ReaverBlast</defName>
+    <label>Reaver missile explosion</label>
+    <defaultDamage>16</defaultDamage>
+    <defaultArmorPenetration>0.75</defaultArmorPenetration>
+    <buildingDamageFactor>3</buildingDamageFactor>
+    <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+  </DamageDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>MM_ReaverMissile</defName>
+    <label>Reaver light missile</label>
+    <thingClass>Monolyn.Mecha.Projectile_ReaverMissile</thingClass>
+    <graphicData>
+      <texPath>Things/Mote/Bullet_Phase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.55,1.1)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MM_ReaverBlast</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <armorPenetrationBase>0.75</armorPenetrationBase>
+      <explosionRadius>4</explosionRadius>
+      <speed>36</speed>
+      <explosionDamageFalloff>false</explosionDamageFalloff>
+    </projectile>
+    <modExtensions>
+      <li Class="ASEL.ASELModExtension">
+        <trailLength>12</trailLength>
+        <trailWidth>0.13</trailWidth>
+        <trailStartPos>0.1</trailStartPos>
+        <impactEffecter>MNBulletImpactBase</impactEffecter>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

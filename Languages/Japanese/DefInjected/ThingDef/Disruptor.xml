@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Disruptor.label>ディスラプター</MM_Disruptor.label>
+  <MM_Disruptor.description>入植者1人が操縦する範囲攻撃メカ。追尾する光球を発射し、周囲の敵に継続ダメージを与えて5秒後に爆発する。光球は敵だけを傷つけ、建物には3倍のダメージを与える。\n\n光球の維持中は移動も転送もできず、終了後は5秒の冷却が必要。占有面積は2×2マス、積載量は600 kgで、光を動力とする。光球がない状態なら、操縦者ごと同じマップの光ネットワーク内で転送できる。</MM_Disruptor.description>
+  <MM_Disruptor.tools.0.label>装甲支持脚</MM_Disruptor.tools.0.label>
+  <MM_DisruptorOrb.label>追尾光球</MM_DisruptorOrb.label>
+</LanguageData>

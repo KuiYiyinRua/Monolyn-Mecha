@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerAutoCombat>自动战斗</MM_StalkerAutoCombat>
+  <MM_StalkerAutoCombatDesc>追击地图上可见且能够到达的敌人，寻找掩体，并尝试保持24至30格距离。手动命令、搬运和远行任务优先。关闭后恢复通常的工作安排。</MM_StalkerAutoCombatDesc>
+  <MM_StalkerAutoBlink>自动闪现</MM_StalkerAutoBlink>
+  <MM_StalkerAutoBlinkDesc>行走时自动闪现，缩短路程。单次距离最多20.9格，冷却8秒，落点必须可见、可站立且未被占用。闪现后继续原任务；关闭此选项仍可手动闪现。</MM_StalkerAutoBlinkDesc>
+</LanguageData>

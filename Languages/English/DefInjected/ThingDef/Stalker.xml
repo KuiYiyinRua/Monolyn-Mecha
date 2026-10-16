@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Stalker.label>Stalker</MM_Stalker.label>
+  <MM_Stalker.description>A fast combat construct that uses 2 bandwidth. Twin lasers provide ranged fire, while blink allows rapid repositioning. In automatic combat it pursues enemies, seeks cover and tries to keep its distance. Manual orders take priority.\n\nIt can also haul, clean and fight fires. It has a 100-point shield and consumes 30 light per game hour to recharge.</MM_Stalker.description>
+  <MM_Stalker.tools.0.label>blade legs</MM_Stalker.tools.0.label>
+  <MM_StalkerProjectors.label>twin laser projectors</MM_StalkerProjectors.label>
+  <MM_StalkerProjectors.description>The Stalker's built-in weapon. Fires two laser bolts in sequence for combat at medium to long range.</MM_StalkerProjectors.description>
+  <MM_StalkerLaser.label>Stalker laser bolt</MM_StalkerLaser.label>
+</LanguageData>

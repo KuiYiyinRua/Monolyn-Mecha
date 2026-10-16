@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerBlink.label>Blink</MM_StalkerBlink.label>
+  <MM_StalkerBlink.description>Teleport to a visible, standable and unoccupied location within 20.9 cells. Cooldown: 8 seconds. With automatic blink enabled, this ability is also used while traveling on foot.</MM_StalkerBlink.description>
+</LanguageData>

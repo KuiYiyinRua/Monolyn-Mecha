@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <MM_MechaAutoCombat>自动战斗</MM_MechaAutoCombat>
+  <MM_MechaAutoCombatDesc>有驾驶员且光芒充足时，主动追击敌人，进入射程并取得射界后停下攻击，不主动拉开距离。手动移动优先；手动攻击或停止会关闭自动战斗。</MM_MechaAutoCombatDesc>
+  <MM_ColossusAutoCombatDesc>有驾驶员且光芒充足时，主动追击敌人、选择射击位置，并在敌人接近时拉开距离。可在移动中持续射击。手动移动优先；手动攻击或停止会关闭自动战斗。</MM_ColossusAutoCombatDesc>
+</LanguageData>

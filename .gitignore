@@ -1,0 +1,18 @@
+Source/obj/
+BuildValidation/**/obj/
+BuildValidation/**/bin/
+BuildValidation/Decompiled/
+BuildValidation/SP-*/
+BuildValidation/Cold-*/
+*.user
+
+# Local validation, intermediate builds and release staging are not mod payload.
+BuildValidation/
+Workshop/
+Artwork/
+**/bin/
+**/obj/
+*.pdb
+*.zip
+*.7z
+.vs/

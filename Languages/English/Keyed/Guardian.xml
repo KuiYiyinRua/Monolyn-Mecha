@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianAutoCombat>Automatic combat</MM_GuardianAutoCombat>
+  <MM_GuardianAutoCombatDesc>Pursue visible enemies, seek cover and fight near the edge of the 25-cell range. Shield support takes priority when enabled. Manual orders take priority over both.</MM_GuardianAutoCombatDesc>
+  <MM_GuardianAutoRestore>Automatic shield support</MM_GuardianAutoRestore>
+  <MM_GuardianAutoRestoreDesc>Automatically restore allied shields within 25 cells at 25 points/s, spending 1 stored light per point and keeping a 10% energy reserve. Cannot restore its own shield or end recovery delays caused by shield breaks or EMP. With automatic combat off, only works while drafted.</MM_GuardianAutoRestoreDesc>
+  <MM_GuardianRestore>Restore shield</MM_GuardianRestore>
+  <MM_GuardianRestoreDesc>Approach an allied unit or turret and restore its shield within 25 cells. Restores 25 points/s for 1 stored light per point, keeping a 10% energy reserve. Stops when the shield is full or usable energy runs out. Cannot attack while restoring.</MM_GuardianRestoreDesc>
+  <MM_GuardianNotReady>The Guardian is uncontrolled, unable to act or short of usable light.</MM_GuardianNotReady>
+  <MM_GuardianPayload>Guardian carrying capacity: 40 kg</MM_GuardianPayload>
+</LanguageData>

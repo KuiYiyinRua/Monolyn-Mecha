@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerBlink.label>ブリンク</MM_StalkerBlink.label>
+  <MM_StalkerBlink.description>20.9マス以内の、見えていて立つことができる空き位置へ瞬間移動する。冷却は8秒。自動ブリンクを有効にすると、徒歩での移動中にも使用する。</MM_StalkerBlink.description>
+</LanguageData>

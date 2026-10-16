@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianAutoCombat>Combat automatique</MM_GuardianAutoCombat>
+  <MM_GuardianAutoCombatDesc>Poursuivre les ennemis visibles, chercher un abri et combattre près de la limite de portée de 25 cases. Le soutien des boucliers est prioritaire lorsqu’il est activé. Les ordres manuels passent avant les deux.</MM_GuardianAutoCombatDesc>
+  <MM_GuardianAutoRestore>Soutien automatique</MM_GuardianAutoRestore>
+  <MM_GuardianAutoRestoreDesc>Restaurer automatiquement les boucliers alliés à moins de 25 cases, à raison de 25 points/s et d’une unité de lumière stockée par point, en gardant 10 % d’énergie en réserve. Ne restaure pas son propre bouclier et ne supprime pas les délais dus à une rupture de bouclier ou à une IEM. Sans combat automatique, agit uniquement pendant la mobilisation.</MM_GuardianAutoRestoreDesc>
+  <MM_GuardianRestore>Restaurer le bouclier</MM_GuardianRestore>
+  <MM_GuardianRestoreDesc>Rejoindre une unité ou une tourelle alliée et restaurer son bouclier à moins de 25 cases. Restaure 25 points/s pour une unité de lumière stockée par point, en gardant 10 % d’énergie en réserve. S’arrête quand le bouclier est plein ou l’énergie utilisable épuisée. Impossible d’attaquer pendant la restauration.</MM_GuardianRestoreDesc>
+  <MM_GuardianNotReady>Le Gardien n’est pas contrôlé, ne peut pas agir ou manque de lumière utilisable.</MM_GuardianNotReady>
+  <MM_GuardianPayload>Charge utile du Gardien : 40 kg</MM_GuardianPayload>
+</LanguageData>

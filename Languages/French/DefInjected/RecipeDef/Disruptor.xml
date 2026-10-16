@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintDisruptor.label>Construire : Disrupteur</MM_PrintDisruptor.label>
+  <MM_PrintDisruptor.description>Construire un Disrupteur dans un formateur de constructions lié à un mécaniteur. Piloté par un colon, il attaque les groupes ennemis avec un orbe à tête chercheuse. Il n’utilise aucune bande passante.</MM_PrintDisruptor.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerBlink.label>闪现</MM_StalkerBlink.label>
+  <MM_StalkerBlink.description>瞬间移动至20.9格以内可见、可站立且未被占用的位置。冷却8秒。开启自动闪现后，行走时也会使用此能力。</MM_StalkerBlink.description>
+</LanguageData>

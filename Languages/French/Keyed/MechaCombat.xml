@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <MM_MechaAutoCombat>Combat automatique</MM_MechaAutoCombat>
+  <MM_MechaAutoCombatDesc>Avec un pilote et assez de lumière, poursuivre les ennemis puis s’arrêter dès qu’un tir est possible. Ne cherche pas à reculer. Le déplacement manuel est prioritaire ; une attaque manuelle ou Arrêt désactive le combat automatique.</MM_MechaAutoCombatDesc>
+  <MM_ColossusAutoCombatDesc>Avec un pilote et assez de lumière, poursuivre les ennemis, choisir une position de tir et reculer devant les attaquants proches en tirant en mouvement. Le déplacement manuel est prioritaire ; une attaque manuelle ou Arrêt désactive le combat automatique.</MM_ColossusAutoCombatDesc>
+</LanguageData>

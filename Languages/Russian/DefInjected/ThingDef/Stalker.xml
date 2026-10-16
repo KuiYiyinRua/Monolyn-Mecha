@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Stalker.label>Сталкер</MM_Stalker.label>
+  <MM_Stalker.description>Быстрый боевой конструкт, занимающий 2 единицы пропускной способности. Сдвоенные лазеры поражают цели на расстоянии, а скачок позволяет быстро сменить позицию. В автоматическом бою преследует врагов, ищет укрытия и старается держать дистанцию. Ручные приказы имеют приоритет.\n\nТакже переносит грузы, убирает и тушит пожары. Имеет щит на 100 единиц; подзарядка расходует 30 света за игровой час.</MM_Stalker.description>
+  <MM_Stalker.tools.0.label>клинковые ноги</MM_Stalker.tools.0.label>
+  <MM_StalkerProjectors.label>сдвоенные лазерные излучатели</MM_StalkerProjectors.label>
+  <MM_StalkerProjectors.description>Встроенное оружие Сталкера. Последовательно выпускает два лазерных заряда для боя на средней и дальней дистанции.</MM_StalkerProjectors.description>
+  <MM_StalkerLaser.label>лазерный заряд Сталкера</MM_StalkerLaser.label>
+</LanguageData>

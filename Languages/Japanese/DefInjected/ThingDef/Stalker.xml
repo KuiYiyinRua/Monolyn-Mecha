@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Stalker.label>ストーカー</MM_Stalker.label>
+  <MM_Stalker.description>帯域幅を2使用する高速戦闘構造体。2連装レーザーで遠距離攻撃を行い、ブリンクで素早く位置を変える。自動戦闘では敵を追跡し、遮蔽物を探して距離を保とうとする。手動命令が優先される。\n\n運搬、掃除、消火も可能。シールドは100で、充電にはゲーム内1時間につき30の光を消費する。</MM_Stalker.description>
+  <MM_Stalker.tools.0.label>刃脚</MM_Stalker.tools.0.label>
+  <MM_StalkerProjectors.label>2連装レーザー投射器</MM_StalkerProjectors.label>
+  <MM_StalkerProjectors.description>ストーカーの内蔵武器。レーザー弾を2発続けて発射し、中距離から遠距離の戦闘に適する。</MM_StalkerProjectors.description>
+  <MM_StalkerLaser.label>ストーカーのレーザー弾</MM_StalkerLaser.label>
+</LanguageData>

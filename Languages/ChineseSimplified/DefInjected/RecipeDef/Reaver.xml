@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintReaver.label>制造：掠夺者</MM_PrintReaver.label>
+  <MM_PrintReaver.description>在已绑定机械师的构造体塑造所中制造一台掠夺者。成品弹仓为空，可开启自动制弹补充导弹。不占用带宽。</MM_PrintReaver.description>
+</LanguageData>

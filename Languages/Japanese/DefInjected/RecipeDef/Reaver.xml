@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintReaver.label>リーヴァーを製造</MM_PrintReaver.label>
+  <MM_PrintReaver.description>メカニターと接続した構造体成型器でリーヴァーを製造する。完成時の弾倉は空。自動製弾を有効にしてミサイルを補充できる。帯域幅は使用しない。</MM_PrintReaver.description>
+</LanguageData>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <MM_MechaAutoCombat>Automatic combat</MM_MechaAutoCombat>
+  <MM_MechaAutoCombatDesc>With a pilot and enough light, pursue enemies and stop to fire once a clear shot is available. Does not kite. Manual movement takes priority; a manual attack or Stop disables automatic combat.</MM_MechaAutoCombatDesc>
+  <MM_ColossusAutoCombatDesc>With a pilot and enough light, pursue enemies, choose firing positions and retreat from close attackers while firing on the move. Manual movement takes priority; a manual attack or Stop disables automatic combat.</MM_ColossusAutoCombatDesc>
+</LanguageData>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ModMetaData>
+  <name>Monolyn: Mecha · 墨诺灵机甲</name>
+  <author>尹怨怨</author>
+  <packageId>local.monolyn.mecha</packageId>
+  <modVersion>0.6.3</modVersion>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>ASEL.MonolynRace</packageId>
+      <displayName>Monolyn Race</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3742031864</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>rwmt.Multiplayer</li>
+    <li>local.mp.meowonlineshop.sellslingshot</li>
+    <li>brrainz.harmony</li>
+    <li>ASEL.MonolynRace</li>
+  </loadAfter>
+  <description>简体中文
+墨诺灵的地面战甲与构装体扩展。新增不朽、追猎者、巨像、守护者、掠夺者和禁断者，分别提供火力支援、机动作战、护盾恢复和货物运输等功能。战甲由殖民者驾驶，构装体由机械师控制。以光芒为能源，需要安装墨诺灵种族与 Harmony。支持简体中文、日文、英文、法文和俄文。
+
+日本語
+モノリンの地上メカと構造体を追加する拡張。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプターの6種が、火力支援、機動戦闘、シールド回復、物資輸送を担う。メカは入植者が操縦し、構造体はメカニターが制御する。動力には光を使用。Monolyn RaceとHarmonyが必要。簡体字中国語、日本語、英語、フランス語、ロシア語に対応。
+
+English
+Adds six Monolyn ground warframes and constructs: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. They provide fire support, mobile combat, shield restoration and cargo transport. Colonists pilot warframes; mechanitors control constructs. All use light as their energy source. Requires Monolyn Race and Harmony. Available in Simplified Chinese, Japanese, English, French and Russian.
+
+Français
+Ajoute six méchas terrestres et constructions monolyns : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Ils assurent l’appui-feu, le combat mobile, la restauration des boucliers et le transport. Les colons pilotent les méchas ; les mécaniteurs contrôlent les constructions. Tous fonctionnent à la lumière. Nécessite Monolyn Race et Harmony. Disponible en chinois simplifié, japonais, anglais, français et russe.
+
+Русский
+Добавляет шесть наземных мехов и конструктов монолинов: Бессмертный, Сталкер, Колосс, Страж, Разоритель и Дизраптор. Они обеспечивают огневую поддержку, манёвренный бой, восстановление щитов и перевозку грузов. Мехами управляют поселенцы, конструктами — механиторы. Все используют свет как источник энергии. Требуются Monolyn Race и Harmony. Поддерживаются упрощённый китайский, японский, английский, французский и русский языки.</description>
+</ModMetaData>

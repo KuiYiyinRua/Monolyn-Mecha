@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ReaverStatusTip>通过光芒网络自动补能，最多储存10000光芒。\n驾驶待机：1光芒/秒；移动：3光芒/秒；远行：1200光芒/天。\n弹仓容量8枚，每5秒消耗150光芒制造一枚，满仓后停止。可关闭自动制弹以节省能源。\n每消耗250光芒可恢复25点护盾。载重2000千克，远行速度每天4格。</MM_ReaverStatusTip>
+  <MM_ReaverSpeed>掠夺者基础移动速度：每秒4格。</MM_ReaverSpeed>
+  <MM_ReaverAttackDesc>每秒发射一枚库存导弹。伤害16，穿甲75%，爆炸半径4格，对建筑造成三倍伤害，可能误伤友军。射程45格，最小射程4.5格。需要驾驶员、能源和弹药；发射本身不额外消耗光芒，移动时停止射击。</MM_ReaverAttackDesc>
+  <MM_ReaverLoadDesc>先选择货物，再选择负责装载的殖民者。最多装载2000千克。</MM_ReaverLoadDesc>
+  <MM_ReaverMoveDesc>基础速度为每秒4格，会受地形影响。移动时停止射击。</MM_ReaverMoveDesc>
+  <MM_ReaverTeleportDesc>可携带驾驶员一起传送至同一地图内光芒网络覆盖的空地，货物和弹药一同转移。消耗300网络流量，冷却约16.7秒。</MM_ReaverTeleportDesc>
+  <MM_ReaverAmmo>导弹：{0} / {1}</MM_ReaverAmmo>
+  <MM_ReaverFull>弹仓已满</MM_ReaverFull>
+  <MM_ReaverPaused>制弹已暂停</MM_ReaverPaused>
+  <MM_ReaverLowLight>需要150光芒</MM_ReaverLowLight>
+  <MM_ReaverBuilding>正在制弹</MM_ReaverBuilding>
+  <MM_ReaverFabricate>自动制弹</MM_ReaverFabricate>
+  <MM_ReaverFabricateDesc>每5秒制造一枚导弹，完成时消耗150光芒，最多储存8枚。弹仓满时停止；能源不足或关闭此选项时暂停，保留进度。无人驾驶和远行时也能制造。</MM_ReaverFabricateDesc>
+</LanguageData>

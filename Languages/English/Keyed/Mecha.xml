@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Hull>Hull: {0} / {1}</MM_Hull>
+  <MM_Cargo>Cargo: {0} / {1} kg</MM_Cargo>
+  <MM_Pilot>Pilot: {0}</MM_Pilot>
+  <MM_StatusTip>Recharges automatically from the light network. Stores up to 6000 light.\nPiloted idle: 1 light/s; moving: 3 light/s; missile: 30 light; caravan travel: 1200 light/day.\nRestores 25 shield points for 250 light.</MM_StatusTip>
+  <MM_Board>Board</MM_Board>
+  <MM_BoardDesc>Choose a colonist to walk to the warframe and enter the cockpit.</MM_BoardDesc>
+  <MM_Eject>Disembark</MM_Eject>
+  <MM_EjectDesc>Let the pilot out beside the warframe and stop movement and firing.</MM_EjectDesc>
+  <MM_Move>Move</MM_Move>
+  <MM_MoveDesc>Move to a location. You can also right-click the ground with the warframe selected.</MM_MoveDesc>
+  <MM_Attack>Attack</MM_Attack>
+  <MM_AttackDesc>Fire two missiles 0.2 seconds apart, then recover for 1 second. Each deals 10 damage with 100% armor penetration in a cross extending 1 cell from the center in each cardinal direction (5 cells total) and can hit allies. Costs 60 light per pair. Range: 26 cells; minimum: 2.5.</MM_AttackDesc>
+  <MM_AutoFire>Fire at will</MM_AutoFire>
+  <MM_AutoFireDesc>Automatically attack visible enemies in range while piloted and powered.</MM_AutoFireDesc>
+  <MM_Stop>Stop</MM_Stop>
+  <MM_StopDesc>Cancel movement and the current manual attack target.</MM_StopDesc>
+  <MM_Teleport>Light teleport</MM_Teleport>
+  <MM_TeleportDesc>Teleport with the pilot and all cargo to clear ground covered by the light network on the same map. Uses 300 network traffic. Cooldown: about 16.7 seconds.</MM_TeleportDesc>
+  <MM_Load>Load cargo</MM_Load>
+  <MM_LoadDesc>Choose cargo, then a colonist to load it. Capacity: 500 kg.</MM_LoadDesc>
+  <MM_Unload>Unload cargo</MM_Unload>
+  <MM_UnloadDesc>Unload all cargo beside the warframe.</MM_UnloadDesc>
+  <MM_NeedsPilotLight>Requires an able pilot and light.</MM_NeedsPilotLight>
+  <MM_TeleportEmpty>The pilot must disembark first.</MM_TeleportEmpty>
+  <MM_Cooldown>Cooldown: {0} s</MM_Cooldown>
+  <MM_NetworkBusy>The light network is overloaded.</MM_NetworkBusy>
+  <MM_WorldSpeed>Warframe travel speed: {0} world tiles/day, unaffected by roads, terrain or night rest. Caravans with several warframe types use the slowest one's speed.</MM_WorldSpeed>
+  <MM_MapSpeed>Immortal base speed: 3.3 cells/s.</MM_MapSpeed>
+</LanguageData>

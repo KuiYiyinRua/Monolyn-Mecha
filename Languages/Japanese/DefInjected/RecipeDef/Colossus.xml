@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintColossus.label>コロッサスを製造</MM_PrintColossus.label>
+  <MM_PrintColossus.description>メカニターと接続した構造体成型器でコロッサスを製造する。障害物を通り抜け、移動中に2本のビームを発射できる。帯域幅は使用しない。</MM_PrintColossus.description>
+</LanguageData>

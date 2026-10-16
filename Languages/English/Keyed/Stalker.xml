@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerAutoCombat>Automatic combat</MM_StalkerAutoCombat>
+  <MM_StalkerAutoCombatDesc>Pursue visible, reachable enemies, seek cover and try to stay 24 to 30 cells away. Manual orders, hauling and caravan duties take priority. Disable to resume normal work.</MM_StalkerAutoCombatDesc>
+  <MM_StalkerAutoBlink>Automatic blink</MM_StalkerAutoBlink>
+  <MM_StalkerAutoBlinkDesc>Use blink while walking to shorten the route. Maximum distance: 20.9 cells; cooldown: 8 seconds. The destination must be visible, standable and unoccupied. The current task continues afterward. Manual blink remains available when disabled.</MM_StalkerAutoBlinkDesc>
+</LanguageData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Colossus.label>Colossus</MM_Colossus.label>
+  <MM_Colossus.description>A four-legged warframe piloted by one colonist for ranged fire support. Twin beams sweep across the target area and can fire while moving. Walls block the beams, and friendly units can be hit.\n\nOccupies 3×3 cells and moves through walls and obstacles at 8 cells per second without terrain penalties. Carries 800 kg and can be ridden in caravans. Runs on light; it can teleport with its pilot within the light network on the same map.</MM_Colossus.description>
+  <MM_Colossus.tools.0.label>blade legs</MM_Colossus.tools.0.label>
+</LanguageData>

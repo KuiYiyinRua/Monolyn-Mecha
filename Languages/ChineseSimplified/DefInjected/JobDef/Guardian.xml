@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianCombat.reportString>正在警戒并恢复友方护盾。</MM_GuardianCombat.reportString>
+  <MM_GuardianRestore.reportString>正在恢复TargetA的护盾。</MM_GuardianRestore.reportString>
+</LanguageData>

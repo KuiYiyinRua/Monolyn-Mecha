@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Colossus.label>Colosse</MM_Colossus.label>
+  <MM_Colossus.description>Un mécha quadrupède piloté par un colon pour l’appui à distance. Ses deux faisceaux balaient la zone visée, même en mouvement. Les murs les bloquent et les alliés peuvent être touchés.\n\nIl occupe 3×3 cases et traverse murs et obstacles à 8 cases par seconde, sans ralentissement dû au terrain. Il transporte 800 kg et peut servir de monture en caravane. Il fonctionne à la lumière et peut se téléporter avec son pilote dans le réseau lumineux de la même carte.</MM_Colossus.description>
+  <MM_Colossus.tools.0.label>pattes-lames</MM_Colossus.tools.0.label>
+</LanguageData>

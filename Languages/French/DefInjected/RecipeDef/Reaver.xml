@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintReaver.label>Construire : Ravageur</MM_PrintReaver.label>
+  <MM_PrintReaver.description>Construire un Ravageur dans un formateur de constructions lié à un mécaniteur. Son magasin est vide au départ ; activer la production automatique pour fabriquer des missiles. Il n’utilise aucune bande passante.</MM_PrintReaver.description>
+</LanguageData>

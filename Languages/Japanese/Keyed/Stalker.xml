@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerAutoCombat>自動戦闘</MM_StalkerAutoCombat>
+  <MM_StalkerAutoCombatDesc>見えていて到達可能な敵を追跡し、遮蔽物を探して24〜30マスの距離を保とうとする。手動命令、運搬、キャラバンの作業を優先。無効にすると通常の作業に戻る。</MM_StalkerAutoCombatDesc>
+  <MM_StalkerAutoBlink>自動ブリンク</MM_StalkerAutoBlink>
+  <MM_StalkerAutoBlinkDesc>歩行中にブリンクを使い、移動を短縮する。最大距離20.9マス、冷却8秒。移動先は見えていて、立つことができ、空いている必要がある。使用後も元の作業を続ける。無効にしても手動で使用可能。</MM_StalkerAutoBlinkDesc>
+</LanguageData>

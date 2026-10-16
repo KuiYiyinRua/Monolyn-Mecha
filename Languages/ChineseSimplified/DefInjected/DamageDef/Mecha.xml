@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ImmortalBlast.label>光芒导弹爆炸</MM_ImmortalBlast.label>
+  <MM_ImmortalBlast.deathMessage>{0}被光芒导弹炸死。</MM_ImmortalBlast.deathMessage>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerBlink.label>Скачок</MM_StalkerBlink.label>
+  <MM_StalkerBlink.description>Мгновенно переместиться на видимую, доступную и незанятую клетку в пределах 20,9 клетки. Перезарядка: 8 секунд. При включённом автоматическом скачке способность также используется во время ходьбы.</MM_StalkerBlink.description>
+</LanguageData>

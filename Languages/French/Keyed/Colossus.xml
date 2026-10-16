@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ColossusStatusTip>Se recharge automatiquement dans le réseau lumineux. Capacité : 10000 unités de lumière.\nAvec pilote au repos : 2 lumières/s ; en mouvement : 4 lumières/s ; double balayage : 120 lumières ; trajet en caravane : 1200 lumières/jour.\nRestaure 25 points de bouclier pour 250 unités de lumière. Transporte 800 kg et tire en mouvement.</MM_ColossusStatusTip>
+  <MM_ColossusSpeed>Vitesse du Colosse : 8 cases/s, sans effet du terrain, des obstacles ou des ralentissements.</MM_ColossusSpeed>
+  <MM_ColossusAttackDesc>Balayer une zone d’environ 6 cases de large avec deux faisceaux. Chacun inflige 12 dégâts avec 60 % de pénétration d’armure et touche chaque cible une fois par balayage. Portée : 38 cases ; minimum : 4. Visée : 0,6 s ; balayage : 0,9 s ; récupération : 1,1 s. Coût : 120 unités de lumière par paire. Tir possible en mouvement. Les murs bloquent les faisceaux ; les alliés peuvent être touchés.</MM_ColossusAttackDesc>
+  <MM_ColossusLoadDesc>Choisir le chargement, puis le colon chargé de l’embarquer. Capacité : 800 kg.</MM_ColossusLoadDesc>
+  <MM_ColossusMoveDesc>Se déplacer à 8 cases/s à travers murs et obstacles, sans ralentissement dû au terrain. Le tir peut continuer en mouvement.</MM_ColossusMoveDesc>
+  <MM_ColossusTeleportDesc>Se téléporter avec le pilote et tout le chargement vers un emplacement visible couvert par le réseau lumineux sur la même carte. Consomme 300 unités de trafic réseau. Recharge : environ 16,7 secondes.</MM_ColossusTeleportDesc>
+</LanguageData>

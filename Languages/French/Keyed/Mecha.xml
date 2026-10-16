@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Hull>Coque : {0} / {1}</MM_Hull>
+  <MM_Cargo>Chargement : {0} / {1} kg</MM_Cargo>
+  <MM_Pilot>Pilote : {0}</MM_Pilot>
+  <MM_StatusTip>Se recharge automatiquement dans le réseau lumineux. Capacité : 6000 unités de lumière.\nAvec pilote au repos : 1 lumière/s ; en mouvement : 3 lumières/s ; missile : 30 lumières ; trajet en caravane : 1200 lumières/jour.\nRestaure 25 points de bouclier pour 250 unités de lumière.</MM_StatusTip>
+  <MM_Board>Embarquer</MM_Board>
+  <MM_BoardDesc>Choisir un colon qui rejoindra le mécha pour entrer dans le cockpit.</MM_BoardDesc>
+  <MM_Eject>Débarquer</MM_Eject>
+  <MM_EjectDesc>Faire sortir le pilote à côté du mécha et arrêter les déplacements et les tirs.</MM_EjectDesc>
+  <MM_Move>Déplacer</MM_Move>
+  <MM_MoveDesc>Rejoindre un emplacement. Vous pouvez aussi sélectionner le mécha puis faire un clic droit au sol.</MM_MoveDesc>
+  <MM_Attack>Attaquer</MM_Attack>
+  <MM_AttackDesc>Tirer deux missiles à 0,2 seconde d’intervalle, puis récupérer pendant 1 seconde. Chacun inflige 10 dégâts avec 100 % de pénétration d’armure dans une croix de 1 case par direction depuis le centre (5 cases au total) et peut toucher les alliés. Coût : 60 unités de lumière par salve. Portée : 26 cases ; minimum : 2,5.</MM_AttackDesc>
+  <MM_AutoFire>Tir à volonté</MM_AutoFire>
+  <MM_AutoFireDesc>Attaquer automatiquement les ennemis visibles à portée si un pilote est présent et si le mécha est alimenté.</MM_AutoFireDesc>
+  <MM_Stop>Arrêter</MM_Stop>
+  <MM_StopDesc>Annuler le déplacement et la cible d’attaque désignée manuellement.</MM_StopDesc>
+  <MM_Teleport>Téléportation</MM_Teleport>
+  <MM_TeleportDesc>Se téléporter avec le pilote et tout le chargement vers un espace libre couvert par le réseau lumineux sur la même carte. Consomme 300 unités de trafic réseau. Recharge : environ 16,7 secondes.</MM_TeleportDesc>
+  <MM_Load>Charger</MM_Load>
+  <MM_LoadDesc>Choisir le chargement, puis le colon chargé de l’embarquer. Capacité : 500 kg.</MM_LoadDesc>
+  <MM_Unload>Décharger</MM_Unload>
+  <MM_UnloadDesc>Déposer tout le chargement à côté du mécha.</MM_UnloadDesc>
+  <MM_NeedsPilotLight>Nécessite un pilote valide et de la lumière.</MM_NeedsPilotLight>
+  <MM_TeleportEmpty>Le pilote doit d’abord débarquer.</MM_TeleportEmpty>
+  <MM_Cooldown>Recharge : {0} s</MM_Cooldown>
+  <MM_NetworkBusy>Le réseau lumineux est surchargé.</MM_NetworkBusy>
+  <MM_WorldSpeed>Vitesse du mécha : {0} tuiles du monde/jour, sans effet des routes, du terrain ou du repos nocturne. Une caravane de plusieurs types de méchas adopte la vitesse du plus lent.</MM_WorldSpeed>
+  <MM_MapSpeed>Vitesse de base de l’Immortel : 3,3 cases/s.</MM_MapSpeed>
+</LanguageData>

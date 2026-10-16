@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintGuardian.label>Construire : Gardien</MM_PrintGuardian.label>
+  <MM_PrintGuardian.description>Construire un Gardien. Nécessite 1 point de bande passante disponible. Il assure la défense, restaure les boucliers alliés et effectue les tâches courantes.</MM_PrintGuardian.description>
+</LanguageData>

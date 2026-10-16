@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Guardian.label>守护者</MM_Guardian.label>
+  <MM_Guardian.description>用于防御和护盾支援的小型构装体，占用1点带宽。可用持续激光攻击敌人，或为友方单位和炮塔恢复护盾，两者不能同时进行。\n\n自动补盾默认开启。关闭自动战斗后，仅在征召时自动补盾。也能搬运最多40千克货物、清洁和灭火。配有75点护盾，每游戏小时消耗20光芒补充能源。</MM_Guardian.description>
+  <MM_Guardian.tools.0.label>支撑钳足</MM_Guardian.tools.0.label>
+  <MM_GuardianProjector.label>守护者光束发生器</MM_GuardianProjector.label>
+  <MM_GuardianProjector.description>守护者的内置装置，用于持续攻击敌人或恢复友方护盾。攻击与补盾不能同时进行。</MM_GuardianProjector.description>
+</LanguageData>

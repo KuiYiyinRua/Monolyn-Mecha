@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianCombat.reportString>Охрана и восстановление щитов союзников.</MM_GuardianCombat.reportString>
+  <MM_GuardianRestore.reportString>Восстановление щита TargetA.</MM_GuardianRestore.reportString>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintGuardian.label>制造：守护者</MM_PrintGuardian.label>
+  <MM_PrintGuardian.description>制造一台守护者。需要1点空闲带宽，可用于防御、恢复友方护盾和日常工作。</MM_PrintGuardian.description>
+</LanguageData>

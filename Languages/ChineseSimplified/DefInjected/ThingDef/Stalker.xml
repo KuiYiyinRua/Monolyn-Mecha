@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Stalker.label>追猎者</MM_Stalker.label>
+  <MM_Stalker.description>行动迅速的战斗构装体，占用2点带宽。双联激光用于远程攻击，闪现可快速接近或远离目标。自动战斗时会追击敌人、寻找掩体并尝试保持距离，手动命令优先。\n\n也能搬运、清洁和灭火。配有100点护盾，每游戏小时消耗30光芒补充能源。</MM_Stalker.description>
+  <MM_Stalker.tools.0.label>刃足</MM_Stalker.tools.0.label>
+  <MM_StalkerProjectors.label>双联激光投射器</MM_StalkerProjectors.label>
+  <MM_StalkerProjectors.description>追猎者的内置武器，连续发射两枚激光弹，适合中远距离交战。</MM_StalkerProjectors.description>
+  <MM_StalkerLaser.label>追猎者激光弹</MM_StalkerLaser.label>
+</LanguageData>

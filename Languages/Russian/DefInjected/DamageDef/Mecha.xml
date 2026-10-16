@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ImmortalBlast.label>взрыв световой ракеты</MM_ImmortalBlast.label>
+  <MM_ImmortalBlast.deathMessage>{0}: гибель от световой ракеты.</MM_ImmortalBlast.deathMessage>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintGuardian.label>Создать: Страж</MM_PrintGuardian.label>
+  <MM_PrintGuardian.description>Создать Стража. Требуется 1 свободная единица пропускной способности. Обеспечивает оборону, восстанавливает щиты союзников и выполняет повседневную работу.</MM_PrintGuardian.description>
+</LanguageData>

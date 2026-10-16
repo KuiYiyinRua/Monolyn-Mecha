@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintGuardian.label>ガーディアンを製造</MM_PrintGuardian.label>
+  <MM_PrintGuardian.description>ガーディアンを製造する。空き帯域幅が1必要。防衛、味方のシールド回復、日常作業を行える。</MM_PrintGuardian.description>
+</LanguageData>

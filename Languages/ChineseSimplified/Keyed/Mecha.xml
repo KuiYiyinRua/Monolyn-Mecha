@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Hull>机体：{0} / {1}</MM_Hull>
+  <MM_Cargo>货物：{0} / {1} 千克</MM_Cargo>
+  <MM_Pilot>驾驶员：{0}</MM_Pilot>
+  <MM_StatusTip>通过光芒网络自动补能，最多储存6000光芒。\n驾驶待机：1光芒/秒；移动：3光芒/秒；导弹：30光芒/枚；远行：1200光芒/天。\n每消耗250光芒可恢复25点护盾。</MM_StatusTip>
+  <MM_Board>登舱</MM_Board>
+  <MM_BoardDesc>选择一名殖民者，让其前往战甲并进入驾驶舱。</MM_BoardDesc>
+  <MM_Eject>离舱</MM_Eject>
+  <MM_EjectDesc>让驾驶员在战甲旁下舱，同时停止移动和射击。</MM_EjectDesc>
+  <MM_Move>移动</MM_Move>
+  <MM_MoveDesc>移动至指定位置。选中战甲后，也可右键点击地面下达移动命令。</MM_MoveDesc>
+  <MM_Attack>攻击</MM_Attack>
+  <MM_AttackDesc>连续发射两枚导弹，间隔0.2秒，之后冷却1秒。每枚造成10点伤害、100%穿甲，覆盖中心及上下左右各1格的十字区域（共5格），可能误伤友军。每轮消耗60光芒。射程26格，最小射程2.5格。</MM_AttackDesc>
+  <MM_AutoFire>自由开火</MM_AutoFire>
+  <MM_AutoFireDesc>有驾驶员且能源充足时，自动攻击射程内可见的敌人。</MM_AutoFireDesc>
+  <MM_Stop>停止</MM_Stop>
+  <MM_StopDesc>取消移动命令和当前指定的攻击目标。</MM_StopDesc>
+  <MM_Teleport>光芒迁移</MM_Teleport>
+  <MM_TeleportDesc>可携带驾驶员一起传送至同一地图内光芒网络覆盖的空地，随身货物一同转移。消耗300网络流量，冷却约16.7秒。</MM_TeleportDesc>
+  <MM_Load>装载货物</MM_Load>
+  <MM_LoadDesc>先选择货物，再选择负责装载的殖民者。最多装载500千克。</MM_LoadDesc>
+  <MM_Unload>卸下货物</MM_Unload>
+  <MM_UnloadDesc>将全部货物卸到战甲旁。</MM_UnloadDesc>
+  <MM_NeedsPilotLight>需要能够行动的驾驶员和光芒能源。</MM_NeedsPilotLight>
+  <MM_TeleportEmpty>请先让驾驶员离舱。</MM_TeleportEmpty>
+  <MM_Cooldown>冷却：{0}秒</MM_Cooldown>
+  <MM_NetworkBusy>光芒网络当前负载过高。</MM_NetworkBusy>
+  <MM_WorldSpeed>战甲远行速度：每天{0}格，不受道路、地形和夜间休息影响。多种战甲同行时，以最慢者为准。</MM_WorldSpeed>
+  <MM_MapSpeed>不朽基础移动速度：每秒3.3格。</MM_MapSpeed>
+</LanguageData>

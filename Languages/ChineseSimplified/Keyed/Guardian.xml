@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianAutoCombat>自动战斗</MM_GuardianAutoCombat>
+  <MM_GuardianAutoCombatDesc>追击可见敌人、寻找掩体，并尽量在25格射程边缘交战。开启自动补盾时，优先支援友方。手动命令优先。</MM_GuardianAutoCombatDesc>
+  <MM_GuardianAutoRestore>自动补盾</MM_GuardianAutoRestore>
+  <MM_GuardianAutoRestoreDesc>自动为25格内的友方恢复护盾，每秒恢复25点，每点消耗1点自身光芒，并保留10%能源。不能为自身补盾，也不能解除护盾破裂或EMP造成的恢复等待。关闭自动战斗时，仅在征召状态下生效。</MM_GuardianAutoRestoreDesc>
+  <MM_GuardianRestore>恢复护盾</MM_GuardianRestore>
+  <MM_GuardianRestoreDesc>接近友方单位或炮塔，在25格内为其恢复护盾。每秒恢复25点，每点消耗1点自身光芒，保留10%能源。护盾充满或可用能源不足时停止，期间不能攻击。</MM_GuardianRestoreDesc>
+  <MM_GuardianNotReady>守护者未受控、无法行动，或可用光芒不足。</MM_GuardianNotReady>
+  <MM_GuardianPayload>守护者载重：40千克</MM_GuardianPayload>
+</LanguageData>

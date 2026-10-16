@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_StalkerAutoCombat>Combat automatique</MM_StalkerAutoCombat>
+  <MM_StalkerAutoCombatDesc>Poursuivre les ennemis visibles et accessibles, chercher un abri et tenter de rester à 24 à 30 cases. Les ordres manuels, le transport et les tâches de caravane sont prioritaires. Désactiver pour reprendre le travail normal.</MM_StalkerAutoCombatDesc>
+  <MM_StalkerAutoBlink>Saut automatique</MM_StalkerAutoBlink>
+  <MM_StalkerAutoBlinkDesc>Utiliser le saut éclair pendant la marche pour raccourcir le trajet. Distance maximale : 20,9 cases ; recharge : 8 secondes. La destination doit être visible, praticable et inoccupée. La tâche en cours se poursuit ensuite. Le saut manuel reste disponible si cette option est désactivée.</MM_StalkerAutoBlinkDesc>
+</LanguageData>

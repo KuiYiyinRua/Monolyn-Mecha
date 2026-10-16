@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ReaverStatusTip>Se recharge automatiquement dans le réseau lumineux. Capacité : 10000 unités de lumière.\nAvec pilote au repos : 1 lumière/s ; en mouvement : 3 lumières/s ; trajet en caravane : 1200 lumières/jour.\nMagasin de 8 missiles. Produit un missile toutes les 5 secondes pour 150 unités de lumière et s’arrête quand le magasin est plein. Désactiver la production économise l’énergie.\nRestaure 25 points de bouclier pour 250 unités de lumière. Transporte 2000 kg ; vitesse en caravane : 4 tuiles du monde/jour.</MM_ReaverStatusTip>
+  <MM_ReaverSpeed>Vitesse de base du Ravageur : 4 cases/s.</MM_ReaverSpeed>
+  <MM_ReaverAttackDesc>Tirer un missile stocké par seconde. Dégâts : 16 ; pénétration d’armure : 75 % ; rayon d’explosion : 4 cases. Inflige le triple de dégâts aux bâtiments et peut toucher les alliés. Portée : 45 cases ; minimum : 4,5. Nécessite un pilote, de l’énergie et des munitions. Le tir ne coûte pas de lumière supplémentaire et cesse pendant le déplacement.</MM_ReaverAttackDesc>
+  <MM_ReaverLoadDesc>Choisir le chargement, puis le colon chargé de l’embarquer. Capacité : 2000 kg.</MM_ReaverLoadDesc>
+  <MM_ReaverMoveDesc>Se déplacer à une vitesse de base de 4 cases/s, modifiée par le terrain. Le tir cesse pendant le déplacement.</MM_ReaverMoveDesc>
+  <MM_ReaverTeleportDesc>Se téléporter avec le pilote et le chargement et les munitions vers un espace libre couvert par le réseau lumineux sur la même carte. Consomme 300 unités de trafic réseau. Recharge : environ 16,7 secondes.</MM_ReaverTeleportDesc>
+  <MM_ReaverAmmo>Missiles : {0} / {1}</MM_ReaverAmmo>
+  <MM_ReaverFull>Magasin plein</MM_ReaverFull>
+  <MM_ReaverPaused>Production en pause</MM_ReaverPaused>
+  <MM_ReaverLowLight>150 lumières requises</MM_ReaverLowLight>
+  <MM_ReaverBuilding>Missile en production</MM_ReaverBuilding>
+  <MM_ReaverFabricate>Production automatique</MM_ReaverFabricate>
+  <MM_ReaverFabricateDesc>Fabriquer un missile toutes les 5 secondes en dépensant 150 unités de lumière à l’achèvement, jusqu’à 8 missiles stockés. S’arrête quand le magasin est plein. Le manque d’énergie ou la désactivation suspend la production sans perdre la progression. Fonctionne sans pilote et pendant les trajets en caravane.</MM_ReaverFabricateDesc>
+</LanguageData>

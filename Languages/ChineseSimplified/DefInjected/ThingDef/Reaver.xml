@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Reaver.label>掠夺者</MM_Reaver.label>
+  <MM_Reaver.description>由一名殖民者驾驶的攻城战甲，也可运输大量货物。导弹对建筑造成三倍伤害，爆炸可能误伤友军。移动时无法开火。\n\n弹仓最多容纳8枚导弹，初始为空。开启自动制弹后，每5秒消耗150光芒制造一枚导弹，无人驾驶或远行时也能生产。载重2000千克，远行速度为每天4格。可携带驾驶员一起在同一地图的光芒网络内传送。</MM_Reaver.description>
+  <MM_Reaver.tools.0.label>装甲足</MM_Reaver.tools.0.label>
+  <MM_ReaverMissile.label>掠夺者光芒导弹</MM_ReaverMissile.label>
+</LanguageData>

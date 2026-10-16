@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintColossus.label>Build: Colossus</MM_PrintColossus.label>
+  <MM_PrintColossus.description>Build a Colossus at a construct formator linked to a mechanitor. It crosses obstacles and fires twin beams while moving. Uses no bandwidth.</MM_PrintColossus.description>
+</LanguageData>

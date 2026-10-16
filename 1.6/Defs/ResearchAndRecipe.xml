@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>MM_ImmortalResearch</defName><label>Immortal warframe</label>
+    <description>Unlocks construction of the Immortal, a heavy warframe with twin missiles and a phase shield for combat and cargo transport.</description>
+    <tab>MonolynAE</tab><knowledgeCategory>Information</knowledgeCategory><knowledgeCost>18000</knowledgeCost>
+    <prerequisites><li>MNConstructII</li><li>BasicDefenseFacilities</li></prerequisites>
+    <researchViewX>9</researchViewX><researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
+    <defName>MM_PrintImmortal</defName><label>Build: Immortal</label><thing>MM_Immortal</thing><pawnKindDef>MM_Immortal</pawnKindDef>
+    <description>Build an Immortal at a construct formator linked to a mechanitor. The finished warframe is piloted by a colonist and uses no bandwidth.</description>
+    <recipeTime>120000</recipeTime><lightCost>25000</lightCost>
+    <costList><MNCalcirite>180</MNCalcirite><MNPneumaCircuit>3</MNPneumaCircuit><MN_Seed>30</MN_Seed></costList>
+    <researchPrerequisites><li>MM_ImmortalResearch</li></researchPrerequisites>
+    <ingredients>
+      <li><filter><thingDefs><li>MNCalcirite</li></thingDefs></filter><count>180</count></li>
+      <li><filter><thingDefs><li>MNPneumaCircuit</li></thingDefs></filter><count>3</count></li>
+      <li><filter><thingDefs><li>MN_Seed</li></thingDefs></filter><count>30</count></li>
+    </ingredients>
+    <products><MM_Immortal>1</MM_Immortal></products>
+  </ASEL.MonolynRecipeDef>
+</Defs>

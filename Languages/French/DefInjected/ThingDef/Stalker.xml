@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Stalker.label>Traqueur</MM_Stalker.label>
+  <MM_Stalker.description>Une construction de combat rapide qui utilise 2 points de bande passante. Ses lasers jumelés assurent le tir à distance et le saut éclair permet de se repositionner rapidement. En combat automatique, elle poursuit les ennemis, cherche un abri et tente de garder ses distances. Les ordres manuels sont prioritaires.\n\nElle peut aussi transporter, nettoyer et éteindre les incendies. Son bouclier possède 100 points et sa recharge consomme 30 unités de lumière par heure de jeu.</MM_Stalker.description>
+  <MM_Stalker.tools.0.label>pattes-lames</MM_Stalker.tools.0.label>
+  <MM_StalkerProjectors.label>projecteurs laser jumelés</MM_StalkerProjectors.label>
+  <MM_StalkerProjectors.description>L’arme intégrée du Traqueur. Elle tire deux projectiles laser successifs pour le combat à moyenne et longue portée.</MM_StalkerProjectors.description>
+  <MM_StalkerLaser.label>projectile laser de Traqueur</MM_StalkerLaser.label>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ColossusBeam.label>faisceau de Colosse</MM_ColossusBeam.label>
+  <MM_ColossusBeam.deathMessage>{0} a été tué par un faisceau de Colosse.</MM_ColossusBeam.deathMessage>
+</LanguageData>

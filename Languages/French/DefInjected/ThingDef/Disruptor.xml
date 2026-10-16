@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Disruptor.label>Disrupteur</MM_Disruptor.label>
+  <MM_Disruptor.description>Un mécha piloté par un colon, spécialisé dans les attaques de zone. Il lance un orbe à tête chercheuse qui blesse les ennemis proches avant d’exploser après 5 secondes. L’orbe ne touche que les ennemis et inflige le triple de dégâts aux bâtiments.\n\nLe mécha ne peut ni bouger ni se téléporter tant que l’orbe est actif, puis doit récupérer pendant 5 secondes. Il occupe 2×2 cases, transporte 600 kg et fonctionne à la lumière. Sans orbe actif, il peut se téléporter avec son pilote dans le réseau lumineux de la même carte.</MM_Disruptor.description>
+  <MM_Disruptor.tools.0.label>supports blindés</MM_Disruptor.tools.0.label>
+  <MM_DisruptorOrb.label>orbe lumineux à tête chercheuse</MM_DisruptorOrb.label>
+</LanguageData>

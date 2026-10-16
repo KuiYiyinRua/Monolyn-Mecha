@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ColossusStatusTip>Recharges automatically from the light network. Stores up to 10000 light.\nPiloted idle: 2 light/s; moving: 4 light/s; twin sweep: 120 light; caravan travel: 1200 light/day.\nRestores 25 shield points for 250 light. Carries 800 kg and fires while moving.</MM_ColossusStatusTip>
+  <MM_ColossusSpeed>Colossus speed: 8 cells/s, unaffected by terrain, obstacles or slowing effects.</MM_ColossusSpeed>
+  <MM_ColossusAttackDesc>Sweep two beams across an area about 6 cells wide. Each deals 12 damage with 60% armor penetration, hitting each target once per sweep. Range: 38 cells; minimum: 4. Aim: 0.6 s; sweep: 0.9 s; recovery: 1.1 s. Costs 120 light per pair. Can fire while moving. Walls block the beams; allies can be hit.</MM_ColossusAttackDesc>
+  <MM_ColossusLoadDesc>Choose cargo, then a colonist to load it. Capacity: 800 kg.</MM_ColossusLoadDesc>
+  <MM_ColossusMoveDesc>Move at 8 cells/s through walls and obstacles, without terrain penalties. Can keep firing while moving.</MM_ColossusMoveDesc>
+  <MM_ColossusTeleportDesc>Teleport with the pilot and all cargo to a visible location covered by the light network on the same map. Uses 300 network traffic. Cooldown: about 16.7 seconds.</MM_ColossusTeleportDesc>
+</LanguageData>

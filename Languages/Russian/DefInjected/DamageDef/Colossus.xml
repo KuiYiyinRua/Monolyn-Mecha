@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_ColossusBeam.label>луч Колосса</MM_ColossusBeam.label>
+  <MM_ColossusBeam.deathMessage>{0}: гибель от луча Колосса.</MM_ColossusBeam.deathMessage>
+</LanguageData>

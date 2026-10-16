@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_PrintDisruptor.label>Build: Disruptor</MM_PrintDisruptor.label>
+  <MM_PrintDisruptor.description>Build a Disruptor at a construct formator linked to a mechanitor. A colonist pilots it to attack groups of enemies with a homing orb. Uses no bandwidth.</MM_PrintDisruptor.description>
+</LanguageData>
