@@ -1,0 +1,9 @@
+Parsed 0.1 as int.
+Parsed 5.5 as int.
+Parsed 0.5 as int.
+Could not resolve cross-reference: No Verse.SoundDef named  MNGravitySwitch found to give to Verse.SubEffecterDef Verse.SubEffecterDef (using undefined sound instead)
+Could not resolve cross-reference: No Verse.SoundDef named  MNDownpourImpact found to give to Verse.SubEffecterDef Verse.SubEffecterDef (using undefined sound instead)
+Could not resolve cross-reference: No Verse.SoundDef named MNCallDown found to give to Verse.SubEffecterDef Verse.SubEffecterDef (using undefined sound instead)
+Could not resolve cross-reference: No Verse.SoundDef named hammerImpact found to give to Verse.SubEffecterDef Verse.SubEffecterDef (using undefined sound instead)
+Could not resolve cross-reference: No Verse.SoundDef named Pawn_Melee_Punch_HitBuilding found to give to Verse.RaceProperties Verse.RaceProperties (using undefined sound instead)
+Translation data for language Simplified Chinese has 27 errors. Generate translation report for more info.

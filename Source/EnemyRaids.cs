@@ -137,9 +137,20 @@ namespace Monolyn.Mecha
 
     // The upstream distributor scans nearby receivers without a faction check. Block
     // both discovery and transfer so an attacker cannot draw power from the player's grid.
-    [HarmonyPatch]
+    // Patching this upstream type also initializes its static selection materials.
+    // Mod constructors run on the loading thread; register only these patches in
+    // the main-thread startup phase, after textures and shaders are available.
+    [StaticConstructorOnStartup]
     static class MechaRaidLightIsolation
     {
+        static MechaRaidLightIsolation()
+        {
+            System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(CompLightDistributor).TypeHandle);
+            var harmony = new Harmony("local.monolyn.mecha");
+            var prefix = new HarmonyMethod(typeof(MechaRaidLightIsolation), nameof(Prefix));
+            foreach (var target in TargetMethods()) harmony.Patch(target, prefix: prefix);
+        }
+
         static IEnumerable<MethodBase> TargetMethods()
         {
             yield return AccessTools.Method(typeof(CompLightDistributor), nameof(CompLightDistributor.RegisterReceiver));
