@@ -28,6 +28,7 @@ namespace Monolyn.Mecha
     public sealed class Pawn_Colossus : Pawn_Immortal
     {
         public const float BeamRange = 38f, SweepHalfWidth = 3f, SweepLight = 120f;
+        static readonly IntVec3[] BeamImpactOffsets = { IntVec3.Zero, IntVec3.North, IntVec3.South, IntVec3.West, IntVec3.East };
         public const int AimTicks = 36, SweepTicks = 54, RecoveryTicks = 66;
         public override int HullMax => 300;
         public override float CargoMax => 800f;
@@ -145,14 +146,19 @@ namespace Monolyn.Mecha
                 ends[i].EffectTick(new TargetInfo(cell, Map), TargetInfo.Invalid);
                 if (sweepRemaining % 5 == 0) FleckMaker.Static(end, Map, DefDatabase<FleckDef>.GetNamed("Fleck_BeamBurn"));
                 var hits = i == 0 ? leftHits : rightHits;
-                // One 12-damage contact per beam and entity per sweep, including multi-cell buildings.
-                foreach (var thing in MechaGeometry.CellThings(cell, Map))
+                // One 21-damage contact per beam and entity per sweep across the five-cell cross.
+                foreach (var offset in BeamImpactOffsets)
                 {
-                    if (thing == this || thing.Destroyed || !(thing is Pawn || thing is Building) || !thing.def.destroyable
-                        || hits.Contains(thing.thingIDNumber) || (thing is Pawn pawn && pawn.Dead)) continue;
-                    hits.Add(thing.thingIDNumber);
-                    thing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("MM_ColossusBeam"), 12f, .6f,
-                        (end - MechaGeometry.Center(this)).AngleFlat(), this));
+                    var impactCell = cell + offset;
+                    if (!impactCell.InBounds(Map)) continue;
+                    foreach (var thing in MechaGeometry.CellThings(impactCell, Map))
+                    {
+                        if (thing == this || thing.Destroyed || !(thing is Pawn || thing is Building) || !thing.def.destroyable
+                            || hits.Contains(thing.thingIDNumber) || (thing is Pawn pawn && pawn.Dead)) continue;
+                        hits.Add(thing.thingIDNumber);
+                        thing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("MM_ColossusBeam"), 21f, .6f,
+                            (end - MechaGeometry.Center(this)).AngleFlat(), this));
+                    }
                 }
             }
             if (sound == null || sound.Ended) sound = DefDatabase<SoundDef>.GetNamed("Supression_Shooting").TrySpawnSustainer(SoundInfo.InMap(this, MaintenanceType.PerTick));

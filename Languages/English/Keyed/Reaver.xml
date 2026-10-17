@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <MM_ReaverStatusTip>Recharges automatically from the light network. Stores up to 10000 light.\nPiloted idle: 1 light/s; moving: 3 light/s; caravan travel: 1200 light/day.\nStores 8 missiles. Makes one every 5 seconds for 150 light and stops when full. Disable fabrication to save energy.\nRestores 25 shield points for 250 light. Carries 2000 kg; caravan speed: 4 world tiles/day.</MM_ReaverStatusTip>
+  <MM_ReaverStatusTip>Recharges automatically from the light network. Stores up to 10000 light.\nPiloted idle: 1 light/s; moving: 3 light/s; caravan travel: 1200 light/day.\nStores 10 missiles. Makes one every 5 seconds for 150 light and stops when full. Disable fabrication to save energy.\nRestores 25 shield points for 250 light. Carries 2000 kg; caravan speed: 4 world tiles/day.</MM_ReaverStatusTip>
   <MM_ReaverSpeed>Reaver base speed: 4 cells/s.</MM_ReaverSpeed>
   <MM_ReaverAttackDesc>Fire one stored missile per second. Damage: 16; armor penetration: 75%; blast radius: 4 cells. Deals triple damage to buildings and can hit allies. Range: 45 cells; minimum: 4.5. Requires a pilot, power and ammunition. Firing costs no extra light; movement suspends fire.</MM_ReaverAttackDesc>
   <MM_ReaverLoadDesc>Choose cargo, then a colonist to load it. Capacity: 2000 kg.</MM_ReaverLoadDesc>
@@ -12,5 +12,5 @@
   <MM_ReaverLowLight>Needs 150 light</MM_ReaverLowLight>
   <MM_ReaverBuilding>Producing missile</MM_ReaverBuilding>
   <MM_ReaverFabricate>Auto-produce missiles</MM_ReaverFabricate>
-  <MM_ReaverFabricateDesc>Make one missile every 5 seconds, paying 150 light on completion, up to 8 stored missiles. Stops when full. Low energy or disabling this option pauses progress without losing it. Works without a pilot and during caravan travel.</MM_ReaverFabricateDesc>
+  <MM_ReaverFabricateDesc>Make one missile every 5 seconds, paying 150 light on completion, up to 10 stored missiles. Stops when full. Low energy or disabling this option pauses progress without losing it. Works without a pilot and during caravan travel.</MM_ReaverFabricateDesc>
 </LanguageData>

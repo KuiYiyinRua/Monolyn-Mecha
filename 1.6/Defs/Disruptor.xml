@@ -54,8 +54,8 @@
       <MarketValue>16000</MarketValue>
       <Flammability>0</Flammability>
       <PainShockThreshold>999</PainShockThreshold>
-      <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.77</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
       <ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity>
       <ToxicResistance>1</ToxicResistance>
@@ -220,7 +220,7 @@
   <DamageDef ParentName="Bomb">
     <defName>MM_DisruptorBlast</defName>
     <label>Disruptor orb explosion</label>
-    <defaultDamage>20</defaultDamage>
+    <defaultDamage>23</defaultDamage>
     <defaultArmorPenetration>.35</defaultArmorPenetration>
     <buildingDamageFactor>3</buildingDamageFactor>
     <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>
@@ -229,7 +229,7 @@
   <DamageDef ParentName="Bullet">
     <defName>MM_DisruptorField</defName>
     <label>Disruptor phase field</label>
-    <defaultDamage>2</defaultDamage>
+    <defaultDamage>5</defaultDamage>
     <defaultArmorPenetration>.45</defaultArmorPenetration>
     <buildingDamageFactor>3</buildingDamageFactor>
     <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>

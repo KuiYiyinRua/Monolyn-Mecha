@@ -27,7 +27,7 @@
     <statBases>
       <MaxHitPoints>150</MaxHitPoints><MoveSpeed>9</MoveSpeed><Mass>85</Mass><MarketValue>1900</MarketValue>
       <BandwidthCost>2</BandwidthCost><ConstructConsumption>30</ConstructConsumption><MechEnergyUsageFactor>1.2</MechEnergyUsageFactor>
-      <ArmorRating_Sharp>0.77</ArmorRating_Sharp><ArmorRating_Blunt>0.67</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.97</ArmorRating_Sharp><ArmorRating_Blunt>0.77</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <ShootingAccuracyPawn>1</ShootingAccuracyPawn><AimingDelayFactor>1</AimingDelayFactor><RangedCooldownFactor>1</RangedCooldownFactor>
       <PainShockThreshold>999</PainShockThreshold>
     </statBases>

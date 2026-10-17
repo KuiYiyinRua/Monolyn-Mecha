@@ -25,7 +25,7 @@
     <statBases>
       <MaxHitPoints>250</MaxHitPoints><MoveSpeed>3.3</MoveSpeed><Mass>450</Mass><CarryingCapacity>500</CarryingCapacity>
       <MarketValue>7500</MarketValue><Flammability>0</Flammability><PainShockThreshold>999</PainShockThreshold>
-      <ArmorRating_Sharp>1.65</ArmorRating_Sharp><ArmorRating_Blunt>1.10</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ArmorRating_Sharp>1.85</ArmorRating_Sharp><ArmorRating_Blunt>1.20</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity><ToxicResistance>1</ToxicResistance><ComfyTemperatureMin>-100</ComfyTemperatureMin><ComfyTemperatureMax>250</ComfyTemperatureMax>
       <MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount><FilthRate>0</FilthRate><Wildness>0</Wildness>
       <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>

@@ -2,7 +2,7 @@
 <LanguageData>
   <MM_ColossusStatusTip>通过光芒网络自动补能，最多储存10000光芒。\n驾驶待机：2光芒/秒；移动：4光芒/秒；双束扫射：120光芒/轮；远行：1200光芒/天。\n每消耗250光芒可恢复25点护盾。载重800千克，可移动射击。</MM_ColossusStatusTip>
   <MM_ColossusSpeed>巨像移动速度：每秒8格，不受地形、障碍和减速影响。</MM_ColossusSpeed>
-  <MM_ColossusAttackDesc>用双束激光横扫约6格宽的区域。每束造成12点伤害、60%穿甲，每轮对同一目标各命中一次。射程38格，最小射程4格。瞄准0.6秒，扫射0.9秒，冷却1.1秒，每轮消耗120光芒。可移动射击；墙体阻挡光束，可能误伤友军。</MM_ColossusAttackDesc>
+  <MM_ColossusAttackDesc>每束激光落点覆盖中心及上下左右各1格，形成五格十字。用双束激光横扫约6格宽的区域。每束造成21点伤害、60%穿甲，每轮对同一目标各命中一次。射程38格，最小射程4格。瞄准0.6秒，扫射0.9秒，冷却1.1秒，每轮消耗120光芒。可移动射击；墙体阻挡光束，可能误伤友军。</MM_ColossusAttackDesc>
   <MM_ColossusLoadDesc>先选择货物，再选择负责装载的殖民者。最多装载800千克。</MM_ColossusLoadDesc>
   <MM_ColossusMoveDesc>以每秒8格的速度移动，可穿过墙体和障碍，不受地形减速影响。移动时可继续扫射。</MM_ColossusMoveDesc>
   <MM_ColossusTeleportDesc>可携带驾驶员一起传送至同一地图内光芒网络覆盖的可见位置，随身货物一同转移。消耗300网络流量，冷却约16.7秒。</MM_ColossusTeleportDesc>

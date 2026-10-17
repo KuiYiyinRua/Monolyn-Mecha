@@ -38,7 +38,7 @@
     <label>Reaver</label>
     <thingClass>Monolyn.Mecha.Pawn_Reaver</thingClass>
     <size>(2,3)</size>
-    <description>A siege warframe piloted by one colonist that also carries heavy cargo. Its missiles deal triple damage to buildings, and explosions can hit allies. It cannot fire while moving.\n\nIts eight-round magazine starts empty. Automatic fabrication makes one missile every 5 seconds for 150 light, even without a pilot or during caravan travel. Carries 2000 kg and travels at 4 world tiles per day. It can teleport with its pilot within the light network on the same map.</description>
+    <description>A siege warframe piloted by one colonist that also carries heavy cargo. Its missiles deal triple damage to buildings, and explosions can hit allies. It cannot fire while moving.\n\nIts ten-round magazine starts empty. Automatic fabrication makes one missile every 5 seconds for 150 light, even without a pilot or during caravan travel. Carries 2000 kg and travels at 4 world tiles per day. It can teleport with its pilot within the light network on the same map.</description>
     <uiIconPath>Things/Mecha/Reaver/Reaver_south</uiIconPath>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <graphicData>
@@ -54,8 +54,8 @@
       <MarketValue>14500</MarketValue>
       <Flammability>0</Flammability>
       <PainShockThreshold>999</PainShockThreshold>
-      <ArmorRating_Sharp>1.35</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.55</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.97</ArmorRating_Blunt>
       <ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity>
       <ToxicResistance>1</ToxicResistance>

@@ -156,7 +156,7 @@ namespace Monolyn.Mecha
                 if (cell.InBounds(Map) && GenSight.LineOfSight(Position, cell, Map, skipFirstCell: true))
                     foreach (var thing in MechaGeometry.CellThings(cell, Map))
                         if (Enemy(thing, caster) && touched.Add(thing))
-                            thing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("MM_DisruptorField"), 2f, .45f,
+                            thing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("MM_DisruptorField"), 5f, .45f,
                                 (MechaGeometry.Center(thing) - location).AngleFlat(), caster));
         }
 
@@ -169,7 +169,7 @@ namespace Monolyn.Mecha
             FleckMaker.Static(DrawPos, map, DefDatabase<FleckDef>.GetNamed("Fleck_MNSparkPulse"), 3.3f);
             FleckMaker.Static(DrawPos, map, DefDatabase<FleckDef>.GetNamed("Fleck_MNSparkFlashPulse"), 1.4f);
             GenExplosion.DoExplosion(cell, map, 5f, DefDatabase<DamageDef>.GetNamed("MM_DisruptorBlast"), owner,
-                damAmount: 20, armorPenetration: .35f, ignoredThings: ignored, intendedTarget: target,
+                damAmount: 23, armorPenetration: .35f, ignoredThings: ignored, intendedTarget: target,
                 chanceToStartFire: 0, damageFalloff: false, doVisualEffects: false, overrideCells: cells);
             Destroy();
         }

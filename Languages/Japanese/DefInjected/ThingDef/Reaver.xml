@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Reaver.label>リーヴァー</MM_Reaver.label>
-  <MM_Reaver.description>入植者1人が操縦する攻城メカ。大量の物資も輸送できる。ミサイルは建物に3倍のダメージを与え、爆発は味方にも当たる。移動中は射撃できない。\n\n弾倉は最大8発で、製造直後は空。自動製弾を有効にすると、5秒ごとに150の光を消費して1発製造する。無人時やキャラバン移動中も製造可能。積載量は2000 kg、ワールドマップでの速度は1日4タイル。操縦者ごと同じマップの光ネットワーク内で転送できる。</MM_Reaver.description>
+  <MM_Reaver.description>入植者1人が操縦する攻城メカ。大量の物資も輸送できる。ミサイルは建物に3倍のダメージを与え、爆発は味方にも当たる。移動中は射撃できない。\n\n弾倉は最大10発で、製造直後は空。自動製弾を有効にすると、5秒ごとに150の光を消費して1発製造する。無人時やキャラバン移動中も製造可能。積載量は2000 kg、ワールドマップでの速度は1日4タイル。操縦者ごと同じマップの光ネットワーク内で転送できる。</MM_Reaver.description>
   <MM_Reaver.tools.0.label>装甲脚</MM_Reaver.tools.0.label>
   <MM_ReaverMissile.label>リーヴァーの光ミサイル</MM_ReaverMissile.label>
 </LanguageData>

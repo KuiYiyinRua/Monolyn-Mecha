@@ -26,7 +26,7 @@
       <MaxHitPoints>100</MaxHitPoints><MoveSpeed>6</MoveSpeed><Mass>35</Mass><MarketValue>1600</MarketValue>
       <BandwidthCost>1</BandwidthCost><ConstructConsumption>20</ConstructConsumption><MechEnergyUsageFactor>0.8</MechEnergyUsageFactor>
       <CarryingCapacity>66.66667</CarryingCapacity>
-      <ArmorRating_Sharp>0.66</ArmorRating_Sharp><ArmorRating_Blunt>0.66</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp><ArmorRating_Blunt>0.76</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <ShootingAccuracyPawn>1</ShootingAccuracyPawn><AimingDelayFactor>1</AimingDelayFactor><RangedCooldownFactor>1</RangedCooldownFactor><PainShockThreshold>999</PainShockThreshold>
     </statBases>
     <inspectorTabs><li>ASEL.ITab_MechWorkTypes</li></inspectorTabs>

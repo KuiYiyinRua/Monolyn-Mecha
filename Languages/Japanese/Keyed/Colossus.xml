@@ -2,7 +2,7 @@
 <LanguageData>
   <MM_ColossusStatusTip>光ネットワークから自動補給する。光の容量は10000。\n搭乗中の待機：2光/秒、移動：4光/秒、双ビーム掃射：1回120光、キャラバン移動：1200光/日。\n250の光でシールドを25回復する。積載量800 kg。移動中も射撃可能。</MM_ColossusStatusTip>
   <MM_ColossusSpeed>コロッサスの移動速度：毎秒8マス。地形、障害物、減速効果の影響を受けない。</MM_ColossusSpeed>
-  <MM_ColossusAttackDesc>幅約6マスを2本のビームで薙ぎ払う。各ビームは1回の掃射で同じ目標に1回命中し、12ダメージ、装甲貫通率60%。射程38マス、最小4マス。照準0.6秒、掃射0.9秒、冷却1.1秒。1回120光を消費。移動中も射撃可能。壁に遮られ、味方にも当たる。</MM_ColossusAttackDesc>
+  <MM_ColossusAttackDesc>各ビームの着弾範囲は中心と上下左右の計5マスの十字形。幅約6マスを2本のビームで薙ぎ払う。各ビームは1回の掃射で同じ目標に1回命中し、21ダメージ、装甲貫通率60%。射程38マス、最小4マス。照準0.6秒、掃射0.9秒、冷却1.1秒。1回120光を消費。移動中も射撃可能。壁に遮られ、味方にも当たる。</MM_ColossusAttackDesc>
   <MM_ColossusLoadDesc>貨物を選び、次に積み込む入植者を選ぶ。積載量は800 kg。</MM_ColossusLoadDesc>
   <MM_ColossusMoveDesc>壁や障害物を通り抜け、地形による減速を受けずに毎秒8マスで移動する。移動中も掃射を続けられる。</MM_ColossusMoveDesc>
   <MM_ColossusTeleportDesc>操縦者と貨物ごと同じマップ内の光ネットワークに覆われた見える位置へ転送する。ネットワーク転送量を300消費。冷却は約16.7秒。</MM_ColossusTeleportDesc>

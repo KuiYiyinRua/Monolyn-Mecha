@@ -12,7 +12,7 @@ namespace Monolyn.Mecha
 {
     public sealed class Pawn_Reaver : Pawn_Immortal
     {
-        public const int MagazineCapacity = 8, ManufactureTicks = 300, AttackTicks = 60;
+        public const int MagazineCapacity = 10, ManufactureTicks = 300, AttackTicks = 60;
         public const float MissileLight = 150f, MissileRange = 45f;
         public override int HullMax => 280;
         public override float CargoMax => 2000f;

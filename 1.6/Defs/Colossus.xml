@@ -14,7 +14,7 @@
     <statBases>
       <MaxHitPoints>300</MaxHitPoints><MoveSpeed>8</MoveSpeed><Mass>900</Mass><CarryingCapacity>800</CarryingCapacity>
       <MarketValue>14500</MarketValue><Flammability>0</Flammability><PainShockThreshold>999</PainShockThreshold>
-      <ArmorRating_Sharp>1.00</ArmorRating_Sharp><ArmorRating_Blunt>0.77</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp><ArmorRating_Blunt>0.87</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity><ToxicResistance>1</ToxicResistance><ComfyTemperatureMin>-100</ComfyTemperatureMin><ComfyTemperatureMax>250</ComfyTemperatureMax>
       <MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount><FilthRate>0</FilthRate><Wildness>0</Wildness>
       <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
@@ -35,7 +35,7 @@
         <radius>2.2</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptNonHostileProjectiles>false</interceptNonHostileProjectiles><interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
         <color>(0.6,0.6,0.6)</color><idlePulseSpeed>3</idlePulseSpeed><minIdleAlpha>0.05</minIdleAlpha>
         <chargeDurationTicks>1800</chargeDurationTicks><disarmedByEmpForTicks>100</disarmedByEmpForTicks><activeSound>Broadshield_Ambience</activeSound>
-        <hitPoints>100</hitPoints><rechargeHitPointsIntervalTicks>180</rechargeHitPointsIntervalTicks><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+        <hitPoints>200</hitPoints><rechargeHitPointsIntervalTicks>180</rechargeHitPointsIntervalTicks><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
       </li>
       <li Class="ASEL.CompProperties_PhaseShield"/>
       <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable"/>
@@ -54,7 +54,7 @@
   <DamageDef>
     <defName>MM_ColossusBeam</defName><label>Colossus beam</label><workerClass>DamageWorker_AddInjury</workerClass><externalViolence>true</externalViolence>
     <deathMessage>{0} was killed by a Colossus beam.</deathMessage><hediff>MNBeamWound</hediff><armorCategory>Sharp</armorCategory><isRanged>true</isRanged><makesAnimalsFlee>true</makesAnimalsFlee>
-    <defaultDamage>12</defaultDamage><defaultArmorPenetration>0.6</defaultArmorPenetration><buildingDamageFactor>1</buildingDamageFactor><buildingDamageFactorImpassable>1</buildingDamageFactorImpassable><buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+    <defaultDamage>21</defaultDamage><defaultArmorPenetration>0.6</defaultArmorPenetration><buildingDamageFactor>1</buildingDamageFactor><buildingDamageFactorImpassable>1</buildingDamageFactorImpassable><buildingDamageFactorPassable>1</buildingDamageFactorPassable>
   </DamageDef>
   <ResearchProjectDef>
     <defName>MM_ColossusResearch</defName><label>Colossus warframe</label><description>Unlocks construction of the Colossus, a four-legged warframe that crosses obstacles and sweeps enemies with twin beams while moving.</description>
