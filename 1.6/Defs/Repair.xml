@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>MM_RepairWarframe</defName>
+    <driverClass>Monolyn.Mecha.JobDriver_RepairWarframe</driverClass>
+    <reportString>Repairing TargetA.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+</Defs>
