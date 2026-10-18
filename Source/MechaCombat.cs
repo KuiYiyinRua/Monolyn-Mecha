@@ -57,8 +57,13 @@ namespace Monolyn.Mecha
         public void SetEnabled(bool value)
         {
             Enabled = value; Enemy = blockedEnemy = null; blockedUntil = nextScan = 0; ResetMovement();
-            if (!value && pawn.CurJob?.def == MechaCombatDefOf.MM_MechaCombat)
-            { pawn.jobs.EndCurrentJob(JobCondition.InterruptForced); pawn.CancelWeapon(); }
+            if (!value)
+            {
+                if (pawn.CurJob?.def == MechaCombatDefOf.MM_MechaCombat) pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                // A Disruptor may be waiting while its orb locks movement. The AI's
+                // last weapon target must still be cleared when combat is disabled.
+                pawn.CancelWeapon();
+            }
         }
         public void ResetMovement()
         { move = MoveKind.None; retreating = false; lastPosition = pawn.Position; lastProgress = Now; nextDecision = repathAfter = 0; }

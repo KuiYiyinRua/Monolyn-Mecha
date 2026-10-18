@@ -3,7 +3,7 @@
   <name>Monolyn: Mecha · 墨诺灵机甲</name>
   <author>尹怨怨</author>
   <packageId>local.monolyn.mecha</packageId>
-  <modVersion>0.9.0</modVersion>
+  <modVersion>0.9.1</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -26,7 +26,7 @@
     <li>ASEL.MonolynRace</li>
   </loadAfter>
   <description>简体中文
-为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.0。
+为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.1。
 
 守护者：护盾立场
 占用2点带宽。独立种子储备最多30个，可用滑条设置0–30个目标储量，并切换是否允许殖民者自动搬运装填。每次消耗10个种子，立即展开半径8格、持续30秒的护盾，随守护者移动。敌方投射物触及边界时有50%概率原路反弹，另外50%继续穿过；友方投射物不受影响。多个守护者的护盾允许重叠，各自独立判定。瞬发光束与近战不在反弹范围内。
@@ -38,7 +38,7 @@
 四种可驾驶战甲均有「自爆」按钮。先阅读并确认后果，再为驾驶员选择50格内、视线可达的有效落点。驾驶员带着自己的装备和随身物品飞出，机甲立即死亡并爆炸，不留尸体；机甲货舱内的货物销毁。爆炸半径8格、基础伤害80、穿甲80%，会伤及友军和建筑。落点应远离红色爆炸圈，近处落地仍可能受伤。空舱确认后立即自爆并释放带宽；取消确认或选点不会引爆。
 
 English
-Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.0.
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.1.
 
 Guardian: Shield Field
 Uses 2 bandwidth. A separate seed reserve holds up to 30 seeds. Set a target of 0–30 with the slider and toggle automatic refueling by colonists. Spend 10 seeds to immediately deploy a radius-8 shield for 30 seconds, moving with the Guardian. Each hostile projectile crossing its boundary has a 50% chance to reflect back along its incoming path; otherwise it continues through. Friendly projectiles are unaffected. Multiple Guardians can overlap their fields, with an independent roll for each shield. Instant beams and melee attacks are not reflected.
@@ -50,7 +50,7 @@ Self-destruct and emergency ejection
 All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
 
 日本語
-Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.0。
+Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.1。
 
 ガーディアン：シールドフィールド
 帯域幅を2使用。専用の種子備蓄は最大30個で、スライダーで目標量を0～30個に設定し、入植者による自動運搬・補充を切り替えられます。種子10個で半径8マス、持続30秒のシールドを即座に展開し、ガーディアンと共に移動します。境界に触れた敵の弾は50%の確率で来た経路へ反射され、残りは通過します。味方の弾には影響しません。複数のシールドを重ねることができ、各シールドが独立して判定します。瞬間着弾のビームと近接攻撃は反射しません。
@@ -62,7 +62,7 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 操縦可能な4種に「自爆」を追加。結果を確認してから、50マス以内かつ視線の通る有効な着地点を選びます。操縦者は自分の装備・所持品と共に飛び出し、機体は即座に死亡・爆発して残骸を残しません。機体の貨物は消滅します。爆発は半径8マス、基本ダメージ80、装甲貫通80%で、味方や建物も巻き込みます。赤い爆発範囲から離れた着地点を選んでください。近距離への着地は危険です。空の機体は確認直後に爆発し、帯域幅を解放します。確認や着地点選択のキャンセルでは爆発しません。
 
 Français
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.0.
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.1.
 
 Gardien : champ de bouclier
 Utilise 2 points de bande passante. Réserve distincte de 30 graines maximum : réglez la cible de 0 à 30 avec le curseur et activez ou désactivez le réapprovisionnement par les colons. Dépensez 10 graines pour déployer immédiatement un bouclier de rayon 8 cases pendant 30 secondes, qui suit le Gardien. Chaque projectile ennemi traversant sa limite a 50% de chances de repartir par sa trajectoire d’arrivée ; sinon, il continue. Les tirs alliés ne sont pas affectés. Plusieurs champs peuvent se superposer, avec un tirage indépendant par bouclier. Les faisceaux instantanés et la mêlée ne sont pas réfléchis.
@@ -74,7 +74,7 @@ Autodestruction et éjection
 Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
 
 Русский
-Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.0.
+Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.1.
 
 Страж: защитное поле
 Пропускная способность 2. Запас 30 семян, цель 0–30 задаёт ползунок; пополнение колонистами отключается. За 10 семян мгновенно создаёт движущийся со Стражем щит: радиус 8 клеток, 30 секунд. На границе 50% вражеских снарядов отражаются по обратной траектории, остальные проходят. Союзные снаряды не затрагиваются. Поля перекрываются и проверяются независимо. Мгновенные лучи и ближний бой не отражаются.

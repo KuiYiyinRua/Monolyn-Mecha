@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -135,6 +136,32 @@ namespace Monolyn.Mecha
         static void Postfix(Pawn mech, ref bool __result)
         {
             if (mech is Pawn_Immortal warframe && (warframe.Pilot != null || warframe.GetOverseer() == null)) __result = false;
+        }
+    }
+    // The overseer component also enables optional autonomous control. Vanilla's
+    // hostility check treats any unbound subject as a harmless uncontrolled mech,
+    // which silenced piloted warframes after that component was added. Change only
+    // this check: PawnComponentsUtility still needs the original subject predicate
+    // to create the relation/work trackers used when the player later binds one.
+    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), new[] { typeof(Thing), typeof(Thing) })]
+    static class WarframeHostility
+    {
+        static bool RequiresMechanitorControl(Pawn pawn)
+        {
+            if (pawn is Pawn_Immortal warframe && (warframe.Pilot != null || warframe.GetOverseer() == null)) return false;
+            return MechanitorUtility.IsPlayerOverseerSubject(pawn);
+        }
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var original = AccessTools.Method(typeof(MechanitorUtility), nameof(MechanitorUtility.IsPlayerOverseerSubject));
+            var replacement = AccessTools.Method(typeof(WarframeHostility), nameof(RequiresMechanitorControl));
+            var result = instructions.ToList();
+            int replaced = 0;
+            foreach (var instruction in result)
+                if (instruction.Calls(original)) { instruction.operand = replacement; replaced++; }
+            if (replaced != 2) throw new InvalidOperationException("Monolyn Mecha: expected two native overseer hostility checks, found " + replaced);
+            Log.Message("[Monolyn Mecha] warframe hostility checks=" + replaced);
+            return result;
         }
     }
     // Native group changes already synchronize in Multiplayer. Keep the existing

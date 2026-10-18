@@ -1,6 +1,6 @@
-# Monolyn: Mecha · 0.9.0
+# Monolyn: Mecha · 0.9.1
 
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.0.
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.1.
 
 ## Gardien : champ de bouclier
 
