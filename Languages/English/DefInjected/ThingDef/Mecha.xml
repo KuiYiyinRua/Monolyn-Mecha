@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Immortal.label>Immortal</MM_Immortal.label>
-  <MM_Immortal.description>A heavy warframe piloted by one colonist, used for fire support and cargo transport. Twin missiles strike targets in a small area. A phase shield intercepts incoming projectiles, and each hit to the hull is limited to 50 damage.\n\nRuns on light and recharges within the light network. Carries 500 kg and can be ridden in caravans. It can teleport with its pilot to clear ground within network coverage on the same map.</MM_Immortal.description>
+  <MM_Immortal.description>A heavy warframe piloted by one colonist, used for fire support and cargo transport. Twin missiles strike targets in a small area. A phase shield intercepts incoming projectiles, and each hit to the hull is limited to 50 damage.\n\nRuns on light and recharges within the light network. Carries 500 kg and can be ridden in caravans. It can teleport with its pilot to clear ground within network coverage on the same map.\n\nCan bind to a mechanitor for autonomous operation at 4 bandwidth; piloted operation uses no bandwidth.</MM_Immortal.description>
   <MM_Immortal.tools.0.label>armored feet</MM_Immortal.tools.0.label>
   <MM_ImmortalMissile.label>Immortal light missile</MM_ImmortalMissile.label>
 </LanguageData>

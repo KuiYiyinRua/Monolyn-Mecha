@@ -3,7 +3,7 @@
   <name>Monolyn: Mecha · 墨诺灵机甲</name>
   <author>尹怨怨</author>
   <packageId>local.monolyn.mecha</packageId>
-  <modVersion>0.7.0</modVersion>
+  <modVersion>0.9.0</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -26,17 +26,62 @@
     <li>ASEL.MonolynRace</li>
   </loadAfter>
   <description>简体中文
-墨诺灵的地面战甲与构装体扩展。新增不朽、追猎者、巨像、守护者、掠夺者和禁断者，分别提供火力支援、机动作战、护盾恢复和货物运输等功能。战甲由殖民者驾驶，构装体由机械师控制。以光芒为能源，需要安装墨诺灵种族与 Harmony。支持简体中文、日文、英文、法文和俄文。
+为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.0。
 
-日本語
-モノリンの地上メカと構造体を追加する拡張。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプターの6種が、火力支援、機動戦闘、シールド回復、物資輸送を担う。メカは入植者が操縦し、構造体はメカニターが制御する。動力には光を使用。Monolyn RaceとHarmonyが必要。簡体字中国語、日本語、英語、フランス語、ロシア語に対応。
+守护者：护盾立场
+占用2点带宽。独立种子储备最多30个，可用滑条设置0–30个目标储量，并切换是否允许殖民者自动搬运装填。每次消耗10个种子，立即展开半径8格、持续30秒的护盾，随守护者移动。敌方投射物触及边界时有50%概率原路反弹，另外50%继续穿过；友方投射物不受影响。多个守护者的护盾允许重叠，各自独立判定。瞬发光束与近战不在反弹范围内。
+
+无人驾驶
+空舱战甲可绑定同地图且有足够可用带宽的机械师：不朽4、巨像6、掠夺者6、禁断者5。绑定后加入机械体控制组，可在机械师指挥范围内征召、移动和攻击，仍消耗光芒。驾驶员登机或主动解除绑定会释放带宽。新制造战甲也需要相应可用带宽，并绑定塑造所的机械师。
+
+自爆与紧急弹射
+四种可驾驶战甲均有「自爆」按钮。先阅读并确认后果，再为驾驶员选择50格内、视线可达的有效落点。驾驶员带着自己的装备和随身物品飞出，机甲立即死亡并爆炸，不留尸体；机甲货舱内的货物销毁。爆炸半径8格、基础伤害80、穿甲80%，会伤及友军和建筑。落点应远离红色爆炸圈，近处落地仍可能受伤。空舱确认后立即自爆并释放带宽；取消确认或选点不会引爆。
 
 English
-Adds six Monolyn ground warframes and constructs: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. They provide fire support, mobile combat, shield restoration and cargo transport. Colonists pilot warframes; mechanitors control constructs. All use light as their energy source. Requires Monolyn Race and Harmony. Available in Simplified Chinese, Japanese, English, French and Russian.
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.0.
+
+Guardian: Shield Field
+Uses 2 bandwidth. A separate seed reserve holds up to 30 seeds. Set a target of 0–30 with the slider and toggle automatic refueling by colonists. Spend 10 seeds to immediately deploy a radius-8 shield for 30 seconds, moving with the Guardian. Each hostile projectile crossing its boundary has a 50% chance to reflect back along its incoming path; otherwise it continues through. Friendly projectiles are unaffected. Multiple Guardians can overlap their fields, with an independent roll for each shield. Instant beams and melee attacks are not reflected.
+
+Autonomous control
+Bind an empty warframe to a mechanitor on the same map with enough free bandwidth: Immortal 4, Colossus 6, Reaver 6, Disruptor 5. It joins a mech control group and can be drafted, moved and ordered to attack within the mechanitor’s command range. It still consumes light. Boarding a pilot or unbinding releases the bandwidth. Manufacturing a new warframe also requires the corresponding free bandwidth and binds it to the Formator’s mechanitor.
+
+Self-destruct and emergency ejection
+All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
+
+日本語
+Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.0。
+
+ガーディアン：シールドフィールド
+帯域幅を2使用。専用の種子備蓄は最大30個で、スライダーで目標量を0～30個に設定し、入植者による自動運搬・補充を切り替えられます。種子10個で半径8マス、持続30秒のシールドを即座に展開し、ガーディアンと共に移動します。境界に触れた敵の弾は50%の確率で来た経路へ反射され、残りは通過します。味方の弾には影響しません。複数のシールドを重ねることができ、各シールドが独立して判定します。瞬間着弾のビームと近接攻撃は反射しません。
+
+無人操縦
+空の機体を、同じマップにいる空き帯域幅の十分なメカニターに接続します。必要帯域幅はイモータル4、コロッサス6、リーヴァー6、ディスラプター5。メカの制御グループに入り、指揮範囲内で徴兵、移動、攻撃を指示できます。光は引き続き消費します。操縦者の搭乗または接続解除で帯域幅を解放します。新規製造にも対応する空き帯域幅が必要で、製造所のメカニターに接続されます。
+
+自爆と緊急脱出
+操縦可能な4種に「自爆」を追加。結果を確認してから、50マス以内かつ視線の通る有効な着地点を選びます。操縦者は自分の装備・所持品と共に飛び出し、機体は即座に死亡・爆発して残骸を残しません。機体の貨物は消滅します。爆発は半径8マス、基本ダメージ80、装甲貫通80%で、味方や建物も巻き込みます。赤い爆発範囲から離れた着地点を選んでください。近距離への着地は危険です。空の機体は確認直後に爆発し、帯域幅を解放します。確認や着地点選択のキャンセルでは爆発しません。
 
 Français
-Ajoute six méchas terrestres et constructions monolyns : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Ils assurent l’appui-feu, le combat mobile, la restauration des boucliers et le transport. Les colons pilotent les méchas ; les mécaniteurs contrôlent les constructions. Tous fonctionnent à la lumière. Nécessite Monolyn Race et Harmony. Disponible en chinois simplifié, japonais, anglais, français et russe.
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.0.
+
+Gardien : champ de bouclier
+Utilise 2 points de bande passante. Réserve distincte de 30 graines maximum : réglez la cible de 0 à 30 avec le curseur et activez ou désactivez le réapprovisionnement par les colons. Dépensez 10 graines pour déployer immédiatement un bouclier de rayon 8 cases pendant 30 secondes, qui suit le Gardien. Chaque projectile ennemi traversant sa limite a 50% de chances de repartir par sa trajectoire d’arrivée ; sinon, il continue. Les tirs alliés ne sont pas affectés. Plusieurs champs peuvent se superposer, avec un tirage indépendant par bouclier. Les faisceaux instantanés et la mêlée ne sont pas réfléchis.
+
+Contrôle autonome
+Liez un mécha vide à un mécaniteur de la même carte disposant de bande passante libre : Immortel 4, Colosse 6, Ravageur 6, Disrupteur 5. Il rejoint un groupe de méchas et peut être mobilisé, déplacé et envoyé à l’attaque dans la portée de commandement. Il consomme toujours de la lumière. Embarquer un pilote ou rompre le lien libère la bande passante. La fabrication exige aussi cette capacité libre et lie le nouveau mécha au mécaniteur du Formateur.
+
+Autodestruction et éjection
+Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
 
 Русский
-Добавляет шесть наземных мехов и конструктов монолинов: Бессмертный, Сталкер, Колосс, Страж, Разоритель и Дизраптор. Они обеспечивают огневую поддержку, манёвренный бой, восстановление щитов и перевозку грузов. Мехами управляют поселенцы, конструктами — механиторы. Все используют свет как источник энергии. Требуются Monolyn Race и Harmony. Поддерживаются упрощённый китайский, японский, английский, французский и русский языки.</description>
+Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.0.
+
+Страж: защитное поле
+Пропускная способность 2. Запас 30 семян, цель 0–30 задаёт ползунок; пополнение колонистами отключается. За 10 семян мгновенно создаёт движущийся со Стражем щит: радиус 8 клеток, 30 секунд. На границе 50% вражеских снарядов отражаются по обратной траектории, остальные проходят. Союзные снаряды не затрагиваются. Поля перекрываются и проверяются независимо. Мгновенные лучи и ближний бой не отражаются.
+
+Беспилотное управление
+Свяжите пустой мех с механитором той же карты со свободной пропускной способностью: Бессмертный 4, Колосс 6, Разоритель 6, Дизраптор 5. Доступны группы мехов, призыв, движение и атака в радиусе командования. Свет расходуется. Посадка пилота или разрыв связи освобождает ресурс. Изготовление также требует свободной пропускной способности и связывает мех с механитором форматора.
+
+Самоуничтожение и катапультирование
+Доступно всем четырём пилотируемым мехам. Подтвердите последствия и выберите допустимую видимую точку посадки не далее 50 клеток. Пилот вылетает со своим снаряжением и инвентарём, а мех сразу погибает и взрывается без останков. Груз меха уничтожается. Радиус взрыва 8 клеток, базовый урон 80, бронепробитие 80%; страдают и союзники, и здания. Выбирайте точку вне красного круга: близкая посадка опасна. Пустой мех взрывается сразу после подтверждения и освобождает пропускную способность. Отмена подтверждения или выбора точки не вызывает взрыв.</description>
 </ModMetaData>

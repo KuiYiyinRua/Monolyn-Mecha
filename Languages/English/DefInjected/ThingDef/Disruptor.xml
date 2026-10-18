@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Disruptor.label>Disruptor</MM_Disruptor.label>
-  <MM_Disruptor.description>A warframe piloted by one colonist for area attacks. It launches a homing orb that damages nearby enemies before exploding after 5 seconds. The orb only harms enemies and deals triple damage to buildings.\n\nIt cannot move or teleport while the orb is active, and needs 5 seconds to recover afterward. Occupies 2×2 cells, carries 600 kg and runs on light. When no orb is active, it can teleport with its pilot within the light network on the same map.</MM_Disruptor.description>
+  <MM_Disruptor.description>A warframe piloted by one colonist for area attacks. It launches a homing orb that damages nearby enemies before exploding after 5 seconds. The orb only harms enemies and deals triple damage to buildings.\n\nIt cannot move or teleport while the orb is active, and needs 5 seconds to recover afterward. Occupies 2×2 cells, carries 600 kg and runs on light. When no orb is active, it can teleport with its pilot within the light network on the same map.\n\nCan bind to a mechanitor for autonomous operation at 5 bandwidth; piloted operation uses no bandwidth.</MM_Disruptor.description>
   <MM_Disruptor.tools.0.label>armored supports</MM_Disruptor.tools.0.label>
   <MM_DisruptorOrb.label>homing light orb</MM_DisruptorOrb.label>
 </LanguageData>

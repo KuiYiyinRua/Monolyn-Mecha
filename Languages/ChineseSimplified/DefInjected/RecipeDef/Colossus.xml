@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintColossus.label>制造：巨像</MM_PrintColossus.label>
-  <MM_PrintColossus.description>在已绑定机械师的构造体塑造所中制造一台巨像。可穿越障碍并在移动中发射双束激光，不占用带宽。</MM_PrintColossus.description>
+  <MM_PrintColossus.description>在已绑定机械师的构造体塑造所中制造一台巨像。可穿越障碍并在移动中发射双束激光 制造需要6点可用带宽，完成后绑定塑造所的机械师；驾驶员登机后解除绑定并释放带宽。</MM_PrintColossus.description>
 </LanguageData>

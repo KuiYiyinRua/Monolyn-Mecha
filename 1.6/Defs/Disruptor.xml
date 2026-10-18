@@ -38,7 +38,7 @@
     <label>Disruptor</label>
     <thingClass>Monolyn.Mecha.Pawn_Disruptor</thingClass>
     <size>(2,2)</size>
-    <description>A warframe piloted by one colonist for area attacks. It launches a homing orb that damages nearby enemies before exploding after 5 seconds. The orb only harms enemies and deals triple damage to buildings.\n\nIt cannot move or teleport while the orb is active, and needs 5 seconds to recover afterward. Occupies 2×2 cells, carries 600 kg and runs on light. When no orb is active, it can teleport with its pilot within the light network on the same map.</description>
+    <description>A warframe piloted by one colonist for area attacks. It launches a homing orb that damages nearby enemies before exploding after 5 seconds. The orb only harms enemies and deals triple damage to buildings.\n\nIt cannot move or teleport while the orb is active, and needs 5 seconds to recover afterward. Occupies 2×2 cells, carries 600 kg and runs on light. When no orb is active, it can teleport with its pilot within the light network on the same map.\n\nCan bind to a mechanitor for autonomous operation at 5 bandwidth; piloted operation uses no bandwidth.</description>
     <uiIconPath>Things/Mecha/Disruptor/Disruptor_south</uiIconPath>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <graphicData>
@@ -66,7 +66,7 @@
       <FilthRate>0</FilthRate>
       <Wildness>0</Wildness>
       <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
-      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">5</BandwidthCost>
     </statBases>
     <race>
       <intelligence>Animal</intelligence>
@@ -102,6 +102,7 @@
       </li>
     </tools>
     <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
       <li Class="ASEL.CompProperties_LightStorage">
         <maxLight>8000</maxLight>
       </li>
@@ -176,7 +177,7 @@
     <label>Build: Disruptor</label>
     <thing>MM_Disruptor</thing>
     <pawnKindDef>MM_Disruptor</pawnKindDef>
-    <description>Build a Disruptor at a construct formator linked to a mechanitor. A colonist pilots it to attack groups of enemies with a homing orb. Uses no bandwidth.</description>
+    <description>Build a Disruptor at a construct formator linked to a mechanitor. A colonist pilots it to attack groups of enemies with a homing orb. Requires 5 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</description>
     <recipeTime>240000</recipeTime>
     <lightCost>60000</lightCost>
     <costList>

@@ -13,7 +13,7 @@
   <MM_Attack>攻撃</MM_Attack>
   <MM_AttackDesc>0.2秒間隔でミサイルを2発撃ち、1秒間冷却する。1発につき中心から上下左右に各1マス伸びる十字範囲（合計5マス）に10ダメージ、装甲貫通率100%。味方にも当たる。2発で60の光を消費。射程26マス、最小射程2.5マス。</MM_AttackDesc>
   <MM_AutoFire>自動射撃</MM_AutoFire>
-  <MM_AutoFireDesc>操縦者がいて動力がある場合、射程内の見える敵を自動攻撃する。</MM_AutoFireDesc>
+  <MM_AutoFireDesc>動力があり、有人または無人操縦で稼働中の場合、射程内の見える敵を自動攻撃する。</MM_AutoFireDesc>
   <MM_Stop>停止</MM_Stop>
   <MM_StopDesc>移動命令と現在の手動攻撃目標を解除する。</MM_StopDesc>
   <MM_Teleport>光転送</MM_Teleport>
@@ -22,7 +22,7 @@
   <MM_LoadDesc>貨物を選び、次に積み込む入植者を選ぶ。積載量は500 kg。</MM_LoadDesc>
   <MM_Unload>荷下ろし</MM_Unload>
   <MM_UnloadDesc>すべての貨物をメカの隣に降ろす。</MM_UnloadDesc>
-  <MM_NeedsPilotLight>行動可能な操縦者と光が必要。</MM_NeedsPilotLight>
+  <MM_NeedsPilotLight>光と、行動可能な操縦者または徴兵済みの無人操縦が必要。</MM_NeedsPilotLight>
   <MM_TeleportEmpty>先に操縦者を降ろしてください。</MM_TeleportEmpty>
   <MM_Cooldown>冷却：{0}秒</MM_Cooldown>
   <MM_NetworkBusy>光ネットワークが過負荷状態。</MM_NetworkBusy>

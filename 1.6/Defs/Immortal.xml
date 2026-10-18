@@ -14,12 +14,13 @@
       <li Class="ThinkNode_QueuedJob"/>
       <li Class="Monolyn.Mecha.JobGiver_MechaCombat"/>
       <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>LordDuty</treeDef></li>
+      <li Class="Monolyn.Mecha.JobGiver_WarframeEscort"/>
       <li Class="Monolyn.Mecha.JobGiver_ImmortalIdle"/>
     </subNodes></thinkRoot>
   </ThinkTreeDef>
   <ThingDef ParentName="BasePawn">
     <defName>MM_Immortal</defName><label>Immortal</label><thingClass>Monolyn.Mecha.Pawn_Immortal</thingClass>
-    <description>A heavy warframe piloted by one colonist, used for fire support and cargo transport. Twin missiles strike targets in a small area. A phase shield intercepts incoming projectiles, and each hit to the hull is limited to 50 damage.\n\nRuns on light and recharges within the light network. Carries 500 kg and can be ridden in caravans. It can teleport with its pilot to clear ground within network coverage on the same map.</description>
+    <description>A heavy warframe piloted by one colonist, used for fire support and cargo transport. Twin missiles strike targets in a small area. A phase shield intercepts incoming projectiles, and each hit to the hull is limited to 50 damage.\n\nRuns on light and recharges within the light network. Carries 500 kg and can be ridden in caravans. It can teleport with its pilot to clear ground within network coverage on the same map.\n\nCan bind to a mechanitor for autonomous operation at 4 bandwidth; piloted operation uses no bandwidth.</description>
     <uiIconPath>Things/Mecha/Immortal/Immortal_south</uiIconPath><soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <graphicData><texPath>Things/Mecha/Immortal/Immortal</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize><drawOffsetNorth>(0,0,0.0303)</drawOffsetNorth><drawOffsetEast>(0.0191,0,0.0494)</drawOffsetEast><drawOffsetWest>(-0.0191,0,0.0494)</drawOffsetWest></graphicData>
     <statBases>
@@ -28,7 +29,7 @@
       <ArmorRating_Sharp>1.85</ArmorRating_Sharp><ArmorRating_Blunt>1.20</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity><ToxicResistance>1</ToxicResistance><ComfyTemperatureMin>-100</ComfyTemperatureMin><ComfyTemperatureMax>250</ComfyTemperatureMax>
       <MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount><FilthRate>0</FilthRate><Wildness>0</Wildness>
-      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
+      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">4</BandwidthCost>
     </statBases>
     <race>
       <intelligence>Animal</intelligence><body>MM_ImmortalBody</body><fleshType>Mechanoid</fleshType>
@@ -40,6 +41,7 @@
     </race>
     <tools><li><label>armored feet</label><capacities><li>Blunt</li></capacities><power>12</power><cooldownTime>2</cooldownTime></li></tools>
     <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
       <li Class="ASEL.CompProperties_LightStorage"><maxLight>6000</maxLight></li>
       <li Class="Monolyn.Mecha.CompProperties_MechaLightReceiver"><minLighttoRecive>1</minLighttoRecive><targetOffset>(0,0.5,0)</targetOffset></li>
       <li Class="ASEL.CompProperties_LightConsumer"/>

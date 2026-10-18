@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Colossus.label>巨像</MM_Colossus.label>
-  <MM_Colossus.description>由一名殖民者驾驶的四足战甲，用于远程火力支援。双束激光横扫目标区域，可在移动中开火。光束会被墙体阻挡，也可能误伤友军。\n\n占地3×3格，能以每秒8格的速度穿过墙体和障碍，不受地形减速影响。载重800千克，可供远行队骑乘。以光芒为能源；可携带驾驶员一起在同一地图的光芒网络内传送。</MM_Colossus.description>
+  <MM_Colossus.description>由一名殖民者驾驶的四足战甲，用于远程火力支援。双束激光横扫目标区域，可在移动中开火。光束会被墙体阻挡，也可能误伤友军。\n\n占地3×3格，能以每秒8格的速度穿过墙体和障碍，不受地形减速影响。载重800千克，可供远行队骑乘。以光芒为能源；可携带驾驶员一起在同一地图的光芒网络内传送。\n\n可绑定机械师以无人驾驶，占用6点带宽；有人驾驶时不占带宽。</MM_Colossus.description>
   <MM_Colossus.tools.0.label>刃足</MM_Colossus.tools.0.label>
 </LanguageData>

@@ -8,7 +8,7 @@
   <BodyDef><defName>MM_ColossusBody</defName><label>Colossus chassis</label><corePart><def>MM_ColossusHull</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
   <ThingDef ParentName="BasePawn">
     <defName>MM_Colossus</defName><label>Colossus</label><thingClass>Monolyn.Mecha.Pawn_Colossus</thingClass>
-    <description>A four-legged warframe piloted by one colonist for ranged fire support. Twin beams sweep across the target area and can fire while moving. Walls block the beams, and friendly units can be hit.\n\nOccupies 3×3 cells and moves through walls and obstacles at 8 cells per second without terrain penalties. Carries 800 kg and can be ridden in caravans. Runs on light; it can teleport with its pilot within the light network on the same map.</description>
+    <description>A four-legged warframe piloted by one colonist for ranged fire support. Twin beams sweep across the target area and can fire while moving. Walls block the beams, and friendly units can be hit.\n\nOccupies 3×3 cells and moves through walls and obstacles at 8 cells per second without terrain penalties. Carries 800 kg and can be ridden in caravans. Runs on light; it can teleport with its pilot within the light network on the same map.\n\nCan bind to a mechanitor for autonomous operation at 6 bandwidth; piloted operation uses no bandwidth.</description>
     <size>(3,3)</size><uiIconPath>Things/Mecha/Colossus/Colossus_south</uiIconPath><soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <graphicData><texPath>Things/Mecha/Colossus/Colossus</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(3.6,5.6)</drawSize><drawOffset>(0,0,1.1)</drawOffset></graphicData>
     <statBases>
@@ -17,7 +17,7 @@
       <ArmorRating_Sharp>1.20</ArmorRating_Sharp><ArmorRating_Blunt>0.87</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <PsychicSensitivity>0</PsychicSensitivity><ToxicResistance>1</ToxicResistance><ComfyTemperatureMin>-100</ComfyTemperatureMin><ComfyTemperatureMax>250</ComfyTemperatureMax>
       <MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount><FilthRate>0</FilthRate><Wildness>0</Wildness>
-      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
+      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">6</BandwidthCost>
     </statBases>
     <race>
       <intelligence>Animal</intelligence><body>MM_ColossusBody</body><fleshType>Mechanoid</fleshType>
@@ -28,6 +28,7 @@
     </race>
     <tools><li><label>blade legs</label><capacities><li>Blunt</li></capacities><power>12</power><cooldownTime>2</cooldownTime></li></tools>
     <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
       <li Class="ASEL.CompProperties_LightStorage"><maxLight>10000</maxLight></li>
       <li Class="Monolyn.Mecha.CompProperties_MechaLightReceiver"><minLighttoRecive>1</minLighttoRecive><targetOffset>(0,0.5,0)</targetOffset></li>
       <li Class="ASEL.CompProperties_LightConsumer"/>
@@ -63,7 +64,7 @@
   </ResearchProjectDef>
   <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
     <defName>MM_PrintColossus</defName><label>Build: Colossus</label><thing>MM_Colossus</thing><pawnKindDef>MM_Colossus</pawnKindDef>
-    <description>Build a Colossus at a construct formator linked to a mechanitor. It crosses obstacles and fires twin beams while moving. Uses no bandwidth.</description>
+    <description>Build a Colossus at a construct formator linked to a mechanitor. It crosses obstacles and fires twin beams while moving. Requires 6 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</description>
     <recipeTime>240000</recipeTime><lightCost>50000</lightCost><costList><MNCalcirite>300</MNCalcirite><MNPneumaCircuit>6</MNPneumaCircuit><MN_Seed>50</MN_Seed></costList>
     <researchPrerequisites><li>MM_ColossusResearch</li></researchPrerequisites>
     <ingredients>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintReaver.label>Build: Reaver</MM_PrintReaver.label>
-  <MM_PrintReaver.description>Build a Reaver at a construct formator linked to a mechanitor. Its magazine starts empty; enable automatic fabrication to produce missiles. Uses no bandwidth.</MM_PrintReaver.description>
+  <MM_PrintReaver.description>Build a Reaver at a construct formator linked to a mechanitor. Its magazine starts empty; enable automatic fabrication to produce missiles. Requires 6 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</MM_PrintReaver.description>
 </LanguageData>

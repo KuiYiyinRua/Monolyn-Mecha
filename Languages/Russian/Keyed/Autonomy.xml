@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_GuardianField>Защитное поле</MM_GuardianField>
+  <MM_GuardianFieldDesc>Расходует 10 семян и мгновенно создаёт щит радиусом 8 клеток на 30 секунд. Каждый вражеский снаряд при соприкосновении с щитом с вероятностью 50% возвращается по исходной траектории, иначе проходит дальше. Поля нескольких Стражей могут перекрываться и срабатывают независимо.</MM_GuardianFieldDesc>
+  <MM_GuardianFieldActive>Защитное поле: осталось {0} с</MM_GuardianFieldActive>
+  <MM_GuardianFieldNeedsSeeds>Требуется не менее 10 семян в запасе.</MM_GuardianFieldNeedsSeeds>
+  <MM_Autonomy>Беспилотное управление</MM_Autonomy>
+  <MM_AutonomyDesc>Привяжите механитора для работы без пилота за {0} ед. пропускной способности. Мех войдёт в группу управления; после призыва можно приказывать двигаться и атаковать в радиусе командования. Свет по-прежнему необходим.</MM_AutonomyDesc>
+  <MM_AutonomyDisconnect>Отвязать механитора</MM_AutonomyDisconnect>
+  <MM_AutonomyDisconnectDesc>Останавливает беспилотное управление и освобождает пропускную способность. Можно привязать механитора или посадить пилота.</MM_AutonomyDisconnectDesc>
+  <MM_AutonomyEjectFirst>Сначала высадите пилота.</MM_AutonomyEjectFirst>
+  <MM_AutonomyNoMechanitor>Нет доступного механитора.</MM_AutonomyNoMechanitor>
+  <MM_AutonomyStatus>Беспилотное управление: {0} ({1})</MM_AutonomyStatus>
+  <MM_AutonomyRunning>подключено</MM_AutonomyRunning>
+  <MM_AutonomyUnavailable>управление механитора недоступно</MM_AutonomyUnavailable>
+  <MM_AutonomyAlreadyBound>Уже привязан к этому механитору.</MM_AutonomyAlreadyBound>
+  <MM_AutonomyBandwidth>У механитора недостаточно свободной пропускной способности.</MM_AutonomyBandwidth>
+</LanguageData>

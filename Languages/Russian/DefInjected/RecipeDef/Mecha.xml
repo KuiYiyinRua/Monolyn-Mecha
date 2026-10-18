@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintImmortal.label>Создать: Бессмертный</MM_PrintImmortal.label>
-  <MM_PrintImmortal.description>Создать Бессмертного в формирователе конструктов, связанном с механитором. Готовым мехом управляет поселенец; пропускная способность не расходуется.</MM_PrintImmortal.description>
+  <MM_PrintImmortal.description>Создать Бессмертного в формирователе конструктов, связанном с механитором. Требуется 4 ед. свободной пропускной способности. Готовый мех привязывается к механитору формирователя. Посадка пилота разрывает связь и освобождает пропускную способность.</MM_PrintImmortal.description>
 </LanguageData>

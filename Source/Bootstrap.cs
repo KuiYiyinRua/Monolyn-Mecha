@@ -15,7 +15,7 @@ namespace Monolyn.Mecha
         public MechaMod(ModContentPack pack) : base(pack)
         {
             new Harmony("local.monolyn.mecha").PatchAll();
-            Log.Message("[Monolyn Mecha] 0.7.0 loaded; Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor with native Monolyn light and shielding.");
+            Log.Message("[Monolyn Mecha] 0.9.0 loaded; Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor with native Monolyn light and shielding.");
         }
     }
 

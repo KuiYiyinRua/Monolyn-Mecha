@@ -1,0 +1,12 @@
+<Defs>
+  <HediffDef>
+    <defName>MM_TestBandwidth</defName><label>test bandwidth capacity</label><hediffClass>Hediff</hediffClass><isBad>false</isBad>
+    <stages><li><statOffsets><MechBandwidth>50</MechBandwidth></statOffsets></li></stages>
+  </HediffDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>MM_TestTarget</defName><label>test target</label><thingClass>Building</thingClass>
+    <graphicData><texPath>UI/Commands/Attack</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>100000</MaxHitPoints><Flammability>0</Flammability></statBases><size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer><passability>Impassable</passability><fillPercent>1</fillPercent>
+  </ThingDef>
+</Defs>

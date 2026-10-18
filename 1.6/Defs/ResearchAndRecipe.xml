@@ -9,7 +9,7 @@
   </ResearchProjectDef>
   <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
     <defName>MM_PrintImmortal</defName><label>Build: Immortal</label><thing>MM_Immortal</thing><pawnKindDef>MM_Immortal</pawnKindDef>
-    <description>Build an Immortal at a construct formator linked to a mechanitor. The finished warframe is piloted by a colonist and uses no bandwidth.</description>
+    <description>Build an Immortal at a construct formator linked to a mechanitor. Requires 4 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</description>
     <recipeTime>120000</recipeTime><lightCost>25000</lightCost>
     <costList><MNCalcirite>180</MNCalcirite><MNPneumaCircuit>3</MNPneumaCircuit><MN_Seed>30</MN_Seed></costList>
     <researchPrerequisites><li>MM_ImmortalResearch</li></researchPrerequisites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_SelfDestruct>Autodestruction</MM_SelfDestruct>
+  <MM_SelfDestructDesc>Éjecte le pilote puis détruit le mécha après confirmation. Portée : 50 cases. Explosion : rayon de 8 cases, dégâts 80, pénétration 80 %.</MM_SelfDestructDesc>
+  <MM_SelfDestructConfirm>Autodestruction : {0}\n\nLe mécha mourra immédiatement et sera définitivement détruit, sans cadavre. Aucune réparation ni résurrection ne sera possible. Sa cargaison sera également détruite.\n\nL’explosion inflige 80 dégâts avec 80 % de pénétration dans un rayon de 8 cases, aux alliés, ennemis et bâtiments.\n\n{1}</MM_SelfDestructConfirm>
+  <MM_SelfDestructPilot>Après confirmation, choisissez une case d’atterrissage visible et valide à 50 cases maximum. Le pilote s’éjecte avec son équipement et ses affaires, puis le mécha explose immédiatement. Choisissez un point hors du cercle rouge : un atterrissage proche risque de blesser ou tuer le pilote. Clic droit ou Échap pendant la visée annule sans explosion.</MM_SelfDestructPilot>
+  <MM_SelfDestructEmpty>Aucun pilote à bord. La confirmation déclenche immédiatement l’explosion, sans choisir de point d’atterrissage.</MM_SelfDestructEmpty>
+  <MM_SelfDestructChoose>Confirmer et choisir l’atterrissage</MM_SelfDestructChoose>
+  <MM_SelfDestructNow>Confirmer l’autodestruction</MM_SelfDestructNow>
+  <MM_SelfDestructUnavailable>Autodestruction indisponible dans l’état actuel.</MM_SelfDestructUnavailable>
+</LanguageData>

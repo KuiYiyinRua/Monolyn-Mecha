@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintImmortal.label>制造：不朽</MM_PrintImmortal.label>
-  <MM_PrintImmortal.description>在已绑定机械师的构造体塑造所中制造一台不朽。成品由殖民者驾驶，不占用带宽。</MM_PrintImmortal.description>
+  <MM_PrintImmortal.description>在已绑定机械师的构造体塑造所中制造一台不朽。制造需要4点可用带宽，完成后绑定塑造所的机械师；驾驶员登机后解除绑定并释放带宽。</MM_PrintImmortal.description>
 </LanguageData>

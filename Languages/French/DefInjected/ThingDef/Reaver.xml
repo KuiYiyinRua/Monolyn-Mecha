@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Reaver.label>Ravageur</MM_Reaver.label>
-  <MM_Reaver.description>Un mécha de siège piloté par un colon, également capable de transporter de lourdes charges. Ses missiles infligent le triple de dégâts aux bâtiments et leurs explosions peuvent toucher les alliés. Il ne tire pas en mouvement.\n\nSon magasin de dix missiles est vide à la fabrication. La production automatique fabrique un missile toutes les 5 secondes pour 150 unités de lumière, même sans pilote ou en caravane. Il transporte 2000 kg et parcourt 4 tuiles du monde par jour. Il peut se téléporter avec son pilote dans le réseau lumineux de la même carte.</MM_Reaver.description>
+  <MM_Reaver.description>Un mécha de siège piloté par un colon, également capable de transporter de lourdes charges. Ses missiles infligent le triple de dégâts aux bâtiments et leurs explosions peuvent toucher les alliés. Il ne tire pas en mouvement.\n\nSon magasin de dix missiles est vide à la fabrication. La production automatique fabrique un missile toutes les 5 secondes pour 150 unités de lumière, même sans pilote ou en caravane. Il transporte 2000 kg et parcourt 4 tuiles du monde par jour. Il peut se téléporter avec son pilote dans le réseau lumineux de la même carte.\n\nPeut être lié à un mécaniteur pour un pilotage autonome coûtant 6 points de bande passante. Le pilotage manuel n’en utilise pas.</MM_Reaver.description>
   <MM_Reaver.tools.0.label>pattes blindées</MM_Reaver.tools.0.label>
   <MM_ReaverMissile.label>missile lumineux de Ravageur</MM_ReaverMissile.label>
 </LanguageData>

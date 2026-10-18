@@ -47,7 +47,8 @@ namespace Monolyn.Mecha
         public CompProjectileInterceptor Shield => this.GetComp<CompProjectileInterceptor>();
         public Pawn Pilot => pilots.Count > 0 ? pilots[0] : null;
         public bool Powered => Light != null && Light.currentLight > 0.001f;
-        public bool Driven => Pilot != null && !Pilot.Dead && !Pilot.Downed;
+        public bool Autonomous => MechaAutonomy.Available(this);
+        public bool Driven => (Pilot != null && !Pilot.Dead && !Pilot.Downed) || MechaAutonomy.Working(this);
         public bool FormingCaravan => this.GetLord()?.LordJob is LordJob_FormAndSendCaravan;
         public virtual bool MovementLocked => false;
         public bool MayWalk => !MovementLocked && !Dead && Powered && (Driven || FormingCaravan || this.GetCaravan() != null);
@@ -61,6 +62,9 @@ namespace Monolyn.Mecha
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
+            // Native drafted-mech UI dereferences equipment.Primary, even for a
+            // chassis whose weapons are built in and whose intelligence is Animal.
+            if (equipment == null) equipment = new Pawn_EquipmentTracker(this);
             base.SpawnSetup(map, respawningAfterLoad);
             Light.maxLightP = LightMax;
             if (!respawningAfterLoad && string.IsNullOrEmpty(Receiver.Code)) Receiver.Code = "MM" + thingIDNumber;
@@ -79,6 +83,10 @@ namespace Monolyn.Mecha
 
         protected override void Tick()
         {
+            // Also releases a legacy piloted chassis' relationship on a shared
+            // simulation tick, never during joining-peer deserialization or UI.
+            if (Pilot != null && this.GetOverseer() != null) MechaAutonomy.Release(this);
+            if (Pilot == null && !Autonomous && Drafted) drafter.Drafted = false;
             if (Spawned && !MayWalk && pather.Moving) pather.StopDead();
             base.Tick();
             // Thing.DoTick traverses PilotTraversal's child holder in RimWorld 1.6.
@@ -168,6 +176,7 @@ namespace Monolyn.Mecha
                 || pawn.Faction != Faction || !pawn.RaceProps.Humanlike || !this.OccupiedRect().ExpandedBy(1).Contains(pawn.Position)) return false;
             pawn.DeSpawn();
             if (!pilots.TryAdd(pawn)) { GenSpawn.Spawn(pawn, Position, Map); return false; }
+            MechaAutonomy.Release(this);
             // DeSpawn alone retains Pawn.lord in 1.6. A seated pilot must no longer
             // receive on-map duties; Eject adds the survivor back to the chassis' lord.
             pawn.GetLord()?.Notify_PawnLost(pawn, PawnLostCondition.ExitedMap);

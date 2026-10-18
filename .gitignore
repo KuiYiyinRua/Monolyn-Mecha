@@ -16,3 +16,7 @@ Artwork/
 *.zip
 *.7z
 .vs/
+
+Tests/GuardianAutonomy/binMP/
+Tests/GuardianAutonomy/objMP/
+Tests/SelfDestruct/binMP/

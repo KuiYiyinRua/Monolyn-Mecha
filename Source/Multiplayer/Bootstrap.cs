@@ -28,6 +28,10 @@ namespace Monolyn.Mecha.Multiplayer
             MP.RegisterSyncMethod(typeof(CompGuardian), nameof(CompGuardian.SetAutoCombat)); registered++;
             MP.RegisterSyncMethod(typeof(CompGuardian), nameof(CompGuardian.SetAutoRestore)); registered++;
             MP.RegisterSyncMethod(typeof(Pawn_Reaver), nameof(Pawn_Reaver.ToggleFabrication)); registered++;
+            MP.RegisterSyncMethod(typeof(CompGuardianField), nameof(CompGuardianField.Activate)); registered++;
+            MP.RegisterSyncMethod(typeof(MechaAutonomy), nameof(MechaAutonomy.Bind)).CancelIfAnyArgNull(); registered++;
+            MP.RegisterSyncMethod(typeof(MechaAutonomy), nameof(MechaAutonomy.Unbind)).CancelIfAnyArgNull(); registered++;
+            MP.RegisterSyncMethod(typeof(MechaSelfDestruct), nameof(MechaSelfDestruct.Execute)).CancelIfAnyArgNull(); registered++;
             MP.RegisterSyncWorker<PilotHolder>(SyncPilotHolder);
             Log.Message("[Monolyn Mecha MP] ready commands=" + registered + " pilotHolder=1 missing=0"
                 + " meow=" + ModsConfig.IsActive("local.mp.meowonlineshop.sellslingshot")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintColossus.label>Construire : Colosse</MM_PrintColossus.label>
-  <MM_PrintColossus.description>Construire un Colosse dans un formateur de constructions lié à un mécaniteur. Il traverse les obstacles et tire deux faisceaux en mouvement. Il n’utilise aucune bande passante.</MM_PrintColossus.description>
+  <MM_PrintColossus.description>Construire un Colosse dans un formateur de constructions lié à un mécaniteur. Il traverse les obstacles et tire deux faisceaux en mouvement. Nécessite 6 points de bande passante disponibles et se lie au mécaniteur du formateur. L’embarquement d’un pilote coupe le lien et libère la bande passante.</MM_PrintColossus.description>
 </LanguageData>

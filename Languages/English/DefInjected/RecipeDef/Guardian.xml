@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintGuardian.label>Build: Guardian</MM_PrintGuardian.label>
-  <MM_PrintGuardian.description>Build a Guardian. Requires 1 available bandwidth. It provides defense, restores allied shields and performs everyday work.</MM_PrintGuardian.description>
+  <MM_PrintGuardian.description>Build a Guardian. Requires 2 available bandwidth. It provides defense, restores allied shields and performs everyday work.</MM_PrintGuardian.description>
 </LanguageData>

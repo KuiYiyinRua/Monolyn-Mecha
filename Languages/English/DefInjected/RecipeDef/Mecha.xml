@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintImmortal.label>Build: Immortal</MM_PrintImmortal.label>
-  <MM_PrintImmortal.description>Build an Immortal at a construct formator linked to a mechanitor. The finished warframe is piloted by a colonist and uses no bandwidth.</MM_PrintImmortal.description>
+  <MM_PrintImmortal.description>Build an Immortal at a construct formator linked to a mechanitor. Requires 4 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</MM_PrintImmortal.description>
 </LanguageData>

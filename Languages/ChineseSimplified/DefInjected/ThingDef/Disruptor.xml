@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Disruptor.label>禁断者</MM_Disruptor.label>
-  <MM_Disruptor.description>由一名殖民者驾驶的范围攻击战甲。发射追踪光球，持续伤害附近敌人，并在5秒后爆炸。光球只伤害敌方目标，对建筑造成三倍伤害。\n\n维持光球时无法移动或传送，光球结束后需冷却5秒。占地2×2格，载重600千克，以光芒为能源。光球消失后，可携带驾驶员一起在同一地图的光芒网络内传送。</MM_Disruptor.description>
+  <MM_Disruptor.description>由一名殖民者驾驶的范围攻击战甲。发射追踪光球，持续伤害附近敌人，并在5秒后爆炸。光球只伤害敌方目标，对建筑造成三倍伤害。\n\n维持光球时无法移动或传送，光球结束后需冷却5秒。占地2×2格，载重600千克，以光芒为能源。光球消失后，可携带驾驶员一起在同一地图的光芒网络内传送。\n\n可绑定机械师以无人驾驶，占用5点带宽；有人驾驶时不占带宽。</MM_Disruptor.description>
   <MM_Disruptor.tools.0.label>装甲支架</MM_Disruptor.tools.0.label>
   <MM_DisruptorOrb.label>追踪光球</MM_DisruptorOrb.label>
 </LanguageData>

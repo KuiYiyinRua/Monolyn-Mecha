@@ -38,7 +38,7 @@
     <label>Reaver</label>
     <thingClass>Monolyn.Mecha.Pawn_Reaver</thingClass>
     <size>(2,3)</size>
-    <description>A siege warframe piloted by one colonist that also carries heavy cargo. Its missiles deal triple damage to buildings, and explosions can hit allies. It cannot fire while moving.\n\nIts ten-round magazine starts empty. Automatic fabrication makes one missile every 5 seconds for 150 light, even without a pilot or during caravan travel. Carries 2000 kg and travels at 4 world tiles per day. It can teleport with its pilot within the light network on the same map.</description>
+    <description>A siege warframe piloted by one colonist that also carries heavy cargo. Its missiles deal triple damage to buildings, and explosions can hit allies. It cannot fire while moving.\n\nIts ten-round magazine starts empty. Automatic fabrication makes one missile every 5 seconds for 150 light, even without a pilot or during caravan travel. Carries 2000 kg and travels at 4 world tiles per day. It can teleport with its pilot within the light network on the same map.\n\nCan bind to a mechanitor for autonomous operation at 6 bandwidth; piloted operation uses no bandwidth.</description>
     <uiIconPath>Things/Mecha/Reaver/Reaver_south</uiIconPath>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <graphicData>
@@ -66,7 +66,7 @@
       <FilthRate>0</FilthRate>
       <Wildness>0</Wildness>
       <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
-      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">0</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">6</BandwidthCost>
     </statBases>
     <race>
       <intelligence>Animal</intelligence>
@@ -102,6 +102,7 @@
       </li>
     </tools>
     <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
       <li Class="ASEL.CompProperties_LightStorage">
         <maxLight>10000</maxLight>
       </li>
@@ -176,7 +177,7 @@
     <label>Build: Reaver</label>
     <thing>MM_Reaver</thing>
     <pawnKindDef>MM_Reaver</pawnKindDef>
-    <description>Build a Reaver at a construct formator linked to a mechanitor. Its magazine starts empty; enable automatic fabrication to produce missiles. Uses no bandwidth.</description>
+    <description>Build a Reaver at a construct formator linked to a mechanitor. Its magazine starts empty; enable automatic fabrication to produce missiles. Requires 6 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</description>
     <recipeTime>240000</recipeTime>
     <lightCost>50000</lightCost>
     <costList>

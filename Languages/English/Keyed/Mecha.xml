@@ -13,7 +13,7 @@
   <MM_Attack>Attack</MM_Attack>
   <MM_AttackDesc>Fire two missiles 0.2 seconds apart, then recover for 1 second. Each deals 10 damage with 100% armor penetration in a cross extending 1 cell from the center in each cardinal direction (5 cells total) and can hit allies. Costs 60 light per pair. Range: 26 cells; minimum: 2.5.</MM_AttackDesc>
   <MM_AutoFire>Fire at will</MM_AutoFire>
-  <MM_AutoFireDesc>Automatically attack visible enemies in range while piloted and powered.</MM_AutoFireDesc>
+  <MM_AutoFireDesc>Automatically attack visible enemies in range while powered and either piloted or operating autonomously.</MM_AutoFireDesc>
   <MM_Stop>Stop</MM_Stop>
   <MM_StopDesc>Cancel movement and the current manual attack target.</MM_StopDesc>
   <MM_Teleport>Light teleport</MM_Teleport>
@@ -22,7 +22,7 @@
   <MM_LoadDesc>Choose cargo, then a colonist to load it. Capacity: 500 kg.</MM_LoadDesc>
   <MM_Unload>Unload cargo</MM_Unload>
   <MM_UnloadDesc>Unload all cargo beside the warframe.</MM_UnloadDesc>
-  <MM_NeedsPilotLight>Requires an able pilot and light.</MM_NeedsPilotLight>
+  <MM_NeedsPilotLight>Requires light and either an able pilot or drafted autonomous operation.</MM_NeedsPilotLight>
   <MM_TeleportEmpty>The pilot must disembark first.</MM_TeleportEmpty>
   <MM_Cooldown>Cooldown: {0} s</MM_Cooldown>
   <MM_NetworkBusy>The light network is overloaded.</MM_NetworkBusy>

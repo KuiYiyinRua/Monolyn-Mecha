@@ -25,7 +25,7 @@ namespace Monolyn.Mecha
         public static void Eject(Map map, Pawn_Immortal m) { if (Owned(map, m)) m.Eject(); }
         public static void Move(Map map, Pawn_Immortal m, IntVec3 cell)
         {
-            if (!Owned(map, m) || !m.Driven || !m.Powered || m.MovementLocked || !cell.InBounds(map) || cell.Fogged(map) || (!(m is Pawn_Colossus) && !cell.Standable(map))
+            if (!Owned(map, m) || !m.Driven || !MechaAutonomy.CanCommand(m, cell) || !m.Powered || m.MovementLocked || !cell.InBounds(map) || cell.Fogged(map) || (!(m is Pawn_Colossus) && !cell.Standable(map))
                 || !m.CanReach(cell, PathEndMode.OnCell, Danger.Deadly) || (m is Pawn_Colossus && !m.CanOccupy(cell))) return;
             if (!(m is Pawn_Colossus)) m.CancelWeapon();
             var job = JobMaker.MakeJob(JobDefOf.Goto, cell);
@@ -34,7 +34,7 @@ namespace Monolyn.Mecha
         }
         public static void Attack(Map map, Pawn_Immortal m, Thing target)
         {
-            if (!Owned(map, m) || !m.Driven || !m.Powered || !m.CanShoot(target)) return;
+            if (!Owned(map, m) || !m.Driven || target == null || !MechaAutonomy.CanCommand(m, target.Position) || !m.Powered || !m.CanShoot(target)) return;
             m.Combat.SetEnabled(false);
             if (!(m is Pawn_Colossus)) { m.pather.StopDead(); m.jobs.StopAll(); }
             m.CancelWeapon(); m.attackTarget = target;
@@ -92,7 +92,7 @@ namespace Monolyn.Mecha
         internal sealed class CachedGizmos
         {
             readonly Pawn_Immortal mecha;
-            readonly Gizmo[] visible = new Gizmo[9];
+            readonly Gizmo[] visible = new Gizmo[10];
             Command[] commands;
             LoadedLanguage language;
             ThingDef definition;
@@ -121,7 +121,7 @@ namespace Monolyn.Mecha
                     commands[i].disabledReason = null;
                 }
                 bool occupied = mecha.Pilot != null;
-                bool operational = mecha.Driven && mecha.Powered;
+                bool operational = mecha.Driven && mecha.Powered && (mecha.Pilot != null || mecha.Drafted);
                 visible[0] = commands[occupied ? 1 : 0];
                 if (!operational)
                 {
@@ -141,6 +141,7 @@ namespace Monolyn.Mecha
                     teleport.Disable(cooldownText);
                 }
                 else if (ASELComponent.IsExcessiveTraffic()) teleport.Disable(busy);
+                if (!MechaSelfDestruct.Available(mecha)) commands[10].Disable("MM_SelfDestructUnavailable".Translate());
                 return visible;
             }
         }
@@ -174,6 +175,9 @@ namespace Monolyn.Mecha
                 defaultDesc = (m is Pawn_Colossus ? "MM_ColossusAutoCombatDesc" : "MM_MechaAutoCombatDesc").Translate(),
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack"), isActive = () => m.Combat.Enabled,
                 toggleAction = () => ToggleCombat(m.Map, m) };
+            var selfDestruct = Action(m, "MM_SelfDestruct", () => MechaSelfDestruct.Confirm(m));
+            selfDestruct.icon = TexCommand.Attack;
+            yield return selfDestruct;
         }
         static Command_Action Action(Pawn_Immortal m, string key, Action action)
             => new Command_Action { defaultLabel = key.Translate(), defaultDesc =
@@ -244,7 +248,7 @@ namespace Monolyn.Mecha
             if (ev == null || ev.type != EventType.MouseDown || ev.button != 1 || map == null || !WorldRendererUtility.DrawingMap
                 || Find.Targeter.IsTargeting || Find.DesignatorManager.SelectedDesignator != null) return;
             var selected = Find.Selector.SelectedObjectsListForReading;
-            if (selected.Count == 0 || selected.Any(o => !(o is Pawn_Immortal m) || !m.Driven || m.Faction != Faction.OfPlayer)) return;
+            if (selected.Count == 0 || selected.Any(o => !(o is Pawn_Immortal m) || !m.Driven || (m.Pilot == null && !m.Drafted) || m.Faction != Faction.OfPlayer)) return;
             var cell = UI.MouseCell();
             if (!cell.InBounds(map)) return;
             var target = cell.GetThingList(map).Where(t => t is Pawn || t.def.category == ThingCategory.Building).FirstOrDefault(t => t.HostileTo(Faction.OfPlayer));

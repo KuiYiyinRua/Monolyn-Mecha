@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Guardian.label>ガーディアン</MM_Guardian.label>
-  <MM_Guardian.description>防衛とシールド回復を担う小型構造体。帯域幅を1使用する。持続レーザーで敵を攻撃するか、味方ユニットやタレットのシールドを回復する。同時には行えない。\n\n自動シールド回復は初期設定で有効。自動戦闘を無効にすると、徴兵中のみ自動回復を行う。最大40 kgの運搬、掃除、消火も可能。シールドは75で、充電にはゲーム内1時間につき20の光を消費する。</MM_Guardian.description>
+  <MM_Guardian.description>防衛とシールド回復を担う小型構造体。帯域幅を2使用する。持続レーザーで敵を攻撃するか、味方ユニットやタレットのシールドを回復する。同時には行えない。\n\n自動シールド回復は初期設定で有効。自動戦闘を無効にすると、徴兵中のみ自動回復を行う。最大40 kgの運搬、掃除、消火も可能。シールドは75で、充電にはゲーム内1時間につき20の光を消費する。\n\n種子10個を消費し、半径8マスのシールドを即座に30秒間展開する。接触した敵の投射物は50%の確率で元の軌道を逆進し、それ以外は通過する。複数のガーディアンのシールドは重ねられ、それぞれ独立に判定する。</MM_Guardian.description>
   <MM_Guardian.tools.0.label>支持爪</MM_Guardian.tools.0.label>
   <MM_GuardianProjector.label>ガーディアンのビーム発生器</MM_GuardianProjector.label>
   <MM_GuardianProjector.description>ガーディアンの内蔵装置。敵への継続攻撃か、味方のシールド回復を行う。同時には使用できない。</MM_GuardianProjector.description>
+  <MM_Guardian.comps.CompGuardianSeeds.fuelLabel>種子</MM_Guardian.comps.CompGuardianSeeds.fuelLabel>
+  <MM_Guardian.comps.CompGuardianSeeds.fuelGizmoLabel>種子の備蓄</MM_Guardian.comps.CompGuardianSeeds.fuelGizmoLabel>
 </LanguageData>

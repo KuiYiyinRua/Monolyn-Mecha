@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Colossus.label>コロッサス</MM_Colossus.label>
-  <MM_Colossus.description>入植者1人が操縦する4脚の火力支援メカ。2本のビームで目標周辺を薙ぎ払い、移動中も射撃できる。ビームは壁に遮られ、味方にも当たる。\n\n占有面積は3×3マス。地形による減速を受けず、壁や障害物を通り抜けて毎秒8マスで移動する。積載量は800 kgで、キャラバンでは騎乗できる。光を動力とし、操縦者ごと同じマップの光ネットワーク内で転送できる。</MM_Colossus.description>
+  <MM_Colossus.description>入植者1人が操縦する4脚の火力支援メカ。2本のビームで目標周辺を薙ぎ払い、移動中も射撃できる。ビームは壁に遮られ、味方にも当たる。\n\n占有面積は3×3マス。地形による減速を受けず、壁や障害物を通り抜けて毎秒8マスで移動する。積載量は800 kgで、キャラバンでは騎乗できる。光を動力とし、操縦者ごと同じマップの光ネットワーク内で転送できる。\n\nメカニターと接続して無人操縦すると帯域幅を6使用する。有人操縦時は帯域幅を使わない。</MM_Colossus.description>
   <MM_Colossus.tools.0.label>刃脚</MM_Colossus.tools.0.label>
 </LanguageData>

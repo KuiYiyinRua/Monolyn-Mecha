@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_PrintReaver.label>リーヴァーを製造</MM_PrintReaver.label>
-  <MM_PrintReaver.description>メカニターと接続した構造体成型器でリーヴァーを製造する。完成時の弾倉は空。自動製弾を有効にしてミサイルを補充できる。帯域幅は使用しない。</MM_PrintReaver.description>
+  <MM_PrintReaver.description>メカニターと接続した構造体成型器でリーヴァーを製造する。完成時の弾倉は空。自動製弾を有効にしてミサイルを補充できる。 製造には空き帯域幅が6必要で、完成後は成型器のメカニターに接続する。操縦者が搭乗すると接続を解除し、帯域幅を解放する。</MM_PrintReaver.description>
 </LanguageData>

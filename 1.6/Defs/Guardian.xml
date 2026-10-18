@@ -20,11 +20,11 @@
   </ThinkTreeDef>
   <ThingDef ParentName="MNConstruct">
     <defName>MM_Guardian</defName><label>Guardian</label>
-    <description>A small construct for defense and shield support, using 1 bandwidth. It can attack with a continuous laser or restore shields on allied units and turrets, but cannot do both at once.\n\nAutomatic shield support is enabled by default. With automatic combat off, it only provides automatic support while drafted. It also hauls up to 40 kg, cleans and fights fires. It has a 75-point shield and consumes 20 light per game hour to recharge.</description>
+    <description>A small construct for defense and shield support, using 2 bandwidth. It can attack with a continuous laser or restore shields on allied units and turrets, but cannot do both at once.\n\nAutomatic shield support is enabled by default. With automatic combat off, it only provides automatic support while drafted. It also hauls up to 40 kg, cleans and fights fires. It has a 75-point shield and consumes 20 light per game hour to recharge.\n\nSpend 10 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</description>
     <uiIconPath>Things/Mecha/Guardian/Guardian_south</uiIconPath>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints><MoveSpeed>6</MoveSpeed><Mass>35</Mass><MarketValue>1600</MarketValue>
-      <BandwidthCost>1</BandwidthCost><ConstructConsumption>20</ConstructConsumption><MechEnergyUsageFactor>0.8</MechEnergyUsageFactor>
+      <BandwidthCost>2</BandwidthCost><ConstructConsumption>20</ConstructConsumption><MechEnergyUsageFactor>0.8</MechEnergyUsageFactor>
       <CarryingCapacity>66.66667</CarryingCapacity>
       <ArmorRating_Sharp>0.86</ArmorRating_Sharp><ArmorRating_Blunt>0.76</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
       <ShootingAccuracyPawn>1</ShootingAccuracyPawn><AimingDelayFactor>1</AimingDelayFactor><RangedCooldownFactor>1</RangedCooldownFactor><PainShockThreshold>999</PainShockThreshold>
@@ -40,6 +40,15 @@
     </race>
     <tools Inherit="False"><li><label>support claws</label><capacities><li>Blunt</li></capacities><power>3</power><cooldownTime>2</cooldownTime></li></tools>
     <comps>
+      <li Class="Monolyn.Mecha.CompProperties_GuardianSeeds">
+        <fuelCapacity>30</fuelCapacity><fuelConsumptionRate>0</fuelConsumptionRate><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelFilter><thingDefs><li>MN_Seed</li></thingDefs></fuelFilter>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>30</initialConfigurableTargetFuelLevel>
+        <initialFuelPercent>0</initialFuelPercent><initialAllowAutoRefuel>true</initialAllowAutoRefuel><autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <hideGizmosIfNotPlayerFaction>true</hideGizmosIfNotPlayerFaction><fuelLabel>Seeds</fuelLabel><fuelGizmoLabel>Seed reserve</fuelGizmoLabel>
+      </li>
+      <li Class="Monolyn.Mecha.CompProperties_GuardianField"/>
       <li Class="Monolyn.Mecha.CompProperties_Guardian"/>
       <li Class="CompProperties_ProjectileInterceptor">
         <radius>0.85</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptNonHostileProjectiles>false</interceptNonHostileProjectiles><interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
@@ -77,7 +86,7 @@
   <JobDef><defName>MM_GuardianCombat</defName><driverClass>Monolyn.Mecha.JobDriver_Guardian</driverClass><reportString>Guarding and restoring allied shields.</reportString><alwaysShowWeapon>true</alwaysShowWeapon><allowOpportunisticPrefix>false</allowOpportunisticPrefix></JobDef>
   <JobDef><defName>MM_GuardianRestore</defName><driverClass>Monolyn.Mecha.JobDriver_Guardian</driverClass><reportString>Restoring TargetA's shield.</reportString><alwaysShowWeapon>true</alwaysShowWeapon><allowOpportunisticPrefix>false</allowOpportunisticPrefix></JobDef>
   <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
-    <defName>MM_PrintGuardian</defName><label>Build: Guardian</label><description>Build a Guardian. Requires 1 available bandwidth. It provides defense, restores allied shields and performs everyday work.</description>
+    <defName>MM_PrintGuardian</defName><label>Build: Guardian</label><description>Build a Guardian. Requires 2 available bandwidth. It provides defense, restores allied shields and performs everyday work.</description>
     <thing>MM_Guardian</thing><pawnKindDef>MM_Guardian</pawnKindDef><recipeTime>180000</recipeTime><lightCost>20000</lightCost>
     <costList><MN_Seed>15</MN_Seed></costList><researchPrerequisites><li>MNConstructII</li></researchPrerequisites>
     <ingredients><li><filter><thingDefs><li>MN_Seed</li></thingDefs></filter><count>15</count></li></ingredients><products><MM_Guardian>1</MM_Guardian></products>

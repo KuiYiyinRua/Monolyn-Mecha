@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Immortal.label>不朽</MM_Immortal.label>
-  <MM_Immortal.description>由一名殖民者驾驶的重型战甲，用于火力支援和货物运输。双联导弹可攻击小范围内的多个目标。相位护盾吸收来袭射弹，机体单次承受的伤害不超过50点。\n\n以光芒为能源，可在光芒网络范围内自动补给。载重500千克，可供远行队骑乘。可携带驾驶员一起传送至同一地图内光芒网络覆盖的空地。</MM_Immortal.description>
+  <MM_Immortal.description>由一名殖民者驾驶的重型战甲，用于火力支援和货物运输。双联导弹可攻击小范围内的多个目标。相位护盾吸收来袭射弹，机体单次承受的伤害不超过50点。\n\n以光芒为能源，可在光芒网络范围内自动补给。载重500千克，可供远行队骑乘。可携带驾驶员一起传送至同一地图内光芒网络覆盖的空地。\n\n可绑定机械师以无人驾驶，占用4点带宽；有人驾驶时不占带宽。</MM_Immortal.description>
   <MM_Immortal.tools.0.label>装甲足</MM_Immortal.tools.0.label>
   <MM_ImmortalMissile.label>不朽光芒导弹</MM_ImmortalMissile.label>
 </LanguageData>

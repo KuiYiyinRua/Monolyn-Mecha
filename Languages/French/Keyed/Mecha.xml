@@ -13,7 +13,7 @@
   <MM_Attack>Attaquer</MM_Attack>
   <MM_AttackDesc>Tirer deux missiles à 0,2 seconde d’intervalle, puis récupérer pendant 1 seconde. Chacun inflige 10 dégâts avec 100 % de pénétration d’armure dans une croix de 1 case par direction depuis le centre (5 cases au total) et peut toucher les alliés. Coût : 60 unités de lumière par salve. Portée : 26 cases ; minimum : 2,5.</MM_AttackDesc>
   <MM_AutoFire>Tir à volonté</MM_AutoFire>
-  <MM_AutoFireDesc>Attaquer automatiquement les ennemis visibles à portée si un pilote est présent et si le mécha est alimenté.</MM_AutoFireDesc>
+  <MM_AutoFireDesc>Attaquer automatiquement les ennemis visibles à portée lorsque le mécha est alimenté et piloté manuellement ou de manière autonome.</MM_AutoFireDesc>
   <MM_Stop>Arrêter</MM_Stop>
   <MM_StopDesc>Annuler le déplacement et la cible d’attaque désignée manuellement.</MM_StopDesc>
   <MM_Teleport>Téléportation</MM_Teleport>
@@ -22,7 +22,7 @@
   <MM_LoadDesc>Choisir le chargement, puis le colon chargé de l’embarquer. Capacité : 500 kg.</MM_LoadDesc>
   <MM_Unload>Décharger</MM_Unload>
   <MM_UnloadDesc>Déposer tout le chargement à côté du mécha.</MM_UnloadDesc>
-  <MM_NeedsPilotLight>Nécessite un pilote valide et de la lumière.</MM_NeedsPilotLight>
+  <MM_NeedsPilotLight>Nécessite de la lumière et un pilote apte, ou un mécha autonome mobilisé.</MM_NeedsPilotLight>
   <MM_TeleportEmpty>Le pilote doit d’abord débarquer.</MM_TeleportEmpty>
   <MM_Cooldown>Recharge : {0} s</MM_Cooldown>
   <MM_NetworkBusy>Le réseau lumineux est surchargé.</MM_NetworkBusy>

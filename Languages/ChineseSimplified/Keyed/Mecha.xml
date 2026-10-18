@@ -13,7 +13,7 @@
   <MM_Attack>攻击</MM_Attack>
   <MM_AttackDesc>连续发射两枚导弹，间隔0.2秒，之后冷却1秒。每枚造成10点伤害、100%穿甲，覆盖中心及上下左右各1格的十字区域（共5格），可能误伤友军。每轮消耗60光芒。射程26格，最小射程2.5格。</MM_AttackDesc>
   <MM_AutoFire>自由开火</MM_AutoFire>
-  <MM_AutoFireDesc>有驾驶员且能源充足时，自动攻击射程内可见的敌人。</MM_AutoFireDesc>
+  <MM_AutoFireDesc>能源充足且有驾驶员或无人驾驶正在运行时，自动攻击射程内可见的敌人。</MM_AutoFireDesc>
   <MM_Stop>停止</MM_Stop>
   <MM_StopDesc>取消移动命令和当前指定的攻击目标。</MM_StopDesc>
   <MM_Teleport>光芒迁移</MM_Teleport>
@@ -22,7 +22,7 @@
   <MM_LoadDesc>先选择货物，再选择负责装载的殖民者。最多装载500千克。</MM_LoadDesc>
   <MM_Unload>卸下货物</MM_Unload>
   <MM_UnloadDesc>将全部货物卸到战甲旁。</MM_UnloadDesc>
-  <MM_NeedsPilotLight>需要能够行动的驾驶员和光芒能源。</MM_NeedsPilotLight>
+  <MM_NeedsPilotLight>需要光芒，以及可行动的驾驶员或已征召的无人驾驶机体。</MM_NeedsPilotLight>
   <MM_TeleportEmpty>请先让驾驶员离舱。</MM_TeleportEmpty>
   <MM_Cooldown>冷却：{0}秒</MM_Cooldown>
   <MM_NetworkBusy>光芒网络当前负载过高。</MM_NetworkBusy>

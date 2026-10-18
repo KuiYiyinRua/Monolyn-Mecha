@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Immortal.label>イモータル</MM_Immortal.label>
-  <MM_Immortal.description>入植者1人が操縦する重装メカ。火力支援と物資輸送に用いる。2発のミサイルで狭い範囲を攻撃し、位相シールドで飛来する弾を防ぐ。機体が一度に受けるダメージは最大50。\n\n光を動力とし、光ネットワーク内で自動補給する。積載量は500 kgで、キャラバンでは騎乗できる。操縦者ごと同じマップ内のネットワークに覆われた空き地へ転送できる。</MM_Immortal.description>
+  <MM_Immortal.description>入植者1人が操縦する重装メカ。火力支援と物資輸送に用いる。2発のミサイルで狭い範囲を攻撃し、位相シールドで飛来する弾を防ぐ。機体が一度に受けるダメージは最大50。\n\n光を動力とし、光ネットワーク内で自動補給する。積載量は500 kgで、キャラバンでは騎乗できる。操縦者ごと同じマップ内のネットワークに覆われた空き地へ転送できる。\n\nメカニターと接続して無人操縦すると帯域幅を4使用する。有人操縦時は帯域幅を使わない。</MM_Immortal.description>
   <MM_Immortal.tools.0.label>装甲脚</MM_Immortal.tools.0.label>
   <MM_ImmortalMissile.label>イモータルの光ミサイル</MM_ImmortalMissile.label>
 </LanguageData>

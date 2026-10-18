@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_SelfDestruct>自爆</MM_SelfDestruct>
+  <MM_SelfDestructDesc>確認後に操縦者を射出し機体を破壊する。射出距離50マス、爆発半径8マス、ダメージ80、装甲貫通80%。</MM_SelfDestructDesc>
+  <MM_SelfDestructConfirm>自爆：{0}\n\n機体は直ちに死亡して完全に消滅し、残骸は残りません。修理や復活はできず、機体の貨物も失われます。\n\n半径8マスにダメージ80・装甲貫通80%の爆発が発生し、味方、敵、建物に被害を与えます。\n\n{1}</MM_SelfDestructConfirm>
+  <MM_SelfDestructPilot>確認後、50マス以内の見通せる着地点を選択してください。操縦者は装備と所持品を持って射出され、機体は直ちに爆発します。赤い爆発範囲の外を選んでください。近い着地点では負傷・死亡の危険があります。選択中は右クリックかEscで自爆を取り消せます。</MM_SelfDestructPilot>
+  <MM_SelfDestructEmpty>操縦者はいません。確認すると着地点を選ばず直ちに自爆します。</MM_SelfDestructEmpty>
+  <MM_SelfDestructChoose>確認して着地点を選択</MM_SelfDestructChoose>
+  <MM_SelfDestructNow>自爆を確定</MM_SelfDestructNow>
+  <MM_SelfDestructUnavailable>現在の状態では自爆できません。</MM_SelfDestructUnavailable>
+</LanguageData>

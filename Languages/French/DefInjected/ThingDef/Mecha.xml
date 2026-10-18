@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_Immortal.label>Immortel</MM_Immortal.label>
-  <MM_Immortal.description>Un mécha lourd piloté par un colon, destiné à l’appui-feu et au transport. Ses deux missiles frappent une petite zone. Son bouclier de phase intercepte les projectiles et chaque coup inflige au maximum 50 dégâts à la coque.\n\nIl fonctionne à la lumière et se recharge dans le réseau lumineux. Il transporte 500 kg et peut servir de monture en caravane. Il peut se téléporter avec son pilote vers un espace libre couvert par le réseau sur la même carte.</MM_Immortal.description>
+  <MM_Immortal.description>Un mécha lourd piloté par un colon, destiné à l’appui-feu et au transport. Ses deux missiles frappent une petite zone. Son bouclier de phase intercepte les projectiles et chaque coup inflige au maximum 50 dégâts à la coque.\n\nIl fonctionne à la lumière et se recharge dans le réseau lumineux. Il transporte 500 kg et peut servir de monture en caravane. Il peut se téléporter avec son pilote vers un espace libre couvert par le réseau sur la même carte.\n\nPeut être lié à un mécaniteur pour un pilotage autonome coûtant 4 points de bande passante. Le pilotage manuel n’en utilise pas.</MM_Immortal.description>
   <MM_Immortal.tools.0.label>pattes blindées</MM_Immortal.tools.0.label>
   <MM_ImmortalMissile.label>missile lumineux d’Immortel</MM_ImmortalMissile.label>
 </LanguageData>
