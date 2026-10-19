@@ -55,7 +55,11 @@ Orbe de 5 secondes, vitesse de 8 cases/seconde, 5 dégâts toutes les 0,25 secon
 
 ## Fret, voyages et combat automatique
 
-Capacités : Immortel 500 kg, Colosse 800 kg, Ravageur 2 000 kg, Disrupteur 600 kg. Les quatre transportent du fret, rejoignent les caravanes et se téléportent avec leur pilote via le réseau lumineux. Combat automatique désactivé par défaut, disponible en fonctionnement piloté ou autonome. Le Colosse garde ses distances ; les autres poursuivent puis s’arrêtent pour tirer. Déplacement manuel prioritaire ; attaque manuelle ou Arrêt désactive le combat automatique.
+Capacités : Immortel 500 kg, Colosse 800 kg, Ravageur 2 000 kg, Disrupteur 600 kg. Ces quatre méchas figurent dans Animaux pour les caravanes, vides, pilotés ou liés. Le mécaniteur peut rester chez lui ; un colon hors cockpit doit accompagner le groupe.
+
+Les six unités utilisent les tours connectées avec un pilote apte ou un mécaniteur lié, en conservant pilotes, fret et liens. Énergie et limites du réseau restent nécessaires. Après une surcharge due aux grands méchas, attendez puis sélectionnez à nouveau. Une sortie bloquée laisse le mécha sur sa carte de départ.
+
+Combat automatique désactivé par défaut. Le Colosse garde ses distances ; les autres poursuivent puis tirent à l’arrêt. Déplacement manuel prioritaire ; attaque manuelle ou Arrêt désactive le combat automatique.
 ![Monolyn Mecha](https://images.steamusercontent.com/ugc/14583897241280851335/E044B67A55D44AD4D8481505D189E1D5979E2E5E/)
 
 ## Production, réparation et raids
@@ -65,4 +69,4 @@ Après les recherches, fabriquez au Construct Formator avec matériaux, lumière
 
 ## Prérequis, langues et Multiplayer
 
-RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race ; chargez ce mod après ses prérequis. Constructions et autonomie utilisent les mécaniteurs de Biotech. Chinois simplifié, anglais, japonais, français et russe inclus. L’adaptateur Multiplayer optionnel synchronise le curseur de graines, le réapprovisionnement, les champs, les liens et l’autodestruction. Redémarrez après mise à jour ; tous les joueurs doivent avoir le mod complet identique. Fonctions testées en solo isolé, sauvegarde/rechargement et avec deux clients locaux ; tous les packs et configurations multi-cartes asynchrones ne sont pas validés.
+RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.

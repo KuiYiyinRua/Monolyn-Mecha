@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_TowerUnavailable>此机甲目前无法进入灯塔。</MM_TowerUnavailable>
+  <MM_TowerNeedsController>需要机内有能够驾驶的驾驶员，或已绑定机械师。</MM_TowerNeedsController>
+  <MM_TowerNeedsPower>机甲需要有能源才能进入灯塔。</MM_TowerNeedsPower>
+  <MM_TowerNoCell>目标灯塔附近没有能容纳机甲的空地。请清理出口后重试。</MM_TowerNoCell>
+</LanguageData>

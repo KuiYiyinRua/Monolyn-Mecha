@@ -55,7 +55,11 @@ Its orb lasts 5 seconds, moves at 8 cells/second, deals 5 damage every 0.25 seco
 
 ## Cargo, travel and automatic combat
 
-Capacity: Immortal 500 kg, Colossus 800 kg, Reaver 2,000 kg, Disruptor 600 kg. All four carry cargo, join caravans and teleport with a pilot through the light network. Automatic combat is off by default and works while piloted or running autonomously. Colossus keeps its distance; the others pursue and stop to fire. Manual movement takes priority; manual attack or Stop disables automatic combat.
+Capacity: Immortal 500 kg, Colossus 800 kg, Reaver 2,000 kg, Disruptor 600 kg. Select these four in the caravan Animals section, empty, piloted or bound. Their mechanitor may stay home; one colonist outside the cockpits must lead.
+
+All six mechs can use connected towers with a capable pilot or assigned mechanitor, retaining pilots, cargo and bindings. Energy and network limits apply; large mechs may overload the network, requiring recovery and reselection. A blocked exit leaves the mech on its source map.
+
+Automatic combat is off by default. Colossus keeps its distance; the others pursue and stop to fire. Manual movement takes priority; manual attack or Stop disables automatic combat.
 ![Monolyn Mecha](https://images.steamusercontent.com/ugc/14583897241280851335/E044B67A55D44AD4D8481505D189E1D5979E2E5E/)
 
 ## Production, repair and enemy raids
@@ -65,4 +69,4 @@ Research and manufacture units at the Construct Formator using materials and lig
 
 ## Requirements, languages and Multiplayer
 
-RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load this mod after its prerequisites. Constructs and autonomous control use Biotech’s mechanitor system. Simplified Chinese, English, Japanese, French and Russian are included. The optional Multiplayer adapter synchronizes the seed slider, hauling toggle, fields, bindings and self-destruct. Restart after updating; every player needs the same complete mod. New features passed isolated single-player, save/load and local two-client tests; this does not certify every modpack or asynchronous multi-map setup.
+Requires RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, plus optional Multiplayer support. All players must update the complete mod and restart.

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_TowerUnavailable>Ce mécha ne peut pas entrer dans la tour actuellement.</MM_TowerUnavailable>
+  <MM_TowerNeedsController>Un pilote en état de conduire ou un mécaniteur lié est nécessaire.</MM_TowerNeedsController>
+  <MM_TowerNeedsPower>Le mécha a besoin d’énergie pour entrer dans la tour.</MM_TowerNeedsPower>
+  <MM_TowerNoCell>Aucun espace près de la tour de destination ne peut accueillir le mécha. Dégagez la sortie et réessayez.</MM_TowerNoCell>
+</LanguageData>

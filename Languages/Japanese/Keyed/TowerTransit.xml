@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_TowerUnavailable>このメカは現在、塔に入れません。</MM_TowerUnavailable>
+  <MM_TowerNeedsController>操縦可能な搭乗者、またはリンク済みのメカニターが必要です。</MM_TowerNeedsController>
+  <MM_TowerNeedsPower>塔に入るにはメカにエネルギーが必要です。</MM_TowerNeedsPower>
+  <MM_TowerNoCell>転送先の塔の周囲にメカを収容できる空間がありません。出口を空けてから再試行してください。</MM_TowerNoCell>
+</LanguageData>

@@ -22,3 +22,5 @@ Tests/GuardianAutonomy/objMP/
 Tests/SelfDestruct/binMP/
 Tests/AutoAttack/binMP/
 Tests/Recall/binMP/
+Tests/Caravan/binMP/
+Tests/Tower/binMP/

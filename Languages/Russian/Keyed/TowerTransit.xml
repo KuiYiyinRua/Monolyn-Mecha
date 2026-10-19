@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_TowerUnavailable>Этот мех сейчас не может войти в башню.</MM_TowerUnavailable>
+  <MM_TowerNeedsController>Требуется способный управлять пилот или привязанный механитор.</MM_TowerNeedsController>
+  <MM_TowerNeedsPower>Для входа в башню меху нужна энергия.</MM_TowerNeedsPower>
+  <MM_TowerNoCell>Рядом с башней назначения нет места для меха. Освободите выход и повторите попытку.</MM_TowerNoCell>
+</LanguageData>

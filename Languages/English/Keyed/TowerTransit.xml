@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_TowerUnavailable>This mech cannot enter the tower now.</MM_TowerUnavailable>
+  <MM_TowerNeedsController>A healthy pilot or a bound mechanitor is required.</MM_TowerNeedsController>
+  <MM_TowerNeedsPower>The mech needs energy to enter the tower.</MM_TowerNeedsPower>
+  <MM_TowerNoCell>There is no clear space for the mech near the destination tower. Clear the exit and try again.</MM_TowerNoCell>
+</LanguageData>

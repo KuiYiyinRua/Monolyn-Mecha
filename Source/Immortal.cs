@@ -51,7 +51,7 @@ namespace Monolyn.Mecha
         public bool Driven => (Pilot != null && !Pilot.Dead && !Pilot.Downed) || MechaAutonomy.Working(this);
         public bool FormingCaravan => this.GetLord()?.LordJob is LordJob_FormAndSendCaravan;
         public virtual bool MovementLocked => false;
-        public bool MayWalk => !MovementLocked && !Dead && Powered && (Driven || FormingCaravan || this.GetCaravan() != null);
+        public bool MayWalk => !MovementLocked && !Dead && Powered && (Driven || FormingCaravan || this.GetCaravan() != null || MechaTowerTransit.Travelling(this));
         public float Hull => health == null ? HullMax : health.hediffSet.GetPartHealth(RaceProps.body.corePart);
 
         public Pawn_Immortal()

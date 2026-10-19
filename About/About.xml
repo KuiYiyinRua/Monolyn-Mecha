@@ -70,7 +70,11 @@ Monolyn: Mecha · 0.9.2
 
 
 货物、远行与自动战斗
-载重：不朽500kg、巨像800kg、掠夺者2000kg、禁断者600kg。四种战甲可运输、参与远行及携驾驶员光芒迁移。自动战斗默认关闭，可在有人或无人驾驶运行时开启：巨像会拉开距离，其他三种追到射击位置后停下攻击。手动移动优先，手动攻击或停止关闭自动战斗。
+载重：不朽500kg、巨像800kg、掠夺者2000kg、禁断者600kg。四种战甲在远征队动物栏中选择，空舱、有人驾驶、绑定机械师均可，机械师可留家；仍需一名舱外殖民者带队。
+
+六种机甲有可用驾驶员或绑定机械师时，可通过已连接的灯塔往返，保留驾驶员、货物和绑定。需要能源及可用的灯塔网络；大型机甲可能造成超载，恢复后重新选择。出口无空地时留在原图。
+
+自动战斗默认关闭；巨像拉开距离，其他战甲追击后停下射击。手动移动优先，手动攻击或停止关闭自动战斗。
 
 
 制造、维修与敌袭
@@ -78,7 +82,7 @@ Monolyn: Mecha · 0.9.2
 
 
 前置、语言与联机
-RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体和无人驾驶使用Biotech机械师系统。内置简中、英、日、法、俄五语，附带可选Multiplayer适配，支持种子滑条、搬运开关、护盾、绑定和自爆同步。更新后重启游戏，联机全员同步完整模组。新功能已完成隔离单机、读档及本机双端验证；不代表所有整合包和异步多地图环境均已验证。
+RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体与无人驾驶需要Biotech。内置简中、英、日、法、俄五语及可选Multiplayer适配。更新后全员同步完整模组并重启。
 
 English
 Monolyn: Mecha · 0.9.2
@@ -125,7 +129,11 @@ Its orb lasts 5 seconds, moves at 8 cells/second, deals 5 damage every 0.25 seco
 
 
 Cargo, travel and automatic combat
-Capacity: Immortal 500 kg, Colossus 800 kg, Reaver 2,000 kg, Disruptor 600 kg. All four carry cargo, join caravans and teleport with a pilot through the light network. Automatic combat is off by default and works while piloted or running autonomously. Colossus keeps its distance; the others pursue and stop to fire. Manual movement takes priority; manual attack or Stop disables automatic combat.
+Capacity: Immortal 500 kg, Colossus 800 kg, Reaver 2,000 kg, Disruptor 600 kg. Select these four in the caravan Animals section, empty, piloted or bound. Their mechanitor may stay home; one colonist outside the cockpits must lead.
+
+All six mechs can use connected towers with a capable pilot or assigned mechanitor, retaining pilots, cargo and bindings. Energy and network limits apply; large mechs may overload the network, requiring recovery and reselection. A blocked exit leaves the mech on its source map.
+
+Automatic combat is off by default. Colossus keeps its distance; the others pursue and stop to fire. Manual movement takes priority; manual attack or Stop disables automatic combat.
 
 
 Production, repair and enemy raids
@@ -133,7 +141,7 @@ Research and manufacture units at the Construct Formator using materials and lig
 
 
 Requirements, languages and Multiplayer
-RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load this mod after its prerequisites. Constructs and autonomous control use Biotech’s mechanitor system. Simplified Chinese, English, Japanese, French and Russian are included. The optional Multiplayer adapter synchronizes the seed slider, hauling toggle, fields, bindings and self-destruct. Restart after updating; every player needs the same complete mod. New features passed isolated single-player, save/load and local two-client tests; this does not certify every modpack or asynchronous multi-map setup.
+Requires RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, plus optional Multiplayer support. All players must update the complete mod and restart.
 
 日本語
 Monolyn: Mecha · 0.9.2
@@ -180,7 +188,11 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 
 
 貨物・旅・自動戦闘
-積載量はイモータル500kg、コロッサス800kg、リーヴァー2000kg、ディスラプター600kg。4種とも輸送、キャラバン、操縦者を乗せた光ネットワーク転送に対応。自動戦闘は初期オフで、有人・無人稼働中に使えます。コロッサスは距離を取り、他3種は射撃位置まで追撃して停止。手動移動を優先し、手動攻撃または停止で自動戦闘を解除します。
+積載量：イモータル500kg、コロッサス800kg、リーヴァー2000kg、ディスラプター600kg。4種は無人・有人・接続済みの各状態でキャラバンの動物欄から選択可能。メカニターは留守番できますが、操縦席の外の入植者が1人以上必要です。
+
+全6種は有効な操縦者または接続済みメカニターがいれば、接続された塔を往復できます。操縦者・貨物・接続を保持。エネルギーとネットワーク制限が適用され、大型機による過負荷時は回復後に再選択してください。出口が塞がっていれば元のマップに残ります。
+
+自動戦闘は初期オフ。コロッサスは距離を取り、他3種は追撃後に停止して射撃。手動移動を優先し、手動攻撃または停止で自動戦闘を解除します。
 
 
 製造・修理・敵襲
@@ -188,7 +200,7 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 
 
 前提MOD・言語・マルチプレイ
-RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Raceが必要。本MODは前提MODの後に読み込んでください。構造体と無人操縦はBiotechのメカニターを使用。簡体字中国語・英語・日本語・フランス語・ロシア語に対応。任意のMultiplayer互換機能は種子スライダー、運搬設定、シールド、接続、自爆を同期します。更新後は再起動し、全員が同じ完全なMODを使用してください。新機能は隔離したソロ、セーブ・ロード、同一PC上の2クライアントで検証済みですが、全MOD構成や非同期の複数マップを保証するものではありません。
+RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Raceが必要。前提MODの後に読み込みます。構造体と無人操縦にはBiotechが必要です。簡中・英・日・仏・露の5言語と任意のMultiplayer互換に対応。更新後は全員が完全なMODを揃えて再起動してください。
 
 Français
 Monolyn: Mecha · 0.9.2
@@ -235,7 +247,11 @@ Orbe de 5 secondes, vitesse de 8 cases/seconde, 5 dégâts toutes les 0,25 secon
 
 
 Fret, voyages et combat automatique
-Capacités : Immortel 500 kg, Colosse 800 kg, Ravageur 2 000 kg, Disrupteur 600 kg. Les quatre transportent du fret, rejoignent les caravanes et se téléportent avec leur pilote via le réseau lumineux. Combat automatique désactivé par défaut, disponible en fonctionnement piloté ou autonome. Le Colosse garde ses distances ; les autres poursuivent puis s’arrêtent pour tirer. Déplacement manuel prioritaire ; attaque manuelle ou Arrêt désactive le combat automatique.
+Capacités : Immortel 500 kg, Colosse 800 kg, Ravageur 2 000 kg, Disrupteur 600 kg. Ces quatre méchas figurent dans Animaux pour les caravanes, vides, pilotés ou liés. Le mécaniteur peut rester chez lui ; un colon hors cockpit doit accompagner le groupe.
+
+Les six unités utilisent les tours connectées avec un pilote apte ou un mécaniteur lié, en conservant pilotes, fret et liens. Énergie et limites du réseau restent nécessaires. Après une surcharge due aux grands méchas, attendez puis sélectionnez à nouveau. Une sortie bloquée laisse le mécha sur sa carte de départ.
+
+Combat automatique désactivé par défaut. Le Colosse garde ses distances ; les autres poursuivent puis tirent à l’arrêt. Déplacement manuel prioritaire ; attaque manuelle ou Arrêt désactive le combat automatique.
 
 
 Production, réparation et raids
@@ -243,20 +259,20 @@ Après les recherches, fabriquez au Construct Formator avec matériaux, lumière
 
 
 Prérequis, langues et Multiplayer
-RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race ; chargez ce mod après ses prérequis. Constructions et autonomie utilisent les mécaniteurs de Biotech. Chinois simplifié, anglais, japonais, français et russe inclus. L’adaptateur Multiplayer optionnel synchronise le curseur de graines, le réapprovisionnement, les champs, les liens et l’autodestruction. Redémarrez après mise à jour ; tous les joueurs doivent avoir le mod complet identique. Fonctions testées en solo isolé, sauvegarde/rechargement et avec deux clients locaux ; tous les packs et configurations multi-cartes asynchrones ne sont pas validés.
+RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.
 
 Русский
 Monolyn: Mecha · 0.9.2
 Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.2.
 
 Прыжок к механитору
-Все шесть типов прыгают к связанному механитору: 30% полной ёмкости света на той же карте, 50% между картами или из каравана. Сталкер и Страж тратят энергию конструкта. Меню механитора возвращает отставших с сохранённой связью. Нужны механитор на карте, энергия и безопасная клетка; иначе расхода нет. Исправлен вход крупных мехов у края карты.
+Все шесть типов прыгают к связанному механитору: 30% полной ёмкости на той же карте, 50% между картами и из каравана. Его меню возвращает отставших с сохранённой связью. Без энергии или безопасного места расхода нет.
 
 Страж: защитное поле
 Пропускная способность 2. Запас 30 семян, цель 0–30 задаёт ползунок; пополнение колонистами отключается. За 5 семян мгновенно создаёт движущийся со Стражем щит: радиус 8 клеток, 30 секунд. На границе 50% вражеских снарядов отражаются по обратной траектории, остальные проходят. Союзные снаряды не затрагиваются. Поля перекрываются и проверяются независимо. Мгновенные лучи и ближний бой не отражаются.
 
 Беспилотное управление
-Свяжите пустой мех с механитором той же карты со свободной пропускной способностью: Бессмертный 4, Колосс 6, Разоритель 6, Дизраптор 5. Доступны группы мехов, призыв, движение и атака в радиусе командования. Свет расходуется. Посадка пилота или разрыв связи освобождает ресурс. Изготовление также требует свободной пропускной способности и связывает мех с механитором форматора.
+Пустой мех связывается с механитором той же карты: Бессмертный 4, Колосс 6, Разоритель 6, Дизраптор 5 единиц пропускной способности. Группы, движение и атака — в радиусе командования; расходуется свет. Пилот или разрыв связи освобождает ресурс. Для изготовления нужны механитор и свободная пропускная способность.
 
 Самоуничтожение и катапультирование
 Четыре пилотируемых меха: подтвердите взрыв, выберите видимую безопасную клетку до 50 клеток. Пилот вылетает со своим инвентарём; мех гибнет без останков, груз уничтожается. Взрыв: радиус 8, урон 80, бронепробитие 80%, опасен союзникам и зданиям. Садитесь вне красного круга. Пустой мех взрывается сразу, освобождая пропускную способность. Отмена не вызывает взрыв.
@@ -290,7 +306,11 @@ Monolyn Race: шесть наземных единиц на энергии св�
 
 
 Грузы, путешествия и автобой
-Вместимость: Бессмертный 500 кг, Колосс 800 кг, Разоритель 2000 кг, Дизраптор 600 кг. Караваны и телепортация с пилотом по сети света. Автобой изначально выключен, работает с пилотом и без него. Колосс держит дистанцию, остальные преследуют и стреляют стоя. Ручное движение приоритетно; ручная атака или остановка выключает автобой.
+Груз: Бессмертный 500 кг, Колосс 800 кг, Разоритель 2000 кг, Дизраптор 600 кг. Эти четыре меха выбираются в разделе животных каравана с пилотом, без него или с привязкой. Механитор может остаться дома; нужен колонист вне кабины.
+
+Все шесть типов проходят между связанными башнями с дееспособным пилотом или привязанным механитором. Пилот, груз и связь сохраняются. Нужны энергия и доступная сеть; после перегрузки крупным мехом дождитесь восстановления и выберите остальных снова. Нет места у выхода — мех остаётся на исходной карте.
+
+Автобой изначально выключен. Колосс держит дистанцию, остальные преследуют и стреляют стоя. Ручное движение приоритетно; атака или остановка выключает автобой.
 
 
 Производство, ремонт и рейды
@@ -298,5 +318,5 @@ Monolyn Race: шесть наземных единиц на энергии св�
 
 
 Требования, языки и Multiplayer
-RimWorld 1.6, Harmony, HAR, Monolyn Race; мод после зависимостей. Автономия и конструкты требуют Biotech. Пять языков. Multiplayer синхронизирует семена, поля, связи, самоуничтожение и прыжки. Всем обновить полный мод и перезапустить. Проверены изолированные клиенты, асинхронные карты и переподключения; не все сборки и сохранения.</description>
+Нужны RimWorld 1.6, Harmony, HAR, Monolyn Race; мод после них. Конструкты и автономия требуют Biotech. Пять языков, поддержка Multiplayer. Всем обновить полный мод и перезапустить.</description>
 </ModMetaData>
