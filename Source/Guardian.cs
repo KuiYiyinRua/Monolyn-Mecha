@@ -331,7 +331,7 @@ namespace Monolyn.Mecha
         }
         public void SetAutoCombat(bool enabled)
         {
-            autoCombat = enabled; nextScan = nextSupportScan = 0;
+            autoCombat = enabled; nextScan = nextSupportScan = nextDecision = 0;
             if (Pawn.CurJob?.def == GuardianDefOf.MM_GuardianCombat) Pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
         }
         public void SetAutoRestore(bool enabled)

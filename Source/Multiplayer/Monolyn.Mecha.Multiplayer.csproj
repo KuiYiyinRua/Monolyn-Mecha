@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework><LangVersion>latest</LangVersion>
-    <AssemblyName>Monolyn.Mecha.Multiplayer</AssemblyName><Version>0.9.1</Version>
+    <AssemblyName>Monolyn.Mecha.Multiplayer</AssemblyName><Version>0.9.2</Version>
     <GameRoot Condition="'$(GameRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..\..</GameRoot>
     <MechaAssembly Condition="'$(MechaAssembly)' == ''">../../1.6/Assemblies/Monolyn.Mecha.dll</MechaAssembly>
     <OutputPath>../../Multiplayer/Assemblies/</OutputPath><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

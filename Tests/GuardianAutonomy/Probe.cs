@@ -245,8 +245,8 @@ namespace GuardianAutonomyTests
                     field.Seeds.allowAutoRefuel = false;
                     Select(guardian); Assert(guardian.GetGizmos().OfType<Gizmo_GuardianSeeds>().Count() == 1, "native integer seed slider visible");
                     Click(guardian, "MM_GuardianField");
-                    Assert(field.remainingTicks == 1800 && field.Seeds.Fuel == 10, "field instantly activates for 1800 ticks costing 10 seeds");
-                    field.Activate(); Assert(field.Seeds.Fuel == 10, "active field cannot charge twice");
+                    Assert(field.remainingTicks == 1800 && field.Seeds.Fuel == 15, "field instantly activates for 1800 ticks costing 5 seeds");
+                    field.Activate(); Assert(field.Seeds.Fuel == 15, "active field cannot charge twice");
                     firstFieldTick = now; TestReflections();
                     stage = 1; index = 0; StartAttack();
                 }

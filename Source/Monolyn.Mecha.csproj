@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework><LangVersion>latest</LangVersion>
-    <AssemblyName>Monolyn.Mecha</AssemblyName><Version>0.9.1</Version>
+    <AssemblyName>Monolyn.Mecha</AssemblyName><Version>0.9.2</Version>
     <GameRoot Condition="'$(GameRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..</GameRoot>
     <HarmonyAssembly Condition="'$(HarmonyAssembly)' == ''">$(GameRoot)/Mods/2009463077/Current/Assemblies/0Harmony.dll</HarmonyAssembly>
     <OutputPath>../1.6/Assemblies/</OutputPath><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

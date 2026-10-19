@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Recall>Rejoindre le mécaniteur</MM_Recall>
+  <MM_RecallDesc>Se téléporte près du mécaniteur lié. Coûte 30% de la capacité maximale de lumière sur la même carte, ou 50% entre cartes ou depuis une caravane. Les Traqueurs et Gardiens dépensent la même proportion de leur énergie. Nécessite assez d’énergie et un emplacement sûr.</MM_RecallDesc>
+  <MM_RecallNoOwner>Nécessite un mécaniteur allié lié et présent sur une carte.</MM_RecallNoOwner>
+  <MM_RecallUnavailable>Téléportation impossible pendant le transport, le confinement ou le verrouillage par une capacité.</MM_RecallUnavailable>
+  <MM_RecallEnergy>Lumière ou énergie insuffisante.</MM_RecallEnergy>
+  <MM_RecallNoCell>Aucun emplacement sûr assez grand près du mécaniteur.</MM_RecallNoCell>
+  <MM_RecallMenu>Rappeler les méchas</MM_RecallMenu>
+  <MM_RecallNone>Aucun mécha Monolyn lié.</MM_RecallNone>
+</LanguageData>

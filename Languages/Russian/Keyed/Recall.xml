@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Recall>Прыжок к механитору</MM_Recall>
+  <MM_RecallDesc>Мгновенно перемещает к назначенному механитору. На той же карте расходует 30% максимального запаса личного света, с другой карты или из каравана — 50%. Сталкер и Страж расходуют такую же долю энергии конструкта. Нужны достаточный запас энергии и безопасное место.</MM_RecallDesc>
+  <MM_RecallNoOwner>Нужен назначенный дружественный механитор на карте.</MM_RecallNoOwner>
+  <MM_RecallUnavailable>Прыжок недоступен при перевозке, нахождении в контейнере или блокировке активной способностью.</MM_RecallUnavailable>
+  <MM_RecallEnergy>Недостаточно света или энергии конструкта.</MM_RecallEnergy>
+  <MM_RecallNoCell>Рядом с механитором нет безопасного места для этого меха.</MM_RecallNoCell>
+  <MM_RecallMenu>Вернуть мехов</MM_RecallMenu>
+  <MM_RecallNone>Нет назначенных мехов Монолин.</MM_RecallNone>
+</LanguageData>

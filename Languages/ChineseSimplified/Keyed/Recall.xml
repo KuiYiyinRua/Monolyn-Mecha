@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Recall>折跃至机械师</MM_Recall>
+  <MM_RecallDesc>立即折跃到已绑定的机械师身旁。同地图消耗自身光芒满容量的30%，跨地图或从远行队召回消耗50%。追猎者和守护者消耗等比例的构装体能源。能源不足或没有安全落点时无法使用。</MM_RecallDesc>
+  <MM_RecallNoOwner>需要已绑定且位于地图上的友方机械师。</MM_RecallNoOwner>
+  <MM_RecallUnavailable>当前处于运输、收容或技能锁定状态，无法折跃。</MM_RecallUnavailable>
+  <MM_RecallEnergy>光芒或构装体能源不足。</MM_RecallEnergy>
+  <MM_RecallNoCell>机械师附近没有容纳该机械体的安全落点。</MM_RecallNoCell>
+  <MM_RecallMenu>召回机械体</MM_RecallMenu>
+  <MM_RecallNone>没有已绑定的墨诺灵机械体。</MM_RecallNone>
+</LanguageData>

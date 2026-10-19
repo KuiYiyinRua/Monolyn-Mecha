@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_GuardianField>シールドフィールド</MM_GuardianField>
-  <MM_GuardianFieldDesc>種子10個を消費し、半径8マスのシールドを即座に30秒間展開する。接触した敵の投射物は50%の確率で元の軌道を逆進し、それ以外は通過する。複数のガーディアンのシールドは重ねられ、それぞれ独立に判定する。</MM_GuardianFieldDesc>
+  <MM_GuardianFieldDesc>種子5個を消費し、半径8マスのシールドを即座に30秒間展開する。接触した敵の投射物は50%の確率で元の軌道を逆進し、それ以外は通過する。複数のガーディアンのシールドは重ねられ、それぞれ独立に判定する。</MM_GuardianFieldDesc>
   <MM_GuardianFieldActive>シールド残り時間：{0}秒</MM_GuardianFieldActive>
-  <MM_GuardianFieldNeedsSeeds>保管された種子が10個以上必要。</MM_GuardianFieldNeedsSeeds>
+  <MM_GuardianFieldNeedsSeeds>保管された種子が5個以上必要。</MM_GuardianFieldNeedsSeeds>
   <MM_Autonomy>無人操縦</MM_Autonomy>
   <MM_AutonomyDesc>メカニターと接続すると操縦者なしで稼働し、帯域幅を{0}使用する。制御グループに加わり、徴兵後は指揮範囲内で移動・攻撃できる。光の供給も必要。</MM_AutonomyDesc>
   <MM_AutonomyDisconnect>メカニターとの接続を解除</MM_AutonomyDisconnect>

@@ -20,7 +20,7 @@
   </ThinkTreeDef>
   <ThingDef ParentName="MNConstruct">
     <defName>MM_Guardian</defName><label>Guardian</label>
-    <description>A small construct for defense and shield support, using 2 bandwidth. It can attack with a continuous laser or restore shields on allied units and turrets, but cannot do both at once.\n\nAutomatic shield support is enabled by default. With automatic combat off, it only provides automatic support while drafted. It also hauls up to 40 kg, cleans and fights fires. It has a 75-point shield and consumes 20 light per game hour to recharge.\n\nSpend 10 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</description>
+    <description>A small construct for defense and shield support, using 2 bandwidth. It can attack with a continuous laser or restore shields on allied units and turrets, but cannot do both at once.\n\nAutomatic shield support is enabled by default. With automatic combat off, it only provides automatic support while drafted. It also hauls up to 40 kg, cleans and fights fires. It has a 75-point shield and consumes 20 light per game hour to recharge.\n\nSpend 5 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</description>
     <uiIconPath>Things/Mecha/Guardian/Guardian_south</uiIconPath>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints><MoveSpeed>6</MoveSpeed><Mass>35</Mass><MarketValue>1600</MarketValue>

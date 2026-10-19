@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Recall>メカニターへ転移</MM_Recall>
+  <MM_RecallDesc>接続中のメカニターのそばへ即座に転移します。同じマップでは光の最大容量の30%、別マップやキャラバンからの呼び戻しでは50%を消費します。ストーカーとガーディアンは構造体エネルギーを同じ割合で消費します。十分なエネルギーと安全な着地点が必要です。</MM_RecallDesc>
+  <MM_RecallNoOwner>マップ上にいる味方メカニターとの接続が必要です。</MM_RecallNoOwner>
+  <MM_RecallUnavailable>輸送・収容中、または能力による移動制限中は転移できません。</MM_RecallUnavailable>
+  <MM_RecallEnergy>光または構造体エネルギーが不足しています。</MM_RecallEnergy>
+  <MM_RecallNoCell>メカニターの近くに機体を収容できる安全な着地点がありません。</MM_RecallNoCell>
+  <MM_RecallMenu>メカを呼び戻す</MM_RecallMenu>
+  <MM_RecallNone>接続中の墨ノ霊メカがいません。</MM_RecallNone>
+</LanguageData>

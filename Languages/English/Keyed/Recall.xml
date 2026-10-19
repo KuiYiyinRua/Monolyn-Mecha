@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_Recall>Warp to mechanitor</MM_Recall>
+  <MM_RecallDesc>Warp beside the assigned mechanitor. Costs 30% of maximum personal light capacity on the same map, or 50% across maps or from a caravan. Stalkers and Guardians spend the same fraction of construct energy. Requires enough energy and a safe landing cell.</MM_RecallDesc>
+  <MM_RecallNoOwner>Requires an assigned friendly mechanitor spawned on a map.</MM_RecallNoOwner>
+  <MM_RecallUnavailable>Cannot warp while transported, contained or locked by an active ability.</MM_RecallUnavailable>
+  <MM_RecallEnergy>Not enough light or construct energy.</MM_RecallEnergy>
+  <MM_RecallNoCell>No safe space near the mechanitor fits this mech.</MM_RecallNoCell>
+  <MM_RecallMenu>Recall mechs</MM_RecallMenu>
+  <MM_RecallNone>No assigned Monolyn mechs.</MM_RecallNone>
+</LanguageData>

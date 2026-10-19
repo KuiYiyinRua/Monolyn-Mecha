@@ -36,7 +36,7 @@ namespace Monolyn.Mecha
     public sealed class CompGuardianField : ThingComp
     {
         public const float Radius = 8f;
-        public const int Duration = 1800, SeedCost = 10;
+        public const int Duration = 1800, SeedCost = 5;
         public int remainingTicks;
         HashSet<int> attempted = new HashSet<int>();
         Command_Action command;

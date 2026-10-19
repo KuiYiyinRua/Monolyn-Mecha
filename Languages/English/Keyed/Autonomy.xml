@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_GuardianField>Shield field</MM_GuardianField>
-  <MM_GuardianFieldDesc>Spend 10 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</MM_GuardianFieldDesc>
+  <MM_GuardianFieldDesc>Spend 5 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</MM_GuardianFieldDesc>
   <MM_GuardianFieldActive>Shield field: {0} s remaining</MM_GuardianFieldActive>
-  <MM_GuardianFieldNeedsSeeds>Requires at least 10 stored seeds.</MM_GuardianFieldNeedsSeeds>
+  <MM_GuardianFieldNeedsSeeds>Requires at least 5 stored seeds.</MM_GuardianFieldNeedsSeeds>
   <MM_Autonomy>Autonomous operation</MM_Autonomy>
   <MM_AutonomyDesc>Bind a mechanitor to operate without a pilot, using {0} bandwidth. Joins the mechanitor control group; draft to move and attack within command range. Still requires light.</MM_AutonomyDesc>
   <MM_AutonomyDisconnect>Disconnect mechanitor</MM_AutonomyDisconnect>

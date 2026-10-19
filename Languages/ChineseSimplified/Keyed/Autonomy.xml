@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_GuardianField>护盾立场</MM_GuardianField>
-  <MM_GuardianFieldDesc>消耗10个种子，立即展开半径8格、持续30秒的护盾。敌方投射物接触护盾时有50%概率沿原路反弹，否则继续穿过。多个守护者的护盾独立判定，可叠加。</MM_GuardianFieldDesc>
+  <MM_GuardianFieldDesc>消耗5个种子，立即展开半径8格、持续30秒的护盾。敌方投射物接触护盾时有50%概率沿原路反弹，否则继续穿过。多个守护者的护盾独立判定，可叠加。</MM_GuardianFieldDesc>
   <MM_GuardianFieldActive>护盾立场剩余：{0}秒</MM_GuardianFieldActive>
-  <MM_GuardianFieldNeedsSeeds>需要储存至少10个种子。</MM_GuardianFieldNeedsSeeds>
+  <MM_GuardianFieldNeedsSeeds>需要储存至少5个种子。</MM_GuardianFieldNeedsSeeds>
   <MM_Autonomy>无人驾驶</MM_Autonomy>
   <MM_AutonomyDesc>绑定机械师后可无人驾驶，占用{0}点带宽。加入机械师控制组，征召后可在机械师指挥范围内移动和攻击。仍需光芒供能。</MM_AutonomyDesc>
   <MM_AutonomyDisconnect>解除机械师绑定</MM_AutonomyDisconnect>

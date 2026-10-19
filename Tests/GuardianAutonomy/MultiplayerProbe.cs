@@ -205,7 +205,7 @@ namespace GuardianAutonomyMpTests
         {
             Need(S.stage == stage, "phase mismatch");
             if (stage == 0) Need(S.units.All(p => p.Autonomous && p.GetMechControlGroup() != null) && S.owner.mechanitor.UsedBandwidth == 25, "native binding/bandwidth");
-            if (stage == 1) Need(S.units.All(p => p.Drafted) && S.guardians.All(p => p.GetComp<CompGuardianField>().Active && p.GetComp<CompGuardianField>().Seeds.Fuel == 20), "draft and field activation");
+            if (stage == 1) Need(S.units.All(p => p.Drafted) && S.guardians.All(p => p.GetComp<CompGuardianField>().Active && p.GetComp<CompGuardianField>().Seeds.Fuel == 25), "draft and field activation");
             if (stage == 2)
             {
                 Need(S.units.All(p => p.Position.z >= 60), "real autonomous movement");

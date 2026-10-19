@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MM_GuardianField>Champ protecteur</MM_GuardianField>
-  <MM_GuardianFieldDesc>Consomme 10 graines pour déployer immédiatement un bouclier de 8 cases de rayon pendant 30 secondes. Chaque projectile hostile qui le touche a 50 % de chances de repartir sur sa trajectoire initiale ; sinon, il traverse. Les champs de plusieurs Gardiens peuvent se superposer et agissent indépendamment.</MM_GuardianFieldDesc>
+  <MM_GuardianFieldDesc>Consomme 5 graines pour déployer immédiatement un bouclier de 8 cases de rayon pendant 30 secondes. Chaque projectile hostile qui le touche a 50 % de chances de repartir sur sa trajectoire initiale ; sinon, il traverse. Les champs de plusieurs Gardiens peuvent se superposer et agissent indépendamment.</MM_GuardianFieldDesc>
   <MM_GuardianFieldActive>Champ protecteur : {0} s restantes</MM_GuardianFieldActive>
-  <MM_GuardianFieldNeedsSeeds>Nécessite au moins 10 graines en réserve.</MM_GuardianFieldNeedsSeeds>
+  <MM_GuardianFieldNeedsSeeds>Nécessite au moins 5 graines en réserve.</MM_GuardianFieldNeedsSeeds>
   <MM_Autonomy>Pilotage autonome</MM_Autonomy>
   <MM_AutonomyDesc>Lie un mécaniteur pour fonctionner sans pilote, pour {0} points de bande passante. Rejoint son groupe de contrôle ; mobilisez le mécha pour le déplacer et attaquer dans la portée de commandement. Nécessite toujours de la lumière.</MM_AutonomyDesc>
   <MM_AutonomyDisconnect>Délier le mécaniteur</MM_AutonomyDisconnect>
