@@ -10,4 +10,10 @@ if($LASTEXITCODE -ne 0){throw 'Build failed'}
 $core=Join-Path $coreOut 'Monolyn.Mecha.dll'
 & dotnet build (Join-Path $PSScriptRoot 'Source\Multiplayer\Monolyn.Mecha.Multiplayer.csproj') -c Release "-p:GameRoot=$GameRoot" "-p:MechaAssembly=$core" "-p:OutputPath=$mpOut/"
 if($LASTEXITCODE -ne 0){throw 'Multiplayer build failed'}
+# Runtime XML changes can be staged alongside source without changing the live mod.
+# Apply them only to the explicitly selected build output.
+$overrides=Join-Path $PSScriptRoot 'Source\RuntimeOverrides'
+if(Test-Path -LiteralPath $overrides){
+    Get-ChildItem -LiteralPath $overrides | Copy-Item -Destination $OutputRoot -Recurse -Force
+}
 Get-FileHash -LiteralPath $core,(Join-Path $mpOut 'Monolyn.Mecha.Multiplayer.dll') -Algorithm SHA256

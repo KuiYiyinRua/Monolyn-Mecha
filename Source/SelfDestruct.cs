@@ -9,6 +9,7 @@ namespace Monolyn.Mecha
     {
         public const float EjectionRange = 50f, BlastRadius = 8f, ArmorPenetration = .8f;
         public const int Damage = 80;
+        public static int DamageFor(Pawn_Immortal mecha) => mecha is Pawn_Disruptor ? Damage + 5 : Damage;
 
         public static bool Available(Pawn_Immortal mecha)
             => mecha != null && mecha.Spawned && !mecha.Dead && !mecha.Destroyed
@@ -30,7 +31,7 @@ namespace Monolyn.Mecha
             int pilotId = mecha.Pilot?.thingIDNumber ?? -1;
             string pilotText = (pilotId < 0 ? "MM_SelfDestructEmpty" : "MM_SelfDestructPilot").Translate();
             var dialog = Dialog_MessageBox.CreateConfirmation(
-                "MM_SelfDestructConfirm".Translate(mecha.LabelShortCap, pilotText),
+                "MM_SelfDestructConfirm".Translate(mecha.LabelShortCap, pilotText, DamageFor(mecha)),
                 () =>
                 {
                     if (!Available(mecha) || mecha.Map != map || (mecha.Pilot?.thingIDNumber ?? -1) != pilotId) return;
@@ -58,6 +59,7 @@ namespace Monolyn.Mecha
             Pawn pilot = mecha.Pilot;
             if (pilot != null && !ValidLanding(mecha, landing)) return;
             IntVec3 origin = mecha.Position;
+            int damage = DamageFor(mecha);
             if (pilot != null)
             {
                 // Move the real pawn into the native saved/ticking flight holder before
@@ -77,11 +79,11 @@ namespace Monolyn.Mecha
             }
             MechaAutonomy.Release(mecha);
             mecha.inventory?.DestroyAll();
-            mecha.Kill(new DamageInfo(DamageDefOf.Bomb, Damage, ArmorPenetration, instigator: mecha));
+            mecha.Kill(new DamageInfo(DamageDefOf.Bomb, damage, ArmorPenetration, instigator: mecha));
             mecha.Corpse?.Destroy(DestroyMode.Vanish);
             if (!mecha.Destroyed) mecha.Destroy(DestroyMode.Vanish);
             GenExplosion.DoExplosion(origin, map, BlastRadius, DamageDefOf.Bomb, mecha,
-                damAmount: Damage, armorPenetration: ArmorPenetration, damageFalloff: false);
+                damAmount: damage, armorPenetration: ArmorPenetration, damageFalloff: false);
         }
     }
 }

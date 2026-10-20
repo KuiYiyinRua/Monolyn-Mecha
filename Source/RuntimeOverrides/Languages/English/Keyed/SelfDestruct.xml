@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_SelfDestruct>Self-destruct</MM_SelfDestruct>
+  <MM_SelfDestructDesc>Confirm to eject the pilot and destroy the warframe. Ejection range: 50 cells. Blast radius: 8 cells; damage: {0}; armor penetration: 80%.</MM_SelfDestructDesc>
+  <MM_SelfDestructConfirm>Self-destruct: {0}\n\nThe warframe will immediately die and be permanently destroyed, leaving no corpse. It cannot be repaired or resurrected. Cargo in its inventory will also be destroyed.\n\nThe explosion deals {2} damage with 80% armor penetration in an 8-cell radius, affecting allies, enemies and buildings.\n\n{1}</MM_SelfDestructConfirm>
+  <MM_SelfDestructPilot>After confirming, select a visible, valid landing cell within 50 cells. The pilot ejects with their equipment and personal inventory, then the warframe explodes immediately. Choose a landing point outside the red blast ring; nearby landings risk injury or death. Right-click or press Esc while targeting to cancel without detonating.</MM_SelfDestructPilot>
+  <MM_SelfDestructEmpty>There is no pilot. Confirmation detonates immediately, without selecting a landing point.</MM_SelfDestructEmpty>
+  <MM_SelfDestructChoose>Confirm and choose landing</MM_SelfDestructChoose>
+  <MM_SelfDestructNow>Confirm self-destruction</MM_SelfDestructNow>
+  <MM_SelfDestructUnavailable>Self-destruction is unavailable in the current state.</MM_SelfDestructUnavailable>
+</LanguageData>

@@ -176,6 +176,7 @@ namespace Monolyn.Mecha
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack"), isActive = () => m.Combat.Enabled,
                 toggleAction = () => ToggleCombat(m.Map, m) };
             var selfDestruct = Action(m, "MM_SelfDestruct", () => MechaSelfDestruct.Confirm(m));
+            selfDestruct.defaultDesc = "MM_SelfDestructDesc".Translate(MechaSelfDestruct.DamageFor(m));
             selfDestruct.icon = TexCommand.Attack;
             yield return selfDestruct;
         }

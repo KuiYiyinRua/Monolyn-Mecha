@@ -1,6 +1,6 @@
-# Monolyn: Mecha · 0.9.2
+# Monolyn: Mecha · 0.9.3
 
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.2.
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.3.
 
 ## Téléportation vers le mécaniteur
 
@@ -16,7 +16,7 @@ Liez un mécha vide à un mécaniteur de la même carte disposant de bande passa
 
 ## Autodestruction et éjection
 
-Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
+Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 (Disrupteur : 85) ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
 
 ## Six unités complémentaires
 
@@ -50,7 +50,7 @@ Magasin de 10 projectiles, portée 45 cases. Fabrique ses munitions avec de la l
 
 ## Disrupteur · Orbe à poursuite
 
-Orbe de 5 secondes, vitesse de 8 cases/seconde, 5 dégâts toutes les 0,25 seconde et explosion finale de 23 dégâts. Le châssis reste immobile tant que l’orbe est actif. Contrôle autonome : 5 points.
+Orbe de 5 secondes, vitesse de 8 cases/seconde, 10 dégâts toutes les 0,25 seconde et explosion finale de 28 dégâts. Le châssis reste immobile tant que l’orbe est actif. Contrôle autonome : 5 points.
 ![Monolyn Mecha](https://images.steamusercontent.com/ugc/12480251011735394709/A0BF373BEA033B81715C8F123EB8B89BBCEF2A14/)
 
 ## Fret, voyages et combat automatique

@@ -5,6 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace Monolyn.Mecha
 {
@@ -144,34 +145,89 @@ namespace Monolyn.Mecha
                 if (cell.InBounds(Map) && (cell == Position || cell.CanBeSeenOverFast(Map) || target.OccupiedRect().Contains(cell)))
                 { location = next; if (cell != Position) Position = cell; }
             }
-            if (age % 3 == 0) FleckMaker.Static(DrawPos, Map, DefDatabase<FleckDef>.GetNamed("Fleck_DisruptorTrail"), .65f);
+            if (age % 3 == 0) DrawFleck("Fleck_DisruptorTrail", .65f);
             if (age % 15 == 0) Pulse();
+            if (Destroyed || !Spawned) return;
             if (age >= Pawn_Disruptor.OrbTicks) Detonate();
         }
 
         void Pulse()
         {
-            var touched = new HashSet<Thing>();
-            foreach (var cell in CellRect.CenteredOn(Position, 1).Cells)
-                if (cell.InBounds(Map) && GenSight.LineOfSight(Position, cell, Map, skipFirstCell: true))
-                    foreach (var thing in MechaGeometry.CellThings(cell, Map))
-                        if (Enemy(thing, caster) && touched.Add(thing))
-                            thing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("MM_DisruptorField"), 5f, .45f,
-                                (MechaGeometry.Center(thing) - location).AngleFlat(), caster));
+            var cells = CellRect.CenteredOn(Position, 1).Cells
+                .Where(c => c.InBounds(Map) && GenSight.LineOfSight(Position, c, Map, skipFirstCell: true));
+            DamageTargets(cells, DefDatabase<DamageDef>.GetNamed("MM_DisruptorField"), false);
         }
 
         void Detonate()
         {
-            var map = Map; var cell = Position; var owner = caster;
-            // Native explosion handles propagation and building multipliers. Restrict both phases to enemies.
-            var ignored = map.listerThings.AllThings.Where(t => !Enemy(t, owner)).ToList();
-            var cells = GenRadial.RadialCellsAround(cell, 5f, true).Where(c => c.InBounds(map)).ToList();
-            FleckMaker.Static(DrawPos, map, DefDatabase<FleckDef>.GetNamed("Fleck_MNSparkPulse"), 3.3f);
-            FleckMaker.Static(DrawPos, map, DefDatabase<FleckDef>.GetNamed("Fleck_MNSparkFlashPulse"), 1.4f);
-            GenExplosion.DoExplosion(cell, map, 5f, DefDatabase<DamageDef>.GetNamed("MM_DisruptorBlast"), owner,
-                damAmount: 23, armorPenetration: .35f, ignoredThings: ignored, intendedTarget: target,
-                chanceToStartFire: 0, damageFalloff: false, doVisualEffects: false, overrideCells: cells);
-            Destroy();
+            var map = Map;
+            var damage = DefDatabase<DamageDef>.GetNamed("MM_DisruptorBlast");
+            var cells = GenRadial.RadialCellsAround(Position, 5f, true).Where(c => c.InBounds(map)).ToArray();
+            DrawFleck("Fleck_MNSparkPulse", 3.3f);
+            DrawFleck("Fleck_MNSparkFlashPulse", 1.4f);
+            // Resolve in this saved orb's map tick. Do not create a second deferred
+            // Explosion with its own registration order and snapshot ignore list.
+            // TakeDamage retains native armor, shields, injuries and building factors.
+            if (damage.explosionHeatEnergyPerCell > float.Epsilon)
+                GenTemperature.PushHeat(Position, map, damage.explosionHeatEnergyPerCell * cells.Length);
+            Rand.PushState();
+            try { damage.soundExplosion?.PlayOneShot(new TargetInfo(Position, map)); }
+            finally { Rand.PopState(); }
+            DamageTargets(cells, damage, true);
+            if (!Destroyed) Destroy();
+        }
+
+        void DamageTargets(IEnumerable<IntVec3> cells, DamageDef damage, bool blast)
+        {
+            // Snapshot the complete footprint before any hit can spawn/despawn things.
+            // A multi-cell target is hit once; insertion order after a cold join cannot
+            // change which target consumes the next armor/injury random draw.
+            var map = Map;
+            var targets = cells.SelectMany(c => blast ? BlastCellThings(c, map) : MechaGeometry.CellThings(c, map))
+                .Where(t => Enemy(t, caster)).Distinct().OrderBy(t => t.thingIDNumber).ToArray();
+            foreach (var victim in targets)
+            {
+                if (Destroyed || !Spawned) break;
+                if (!Enemy(victim, caster)) continue;
+                var info = new DamageInfo(damage, damage.defaultDamage, damage.defaultArmorPenetration,
+                    (MechaGeometry.Center(victim) - location).AngleFlat(), caster, intendedTarget: target);
+                if (blast && damage.explosionAffectOutsidePartsOnly)
+                    info.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
+                BattleLogEntry_ExplosionImpact entry = null;
+                if (blast && victim is Pawn)
+                {
+                    entry = new BattleLogEntry_ExplosionImpact(caster, victim, null, null, damage);
+                    Find.BattleLog.Add(entry);
+                }
+                var result = victim.TakeDamage(info);
+                if (blast)
+                {
+                    result.AssociateWithLog(entry);
+                    if (victim is Pawn pawn && result.wounded && pawn.stances != null)
+                        pawn.stances.stagger.StaggerFor(95);
+                }
+            }
+        }
+
+        static Thing[] BlastCellThings(IntVec3 cell, Map map)
+        {
+            var things = MechaGeometry.CellThings(cell, map);
+            // Match the native explosion's protection for things below full cover.
+            float coverAltitude = float.MinValue;
+            foreach (var thing in things)
+                if (thing.def.category != ThingCategory.Mote && thing.def.category != ThingCategory.Ethereal
+                    && thing.def.Fillage == FillCategory.Full)
+                    coverAltitude = Mathf.Max(coverAltitude, thing.def.Altitude);
+            return things.Where(t => t.def.Altitude >= coverAltitude).ToArray();
+        }
+
+        void DrawFleck(string name, float scale)
+        {
+            // Camera/cosmetic work never advances the combat stream, even without
+            // the optional MP adapter or another mod's visual-random patches.
+            Rand.PushState();
+            try { FleckMaker.Static(DrawPos, Map, DefDatabase<FleckDef>.GetNamed(name), scale); }
+            finally { Rand.PopState(); }
         }
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         { caster?.OrbEnded(this); base.Destroy(mode); }

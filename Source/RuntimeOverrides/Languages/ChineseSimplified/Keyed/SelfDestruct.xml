@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_SelfDestruct>自爆</MM_SelfDestruct>
+  <MM_SelfDestructDesc>确认后弹射驾驶员并自毁。弹射最远50格；爆炸半径8格，伤害{0}，穿甲80%。</MM_SelfDestructDesc>
+  <MM_SelfDestructConfirm>即将自爆：{0}\n\n机甲会立即死亡并彻底销毁，不留下尸体，无法维修或复活；机甲货舱中的物品也会销毁。\n\n爆炸半径8格，伤害{2}，穿甲80%，会伤及范围内的友军、敌人和建筑。\n\n{1}</MM_SelfDestructConfirm>
+  <MM_SelfDestructPilot>确认后选择50格内可见且可落脚的地点。驾驶员将带着自身装备和随身物品弹射飞出，随即机甲爆炸。请选在红色爆炸圈外；近距离落点仍有受伤或死亡风险。选点时可按右键或Esc取消，取消不会自爆。</MM_SelfDestructPilot>
+  <MM_SelfDestructEmpty>目前没有驾驶员。确认后立即自爆，无需选择弹射落点。</MM_SelfDestructEmpty>
+  <MM_SelfDestructChoose>确认并选择弹射落点</MM_SelfDestructChoose>
+  <MM_SelfDestructNow>确认自爆</MM_SelfDestructNow>
+  <MM_SelfDestructUnavailable>当前状态无法自爆。</MM_SelfDestructUnavailable>
+</LanguageData>

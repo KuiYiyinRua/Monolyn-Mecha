@@ -3,7 +3,7 @@
   <name>Monolyn: Mecha · 墨诺灵机甲</name>
   <author>尹怨怨</author>
   <packageId>local.monolyn.mecha</packageId>
-  <modVersion>0.9.2</modVersion>
+  <modVersion>0.9.3</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -26,8 +26,8 @@
     <li>ASEL.MonolynRace</li>
   </loadAfter>
   <description>简体中文
-Monolyn: Mecha · 0.9.2
-为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.2。
+Monolyn: Mecha · 0.9.3
+为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.3。
 
 折跃至机械师
 六种机械体新增专属折跃按钮：同地图消耗自身满容量30%的光芒，跨地图或从远行队召回消耗50%；追猎者和守护者使用等比例构装体能源。机械师菜单可召回仍保留绑定的掉队单位。机械师须在地图上，能源不足或附近无安全落点不扣费。修复大型机体远征入图时因边界越界而掉队的问题。
@@ -39,7 +39,7 @@ Monolyn: Mecha · 0.9.2
 空舱战甲可绑定同地图且有足够可用带宽的机械师：不朽4、巨像6、掠夺者6、禁断者5。绑定后加入机械体控制组，可在机械师指挥范围内征召、移动和攻击，仍消耗光芒。驾驶员登机或主动解除绑定会释放带宽。新制造战甲也需要相应可用带宽，并绑定塑造所的机械师。
 
 自爆与紧急弹射
-四种可驾驶战甲均有「自爆」按钮。先阅读并确认后果，再为驾驶员选择50格内、视线可达的有效落点。驾驶员带着自己的装备和随身物品飞出，机甲立即死亡并爆炸，不留尸体；机甲货舱内的货物销毁。爆炸半径8格、基础伤害80、穿甲80%，会伤及友军和建筑。落点应远离红色爆炸圈，近处落地仍可能受伤。空舱确认后立即自爆并释放带宽；取消确认或选点不会引爆。
+四种可驾驶战甲均有「自爆」按钮。先阅读并确认后果，再为驾驶员选择50格内、视线可达的有效落点。驾驶员带着自己的装备和随身物品飞出，机甲立即死亡并爆炸，不留尸体；机甲货舱内的货物销毁。爆炸半径8格、基础伤害80（禁断者85）、穿甲80%，会伤及友军和建筑。落点应远离红色爆炸圈，近处落地仍可能受伤。空舱确认后立即自爆并释放带宽；取消确认或选点不会引爆。
 
 六种单位，各司其职
 组合前线火力、机动战斗、护盾支援和运输。以下为游戏内功能演示图；图片来自早期版本，当前参数与新增功能以文字说明为准。
@@ -66,7 +66,7 @@ Monolyn: Mecha · 0.9.2
 
 
 禁断者 · 追踪光球
-光球持续5秒，以8格/秒移动，每0.25秒造成5伤害，最终爆炸23伤害。维持光球期间机体不能移动；无人驾驶占5点带宽。
+光球持续5秒，以8格/秒移动，每0.25秒造成10伤害，最终爆炸28伤害。维持光球期间机体不能移动；无人驾驶占5点带宽。
 
 
 货物、远行与自动战斗
@@ -85,8 +85,8 @@ Monolyn: Mecha · 0.9.2
 RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体与无人驾驶需要Biotech。内置简中、英、日、法、俄五语及可选Multiplayer适配。更新后全员同步完整模组并重启。
 
 English
-Monolyn: Mecha · 0.9.2
-Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.2.
+Monolyn: Mecha · 0.9.3
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.3.
 
 Warp to mechanitor
 All six units gain a warp button. It costs 30% of maximum personal light on the same map, or 50% across maps and from caravans; Stalker and Guardian use the same fraction of their construct energy. The mechanitor menu can recall stranded units whose binding still exists. The mechanitor must be on a map. Insufficient energy or no safe landing means no charge. Large units now receive valid full-footprint caravan entry cells.
@@ -98,7 +98,7 @@ Autonomous control
 Bind an empty warframe to a mechanitor on the same map with enough free bandwidth: Immortal 4, Colossus 6, Reaver 6, Disruptor 5. It joins a mech control group and can be drafted, moved and ordered to attack within the mechanitor’s command range. It still consumes light. Boarding a pilot or unbinding releases the bandwidth. Manufacturing a new warframe also requires the corresponding free bandwidth and binds it to the Formator’s mechanitor.
 
 Self-destruct and emergency ejection
-All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
+All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 (85 for Disruptor) and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
 
 Six units, distinct roles
 Combine frontline firepower, mobility, shield support and transport. These staged in-game demonstrations come from an earlier version; the text gives the current figures and new features.
@@ -125,7 +125,7 @@ A ten-round magazine, range 45 and automatic ammunition production from light. A
 
 
 Disruptor · Tracking orb
-Its orb lasts 5 seconds, moves at 8 cells/second, deals 5 damage every 0.25 seconds and finishes with a 23-damage explosion. The chassis cannot move while maintaining the orb. Autonomous control costs 5 bandwidth.
+Its orb lasts 5 seconds, moves at 8 cells/second, deals 10 damage every 0.25 seconds and finishes with a 28-damage explosion. The chassis cannot move while maintaining the orb. Autonomous control costs 5 bandwidth.
 
 
 Cargo, travel and automatic combat
@@ -144,8 +144,8 @@ Requirements, languages and Multiplayer
 Requires RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, plus optional Multiplayer support. All players must update the complete mod and restart.
 
 日本語
-Monolyn: Mecha · 0.9.2
-Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.2。
+Monolyn: Mecha · 0.9.3
+Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.3。
 
 メカニターへ転移
 全6種に専用の転移ボタンを追加。同じマップでは光の最大容量の30%、別マップやキャラバンからは50%を消費します。ストーカーとガーディアンは同率の構造体エネルギーを使用します。メカニターのメニューから、接続が残っている取り残された機体も呼び戻せます。メカニターがマップ上にいる必要があり、エネルギー不足や安全な着地点がない場合は消費しません。大型機体のキャラバン入場時の範囲外配置も修正しました。
@@ -157,7 +157,7 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 空の機体を、同じマップにいる空き帯域幅の十分なメカニターに接続します。必要帯域幅はイモータル4、コロッサス6、リーヴァー6、ディスラプター5。メカの制御グループに入り、指揮範囲内で徴兵、移動、攻撃を指示できます。光は引き続き消費します。操縦者の搭乗または接続解除で帯域幅を解放します。新規製造にも対応する空き帯域幅が必要で、製造所のメカニターに接続されます。
 
 自爆と緊急脱出
-操縦可能な4種に「自爆」を追加。結果を確認してから、50マス以内かつ視線の通る有効な着地点を選びます。操縦者は自分の装備・所持品と共に飛び出し、機体は即座に死亡・爆発して残骸を残しません。機体の貨物は消滅します。爆発は半径8マス、基本ダメージ80、装甲貫通80%で、味方や建物も巻き込みます。赤い爆発範囲から離れた着地点を選んでください。近距離への着地は危険です。空の機体は確認直後に爆発し、帯域幅を解放します。確認や着地点選択のキャンセルでは爆発しません。
+操縦可能な4種に「自爆」を追加。結果を確認してから、50マス以内かつ視線の通る有効な着地点を選びます。操縦者は自分の装備・所持品と共に飛び出し、機体は即座に死亡・爆発して残骸を残しません。機体の貨物は消滅します。爆発は半径8マス、基本ダメージ80（ディスラプター85）、装甲貫通80%で、味方や建物も巻き込みます。赤い爆発範囲から離れた着地点を選んでください。近距離への着地は危険です。空の機体は確認直後に爆発し、帯域幅を解放します。確認や着地点選択のキャンセルでは爆発しません。
 
 6種のユニット
 前線火力、機動戦、シールド支援、輸送を組み合わせられます。画像は旧版のゲーム内実演です。現在の数値と追加機能は本文を参照してください。
@@ -184,7 +184,7 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 
 
 ディスラプター · 追尾光球
-光球は5秒持続、毎秒8マスで移動し、0.25秒ごとに5ダメージ、最後の爆発は23ダメージ。光球維持中は機体が移動できません。無人操縦は帯域幅5。
+光球は5秒持続、毎秒8マスで移動し、0.25秒ごとに10ダメージ、最後の爆発は28ダメージ。光球維持中は機体が移動できません。無人操縦は帯域幅5。
 
 
 貨物・旅・自動戦闘
@@ -203,8 +203,8 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Raceが必要。前提MODの後に読み込みます。構造体と無人操縦にはBiotechが必要です。簡中・英・日・仏・露の5言語と任意のMultiplayer互換に対応。更新後は全員が完全なMODを揃えて再起動してください。
 
 Français
-Monolyn: Mecha · 0.9.2
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.2.
+Monolyn: Mecha · 0.9.3
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.3.
 
 Téléportation vers le mécaniteur
 Les six unités disposent d’un bouton de téléportation : 30 % de leur capacité maximale de lumière sur la même carte, 50 % depuis une autre carte ou une caravane. Le Traqueur et le Gardien dépensent la même proportion d’énergie de construit. Le menu du mécaniteur rappelle aussi les unités égarées encore liées. Le mécaniteur doit être sur une carte ; sans énergie suffisante ou case sûre, rien n’est consommé. L’entrée des grandes unités en caravane vérifie désormais toute leur emprise.
@@ -216,7 +216,7 @@ Contrôle autonome
 Liez un mécha vide à un mécaniteur de la même carte disposant de bande passante libre : Immortel 4, Colosse 6, Ravageur 6, Disrupteur 5. Il rejoint un groupe de méchas et peut être mobilisé, déplacé et envoyé à l’attaque dans la portée de commandement. Il consomme toujours de la lumière. Embarquer un pilote ou rompre le lien libère la bande passante. La fabrication exige aussi cette capacité libre et lie le nouveau mécha au mécaniteur du Formateur.
 
 Autodestruction et éjection
-Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
+Les quatre méchas pilotables disposent d’Autodestruction. Confirmez les conséquences, puis choisissez une case d’atterrissage valide et visible à 50 cases maximum. Le pilote s’envole avec son équipement et son inventaire personnel ; le châssis meurt et explose aussitôt, sans laisser de cadavre. Son fret est détruit. Rayon : 8 cases ; dégâts de base : 80 (Disrupteur : 85) ; pénétration d’armure : 80%. Alliés et bâtiments peuvent être touchés. Évitez le cercle rouge : un atterrissage proche reste dangereux. Un châssis vide explose dès la confirmation et libère sa bande passante. Annuler la confirmation ou le ciblage ne déclenche rien.
 
 Six unités complémentaires
 Combinez puissance de feu, mobilité, boucliers et transport. Ces captures de démonstration proviennent d’une version antérieure ; le texte décrit les valeurs et fonctions actuelles.
@@ -243,7 +243,7 @@ Magasin de 10 projectiles, portée 45 cases. Fabrique ses munitions avec de la l
 
 
 Disrupteur · Orbe à poursuite
-Orbe de 5 secondes, vitesse de 8 cases/seconde, 5 dégâts toutes les 0,25 seconde et explosion finale de 23 dégâts. Le châssis reste immobile tant que l’orbe est actif. Contrôle autonome : 5 points.
+Orbe de 5 secondes, vitesse de 8 cases/seconde, 10 dégâts toutes les 0,25 seconde et explosion finale de 28 dégâts. Le châssis reste immobile tant que l’orbe est actif. Contrôle autonome : 5 points.
 
 
 Fret, voyages et combat automatique
@@ -262,8 +262,8 @@ Prérequis, langues et Multiplayer
 RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.
 
 Русский
-Monolyn: Mecha · 0.9.2
-Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.2.
+Monolyn: Mecha · 0.9.3
+Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.3.
 
 Прыжок к механитору
 Все шесть типов прыгают к связанному механитору: 30% полной ёмкости на той же карте, 50% между картами и из каравана. Его меню возвращает отставших с сохранённой связью. Без энергии или безопасного места расхода нет.
@@ -275,7 +275,7 @@ Monolyn Race: шесть наземных единиц на энергии св�
 Пустой мех связывается с механитором той же карты: Бессмертный 4, Колосс 6, Разоритель 6, Дизраптор 5 единиц пропускной способности. Группы, движение и атака — в радиусе командования; расходуется свет. Пилот или разрыв связи освобождает ресурс. Для изготовления нужны механитор и свободная пропускная способность.
 
 Самоуничтожение и катапультирование
-Четыре пилотируемых меха: подтвердите взрыв, выберите видимую безопасную клетку до 50 клеток. Пилот вылетает со своим инвентарём; мех гибнет без останков, груз уничтожается. Взрыв: радиус 8, урон 80, бронепробитие 80%, опасен союзникам и зданиям. Садитесь вне красного круга. Пустой мех взрывается сразу, освобождая пропускную способность. Отмена не вызывает взрыв.
+Четыре пилотируемых меха: подтвердите взрыв, выберите видимую безопасную клетку до 50 клеток. Пилот вылетает со своим инвентарём; мех гибнет без останков, груз уничтожается. Взрыв: радиус 8, урон 80 (Дизраптор 85), бронепробитие 80%, опасен союзникам и зданиям. Садитесь вне красного круга. Пустой мех взрывается сразу, освобождая пропускную способность. Отмена не вызывает взрыв.
 
 Шесть разных ролей
 Огонь, мобильность, щиты и транспорт. Снимки ранней версии; актуальные параметры — в тексте.
@@ -302,7 +302,7 @@ Monolyn Race: шесть наземных единиц на энергии св�
 
 
 Дизраптор · Преследующая сфера
-Сфера: 5 секунд, 8 клеток/с, 5 урона каждые 0,25 с, финальный взрыв 23. Мех неподвижен, пока сфера активна. Автономия: 5 единиц.
+Сфера: 5 секунд, 8 клеток/с, 10 урона каждые 0,25 с, финальный взрыв 28. Мех неподвижен, пока сфера активна. Автономия: 5 единиц.
 
 
 Грузы, путешествия и автобой

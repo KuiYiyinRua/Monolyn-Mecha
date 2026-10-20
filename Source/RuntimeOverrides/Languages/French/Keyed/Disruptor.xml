@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_DisruptorStatusTip>Se recharge automatiquement dans le réseau lumineux. Capacité : 8000 unités de lumière.\nAvec pilote au repos : 1 lumière/s ; en mouvement : 3 lumières/s ; orbe : 180 lumières ; trajet en caravane : 1200 lumières/jour.\nRestaure 25 points de bouclier pour 250 unités de lumière. Transporte 600 kg ; vitesse en caravane : 30 tuiles du monde/jour.</MM_DisruptorStatusTip>
+  <MM_DisruptorSpeed>Vitesse de base du Disrupteur : 6 cases/s.</MM_DisruptorSpeed>
+  <MM_DisruptorAttackDesc>Lancer un orbe à tête chercheuse pour 180 unités de lumière. Portée : 30 cases ; minimum : 5,5. Il se déplace à 8 cases/s, sans ralentissement dû au terrain. Pendant 5 secondes, il inflige 40 dégâts/s avec 45 % de pénétration d’armure aux ennemis dans les 3×3 cases voisines. Il explose ensuite dans un rayon de 5 cases pour 28 dégâts avec 35 % de pénétration. Les deux effets ne touchent que les ennemis et infligent le triple de dégâts aux bâtiments. Déplacement et téléportation impossibles tant que l’orbe est actif. Récupération ensuite : 5 secondes.</MM_DisruptorAttackDesc>
+  <MM_DisruptorLoadDesc>Choisir le chargement, puis le colon chargé de l’embarquer. Capacité : 600 kg.</MM_DisruptorLoadDesc>
+  <MM_DisruptorMoveDesc>Se déplacer à une vitesse de base de 6 cases/s, modifiée par le terrain. Impossible de bouger tant qu’un orbe est actif.</MM_DisruptorMoveDesc>
+  <MM_DisruptorTeleportDesc>Sans orbe actif, se téléporter avec le pilote et tout le chargement vers un espace libre de 2×2 cases couvert par le réseau lumineux sur la même carte. Consomme 300 unités de trafic réseau. Recharge : environ 16,7 secondes.</MM_DisruptorTeleportDesc>
+  <MM_DisruptorStopDesc>Arrêter les tâches en cours et les attaques manuelles à venir. Un orbe déjà lancé continue sa poursuite et explose au moment prévu. Le déplacement reste impossible jusqu’à sa disparition.</MM_DisruptorStopDesc>
+  <MM_DisruptorAutoFire>Lancement automatique</MM_DisruptorAutoFire>
+  <MM_DisruptorAutoFireDesc>Avec un pilote et à l’arrêt, lancer automatiquement un orbe à tête chercheuse sur les ennemis à portée. Les attaques manuelles restent possibles si l’option est désactivée. Un orbe actif continue d’agir et empêche le déplacement jusqu’à sa disparition.</MM_DisruptorAutoFireDesc>
+  <MM_DisruptorLocked>Orbe actif : déplacement et téléportation impossibles.</MM_DisruptorLocked>
+  <MM_DisruptorOrbLabel>Orbe à tête chercheuse</MM_DisruptorOrbLabel>
+  <MM_DisruptorActive>Durée restante : {0} s</MM_DisruptorActive>
+  <MM_DisruptorReady>Prêt : 180 lumières</MM_DisruptorReady>
+</LanguageData>

@@ -2,7 +2,7 @@
 <LanguageData>
   <MM_DisruptorStatusTip>光ネットワークから自動補給する。光の容量は8000。\n搭乗中の待機：1光/秒、移動：3光/秒、光球：1回180光、キャラバン移動：1200光/日。\n250光でシールドを25回復する。積載量600 kg、遠行速度1日30タイル。</MM_DisruptorStatusTip>
   <MM_DisruptorSpeed>ディスラプターの基本移動速度：毎秒6マス。</MM_DisruptorSpeed>
-  <MM_DisruptorAttackDesc>180光で追尾光球を発射する。射程30マス、最小5.5マス。光球は地形による減速を受けず、毎秒8マスで移動する。5秒間、周囲3×3マスの敵に毎秒20ダメージ、装甲貫通率45%。その後、半径5マスに23ダメージ、装甲貫通率35%の爆発を起こす。どちらも敵だけに当たり、建物には3倍のダメージ。光球がある間は移動と転送ができず、終了後は5秒の冷却が必要。</MM_DisruptorAttackDesc>
+  <MM_DisruptorAttackDesc>180光で追尾光球を発射する。射程30マス、最小5.5マス。光球は地形による減速を受けず、毎秒8マスで移動する。5秒間、周囲3×3マスの敵に毎秒40ダメージ、装甲貫通率45%。その後、半径5マスに28ダメージ、装甲貫通率35%の爆発を起こす。どちらも敵だけに当たり、建物には3倍のダメージ。光球がある間は移動と転送ができず、終了後は5秒の冷却が必要。</MM_DisruptorAttackDesc>
   <MM_DisruptorLoadDesc>貨物を選び、次に積み込む入植者を選ぶ。積載量は600 kg。</MM_DisruptorLoadDesc>
   <MM_DisruptorMoveDesc>基本速度は毎秒6マス。地形の影響を受ける。光球がある間は移動できない。</MM_DisruptorMoveDesc>
   <MM_DisruptorTeleportDesc>光球がないとき、操縦者と貨物ごと同じマップ内の光ネットワークに覆われた2×2マスの空き地へ転送する。ネットワーク転送量を300消費。冷却は約16.7秒。</MM_DisruptorTeleportDesc>

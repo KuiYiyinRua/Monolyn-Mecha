@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MM_DisruptorStatusTip>通过光芒网络自动补能，最多储存8000光芒。\n驾驶待机：1光芒/秒；移动：3光芒/秒；光球：180光芒/次；远行：1200光芒/天。\n每消耗250光芒可恢复25点护盾。载重600千克，远行速度每天30格。</MM_DisruptorStatusTip>
+  <MM_DisruptorSpeed>禁断者基础移动速度：每秒6格。</MM_DisruptorSpeed>
+  <MM_DisruptorAttackDesc>消耗180光芒发射追踪光球。射程30格，最小射程5.5格。光球以每秒8格移动，不受地形减速影响，持续5秒，对附近3×3格内的敌人每秒造成40点伤害、45%穿甲；随后在5格半径内爆炸，造成28点伤害、35%穿甲。两阶段都只伤害敌人，对建筑造成三倍伤害。光球存在时无法移动或传送，结束后冷却5秒。</MM_DisruptorAttackDesc>
+  <MM_DisruptorLoadDesc>先选择货物，再选择负责装载的殖民者。最多装载600千克。</MM_DisruptorLoadDesc>
+  <MM_DisruptorMoveDesc>基础速度为每秒6格，会受地形影响。光球存在时无法移动。</MM_DisruptorMoveDesc>
+  <MM_DisruptorTeleportDesc>光球消失后，可携带驾驶员一起传送至同一地图内光芒网络覆盖的2×2格空地，随身货物一同转移。消耗300网络流量，冷却约16.7秒。</MM_DisruptorTeleportDesc>
+  <MM_DisruptorStopDesc>停止当前任务和后续手动攻击。已发射的光球会继续追踪并按时爆炸，消失前仍无法移动。</MM_DisruptorStopDesc>
+  <MM_DisruptorAutoFire>自动发射光球</MM_DisruptorAutoFire>
+  <MM_DisruptorAutoFireDesc>有驾驶员且静止时，自动向射程内的敌人发射追踪光球。关闭后仍可手动攻击；已发射的光球会继续生效，消失前无法移动。</MM_DisruptorAutoFireDesc>
+  <MM_DisruptorLocked>正在维持光球，无法移动或传送。</MM_DisruptorLocked>
+  <MM_DisruptorOrbLabel>追踪光球</MM_DisruptorOrbLabel>
+  <MM_DisruptorActive>剩余：{0}秒</MM_DisruptorActive>
+  <MM_DisruptorReady>就绪：180光芒</MM_DisruptorReady>
+</LanguageData>

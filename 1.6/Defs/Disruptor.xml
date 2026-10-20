@@ -97,7 +97,7 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>12</power>
+        <power>17</power>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
@@ -221,7 +221,7 @@
   <DamageDef ParentName="Bomb">
     <defName>MM_DisruptorBlast</defName>
     <label>Disruptor orb explosion</label>
-    <defaultDamage>23</defaultDamage>
+    <defaultDamage>28</defaultDamage>
     <defaultArmorPenetration>.35</defaultArmorPenetration>
     <buildingDamageFactor>3</buildingDamageFactor>
     <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>
@@ -230,7 +230,7 @@
   <DamageDef ParentName="Bullet">
     <defName>MM_DisruptorField</defName>
     <label>Disruptor phase field</label>
-    <defaultDamage>5</defaultDamage>
+    <defaultDamage>10</defaultDamage>
     <defaultArmorPenetration>.45</defaultArmorPenetration>
     <buildingDamageFactor>3</buildingDamageFactor>
     <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>

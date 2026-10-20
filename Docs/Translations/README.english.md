@@ -1,6 +1,6 @@
-# Monolyn: Mecha · 0.9.2
+# Monolyn: Mecha · 0.9.3
 
-Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.2.
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.3.
 
 ## Warp to mechanitor
 
@@ -16,7 +16,7 @@ Bind an empty warframe to a mechanitor on the same map with enough free bandwidt
 
 ## Self-destruct and emergency ejection
 
-All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
+All four pilot-capable warframes have Self-destruct. Read and confirm the consequences, then choose a valid landing cell within 50 cells and line of sight. The pilot flies out with their own equipment and inventory; the chassis immediately dies and explodes, leaving no corpse. Cargo in the chassis is destroyed. The blast has radius 8, base damage 80 (85 for Disruptor) and 80% armor penetration, and harms allies and buildings. Choose a landing outside the red blast ring; landing nearby can still injure the pilot. An empty chassis detonates immediately after confirmation and releases its bandwidth. Cancelling either step does not detonate it.
 
 ## Six units, distinct roles
 
@@ -50,7 +50,7 @@ A ten-round magazine, range 45 and automatic ammunition production from light. A
 
 ## Disruptor · Tracking orb
 
-Its orb lasts 5 seconds, moves at 8 cells/second, deals 5 damage every 0.25 seconds and finishes with a 23-damage explosion. The chassis cannot move while maintaining the orb. Autonomous control costs 5 bandwidth.
+Its orb lasts 5 seconds, moves at 8 cells/second, deals 10 damage every 0.25 seconds and finishes with a 28-damage explosion. The chassis cannot move while maintaining the orb. Autonomous control costs 5 bandwidth.
 ![Monolyn Mecha](https://images.steamusercontent.com/ugc/12480251011735394709/A0BF373BEA033B81715C8F123EB8B89BBCEF2A14/)
 
 ## Cargo, travel and automatic combat
