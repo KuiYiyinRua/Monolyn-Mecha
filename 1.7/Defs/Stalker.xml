@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BodyPartDef>
+    <defName>MM_StalkerCore</defName><label>construct frame</label><hitPoints>150</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor><skinCovered>false</skinCovered><solid>true</solid><alive>false</alive><bleedRate>0</bleedRate>
+    <tags><li>ConsciousnessSource</li><li>MovingLimbCore</li><li>MovingLimbSegment</li><li>MovingLimbDigit</li><li>ManipulationLimbCore</li><li>ManipulationLimbSegment</li><li>ManipulationLimbDigit</li><li>SightSource</li><li>HearingSource</li><li>BloodPumpingSource</li><li>BreathingSource</li><li>MetabolismSource</li></tags>
+  </BodyPartDef>
+  <BodyDef><defName>MM_StalkerBody</defName><label>Stalker chassis</label><corePart><def>MM_StalkerCore</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
+  <ThinkTreeDef>
+    <defName>MM_StalkerThink</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
+      <li Class="ThinkNode_QueuedJob"/>
+      <li Class="Monolyn.Mecha.JobGiver_StalkerCombat"/>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Mechanoid</treeDef></li>
+    </subNodes></thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>MM_StalkerConstant</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>MechConstant</treeDef></li>
+      <li Class="Monolyn.Mecha.JobGiver_StalkerCombat"/>
+    </subNodes></thinkRoot>
+  </ThinkTreeDef>
+  <ThingDef ParentName="MNConstruct">
+    <defName>MM_Stalker</defName><label>Stalker</label>
+    <description>A fast combat construct that uses 2 bandwidth. Twin lasers provide ranged fire, while blink allows rapid repositioning. In automatic combat it pursues enemies, seeks cover and tries to keep its distance. Manual orders take priority.\n\nIt can also haul, clean and fight fires. It has a 100-point shield and consumes 30 light per game hour to recharge.</description>
+    <uiIconPath>Things/Mecha/Stalker/Stalker_south</uiIconPath>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints><MoveSpeed>9</MoveSpeed><Mass>85</Mass><MarketValue>1900</MarketValue>
+      <BandwidthCost>2</BandwidthCost><ConstructConsumption>30</ConstructConsumption><MechEnergyUsageFactor>1.2</MechEnergyUsageFactor>
+      <ArmorRating_Sharp>0.97</ArmorRating_Sharp><ArmorRating_Blunt>0.77</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn><AimingDelayFactor>1</AimingDelayFactor><RangedCooldownFactor>1</RangedCooldownFactor>
+      <PainShockThreshold>999</PainShockThreshold>
+    </statBases>
+    <inspectorTabs><li>ASEL.ITab_MechWorkTypes</li></inspectorTabs>
+    <researchPrerequisites><li>MNConstructII</li></researchPrerequisites>
+    <butcherProducts><MN_Seed>15</MN_Seed></butcherProducts>
+    <race>
+      <body>MM_StalkerBody</body><baseBodySize>1.5</baseBodySize><baseHealthScale>1</baseHealthScale>
+      <renderTree>Animal</renderTree><mechWeightClass>Medium</mechWeightClass>
+      <thinkTreeMain>MM_StalkerThink</thinkTreeMain><thinkTreeConstant>MM_StalkerConstant</thinkTreeConstant>
+      <mechEnabledWorkTypes><li>Hauling</li><li>Cleaning</li><li>Firefighter</li></mechEnabledWorkTypes>
+      <lifeStageAges><li><def>MechanoidFullyFormed</def><minAge>0</minAge></li></lifeStageAges>
+    </race>
+    <tools Inherit="False"><li><label>blade legs</label><capacities><li>Stab</li></capacities><power>6</power><cooldownTime>2</cooldownTime><armorPenetration>0.2</armorPenetration></li></tools>
+    <comps>
+      <li Class="Monolyn.Mecha.CompProperties_Stalker"/>
+      <!-- Same interceptor/recharge implementation as native MNC_Inspector. -->
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>1.1</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptNonHostileProjectiles>false</interceptNonHostileProjectiles><interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.4,0.4,0.4)</color><reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect><activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>100</hitPoints><hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>1800</chargeDurationTicks><rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
+        <minIdleAlpha>0.1</minIdleAlpha><disarmedByEmpForTicks>1500</disarmedByEmpForTicks><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+      </li>
+    </comps>
+  </ThingDef>
+  <PawnKindDef ParentName="MNConstructKind">
+    <defName>MM_Stalker</defName><label>Stalker</label><race>MM_Stalker</race><isFighter>true</isFighter><combatPower>400</combatPower>
+    <allowInMechClusters>false</allowInMechClusters><defaultFactionType>RaphaelCult</defaultFactionType>
+    <weaponTags><li>MM_StalkerProjectors</li></weaponTags>
+    <abilities><li>MM_StalkerBlink</li></abilities>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Stalker/Stalker</texPath><shaderType>Cutout</shaderType><graphicClass>Graphic_Multi</graphicClass><drawSize>1.8</drawSize></bodyGraphicData></li></lifeStages>
+    <canArriveManhunter>false</canArriveManhunter>
+    <maxPerGroup>4</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.1</selectionWeight><minRaidPoints>1200</minRaidPoints></li></modExtensions>
+  </PawnKindDef>
+  <!-- Native constructs receive a permanent primary weapon via their PawnKind weapon tag.
+       This also provides the standard ranged command, right-click fire and fire-at-will. -->
+  <ThingDef ParentName="BaseGun">
+    <defName>MM_StalkerProjectors</defName><label>twin laser projectors</label><description>The Stalker's built-in weapon. Fires two laser bolts in sequence for combat at medium to long range.</description>
+    <tradeability>None</tradeability><destroyOnDrop>true</destroyOnDrop><relicChance>0</relicChance><smeltable>false</smeltable><techLevel>Spacer</techLevel>
+    <uiIconPath>UI/Commands/Attack</uiIconPath>
+    <!-- Integral projectors have no handheld sprite; keep the projectile graphic below visible. -->
+    <graphicData><texPath>Things/Mote/Bullet_Dogma</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0</drawSize></graphicData>
+    <statBases><Mass>0</Mass><MarketValue>100</MarketValue><AccuracyTouch>0.9</AccuracyTouch><AccuracyShort>0.9</AccuracyShort><AccuracyMedium>0.9</AccuracyMedium><AccuracyLong>0.9</AccuracyLong><RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown></statBases>
+    <weaponTags><li>MM_StalkerProjectors</li></weaponTags>
+    <verbs><li>
+      <verbClass>Verb_Shoot</verbClass><hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MM_StalkerLaser</defaultProjectile><range>30</range><warmupTime>0.8</warmupTime><defaultCooldownTime>0.2</defaultCooldownTime>
+      <burstShotCount>2</burstShotCount><ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+      <accuracyTouch>0.9</accuracyTouch><accuracyShort>0.9</accuracyShort><accuracyMedium>0.9</accuracyMedium><accuracyLong>0.9</accuracyLong>
+      <soundCast>MNDogma</soundCast><muzzleFlashScale>0.65</muzzleFlashScale>
+    </li></verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>MM_StalkerLaser</defName><label>Stalker laser bolt</label><thingClass>ASEL.TrailProjectileNewB</thingClass>
+    <graphicData><texPath>Things/Mote/Bullet_Dogma</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>MoteGlow</shaderType><drawSize>(0.3,0.65)</drawSize></graphicData>
+    <projectile><damageDef>Bullet</damageDef><damageAmountBase>10</damageAmountBase><armorPenetrationBase>0.35</armorPenetrationBase><speed>100</speed></projectile>
+    <comps><li Class="CompProperties_ProjectileEffecter"><effecterDef>DogmaMuzzle</effecterDef></li></comps>
+    <modExtensions><li Class="ASEL.ASELModExtension"><trailLength>8</trailLength><trailWidth>0.065</trailWidth><trailStartPos>0.07</trailStartPos><impactEffecter>MNBulletImpactBase</impactEffecter></li></modExtensions>
+  </ThingDef>
+  <AbilityDef>
+    <defName>MM_StalkerBlink</defName><label>Blink</label><description>Teleport to a visible, standable and unoccupied location within 20.9 cells. Cooldown: 8 seconds. With automatic blink enabled, this ability is also used while traveling on foot.</description>
+    <iconPath>UI/SyncBlink</iconPath><displayOrder>-900</displayOrder><cooldownTicksRange>480</cooldownTicksRange><hotKey>Misc5</hotKey><aiCanUse>false</aiCanUse><warmupStartSound>MNBlinkGateOpen</warmupStartSound>
+    <verbProperties><verbClass>Verb_CastAbility</verbClass><range>20.9</range><warmupTime>0.33</warmupTime><requireLineOfSight>true</requireLineOfSight><targetParams><canTargetLocations>true</canTargetLocations><canTargetPawns>false</canTargetPawns><canTargetBuildings>false</canTargetBuildings></targetParams></verbProperties>
+    <comps><li Class="Monolyn.Mecha.CompProperties_StalkerBlink"/></comps>
+  </AbilityDef>
+  <JobDef><defName>MM_StalkerCombat</defName><driverClass>Monolyn.Mecha.JobDriver_StalkerCombat</driverClass><reportString>Pursuing TargetA.</reportString><alwaysShowWeapon>true</alwaysShowWeapon><allowOpportunisticPrefix>false</allowOpportunisticPrefix></JobDef>
+  <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
+    <defName>MM_PrintStalker</defName><label>Build: Stalker</label><description>Build a Stalker. Requires 2 available bandwidth. It can fight at range, haul, clean and extinguish fires.</description>
+    <thing>MM_Stalker</thing><pawnKindDef>MM_Stalker</pawnKindDef><recipeTime>180000</recipeTime><lightCost>10000</lightCost>
+    <costList><MN_Seed>30</MN_Seed></costList><researchPrerequisites><li>MNConstructII</li></researchPrerequisites>
+    <ingredients><li><filter><thingDefs><li>MN_Seed</li></thingDefs></filter><count>30</count></li></ingredients><products><MM_Stalker>1</MM_Stalker></products>
+  </ASEL.MonolynRecipeDef>
+</Defs>

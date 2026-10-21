@@ -3,9 +3,10 @@
   <name>Monolyn: Mecha · 墨诺灵机甲</name>
   <author>尹怨怨</author>
   <packageId>local.monolyn.mecha</packageId>
-  <modVersion>0.9.3</modVersion>
+  <modVersion>0.9.4</modVersion>
   <supportedVersions>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -26,8 +27,8 @@
     <li>ASEL.MonolynRace</li>
   </loadAfter>
   <description>简体中文
-Monolyn: Mecha · 0.9.3
-为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.3。
+Monolyn: Mecha · 0.9.4
+为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.4。
 
 折跃至机械师
 六种机械体新增专属折跃按钮：同地图消耗自身满容量30%的光芒，跨地图或从远行队召回消耗50%；追猎者和守护者使用等比例构装体能源。机械师菜单可召回仍保留绑定的掉队单位。机械师须在地图上，能源不足或附近无安全落点不扣费。修复大型机体远征入图时因边界越界而掉队的问题。
@@ -82,11 +83,11 @@ Monolyn: Mecha · 0.9.3
 
 
 前置、语言与联机
-RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体与无人驾驶需要Biotech。内置简中、英、日、法、俄五语及可选Multiplayer适配。更新后全员同步完整模组并重启。
+RimWorld 1.6 / 1.7、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体与无人驾驶需要Biotech。内置简中、英、日、法、俄五语；可选Multiplayer适配仅用于1.6。更新后全员同步完整模组并重启。
 
 English
-Monolyn: Mecha · 0.9.3
-Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.3.
+Monolyn: Mecha · 0.9.4
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.4.
 
 Warp to mechanitor
 All six units gain a warp button. It costs 30% of maximum personal light on the same map, or 50% across maps and from caravans; Stalker and Guardian use the same fraction of their construct energy. The mechanitor menu can recall stranded units whose binding still exists. The mechanitor must be on a map. Insufficient energy or no safe landing means no charge. Large units now receive valid full-footprint caravan entry cells.
@@ -141,11 +142,11 @@ Research and manufacture units at the Construct Formator using materials and lig
 
 
 Requirements, languages and Multiplayer
-Requires RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, plus optional Multiplayer support. All players must update the complete mod and restart.
+Requires RimWorld 1.6 / 1.7, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, with optional Multiplayer support on 1.6 only. All players must update the complete mod and restart.
 
 日本語
-Monolyn: Mecha · 0.9.3
-Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.3。
+Monolyn: Mecha · 0.9.4
+Monolyn Raceに光を動力とする地上ユニット6種を追加します。イモータル、ストーカー、コロッサス、ガーディアン、リーヴァー、ディスラプター。4種のメカは入植者の操縦またはメカニターによる無人操縦に対応し、2種の構造体はメカニターが制御します。バージョン：0.9.4。
 
 メカニターへ転移
 全6種に専用の転移ボタンを追加。同じマップでは光の最大容量の30%、別マップやキャラバンからは50%を消費します。ストーカーとガーディアンは同率の構造体エネルギーを使用します。メカニターのメニューから、接続が残っている取り残された機体も呼び戻せます。メカニターがマップ上にいる必要があり、エネルギー不足や安全な着地点がない場合は消費しません。大型機体のキャラバン入場時の範囲外配置も修正しました。
@@ -200,11 +201,11 @@ Monolyn Raceに光を動力とする地上ユニット6種を追加します。�
 
 
 前提MOD・言語・マルチプレイ
-RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Raceが必要。前提MODの後に読み込みます。構造体と無人操縦にはBiotechが必要です。簡中・英・日・仏・露の5言語と任意のMultiplayer互換に対応。更新後は全員が完全なMODを揃えて再起動してください。
+RimWorld 1.6 / 1.7、Harmony、Humanoid Alien Races、Monolyn Raceが必要。前提MODの後に読み込みます。構造体と無人操縦にはBiotechが必要です。簡中・英・日・仏・露の5言語とMultiplayer互換（1.6のみ）に対応。更新後は全員が完全なMODを揃えて再起動してください。
 
 Français
-Monolyn: Mecha · 0.9.3
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.3.
+Monolyn: Mecha · 0.9.4
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.4.
 
 Téléportation vers le mécaniteur
 Les six unités disposent d’un bouton de téléportation : 30 % de leur capacité maximale de lumière sur la même carte, 50 % depuis une autre carte ou une caravane. Le Traqueur et le Gardien dépensent la même proportion d’énergie de construit. Le menu du mécaniteur rappelle aussi les unités égarées encore liées. Le mécaniteur doit être sur une carte ; sans énergie suffisante ou case sûre, rien n’est consommé. L’entrée des grandes unités en caravane vérifie désormais toute leur emprise.
@@ -259,11 +260,11 @@ Après les recherches, fabriquez au Construct Formator avec matériaux, lumière
 
 
 Prérequis, langues et Multiplayer
-RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.
+RimWorld 1.6 / 1.7, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle uniquement en 1.6. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.
 
 Русский
-Monolyn: Mecha · 0.9.3
-Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.3.
+Monolyn: Mecha · 0.9.4
+Monolyn Race: шесть наземных единиц на энергии света. Четыре меха с пилотом или автономией и два конструкта механитора. Версия: 0.9.4.
 
 Прыжок к механитору
 Все шесть типов прыгают к связанному механитору: 30% полной ёмкости на той же карте, 50% между картами и из каравана. Его меню возвращает отставших с сохранённой связью. Без энергии или безопасного места расхода нет.
@@ -318,5 +319,5 @@ Monolyn Race: шесть наземных единиц на энергии св�
 
 
 Требования, языки и Multiplayer
-Нужны RimWorld 1.6, Harmony, HAR, Monolyn Race; мод после них. Конструкты и автономия требуют Biotech. Пять языков, поддержка Multiplayer. Всем обновить полный мод и перезапустить.</description>
+Нужны RimWorld 1.6 / 1.7, Harmony, HAR, Monolyn Race; мод после них. Конструкты и автономия требуют Biotech. Пять языков; поддержка Multiplayer только для 1.6. Всем обновить полный мод и перезапустить.</description>
 </ModMetaData>

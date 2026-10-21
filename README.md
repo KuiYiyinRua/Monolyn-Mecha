@@ -1,8 +1,10 @@
-# 墨诺灵机甲与构装体 · 0.9.3
+# 墨诺灵机甲与构装体 · 0.9.4
 
 [简体中文](Docs/Translations/README.schinese.md) | [English](Docs/Translations/README.english.md) | [日本語](Docs/Translations/README.japanese.md) | [Français](Docs/Translations/README.french.md) | [Русский](Docs/Translations/README.russian.md)
 
-为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.3。
+为墨诺灵种族添加六种以光芒为能源的地面单位：不朽、追猎者、巨像、守护者、掠夺者和禁断者。四种战甲支持殖民者驾驶或机械师无人驾驶，两种构装体由机械师控制。当前版本：0.9.4。
+
+0.9.4 新增 RimWorld 1.7 独立版本，保留 1.6 支持。[1.7 安装、构建与验证记录](Docs/RimWorld17.md)。
 
 ## 守护者：护盾立场
 
@@ -80,7 +82,7 @@
 
 ## 前置、语言与联机
 
-RimWorld 1.6、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体和无人驾驶使用Biotech机械师系统。内置简中、英、日、法、俄五语，附带可选Multiplayer适配，支持种子滑条、搬运开关、护盾、绑定和自爆同步。更新后重启游戏，联机全员同步完整模组。新功能已完成隔离单机、读档及本机双端验证；不代表所有整合包和异步多地图环境均已验证。
+RimWorld 1.6 / 1.7、Harmony、Humanoid Alien Races、Monolyn Race；本模组在前置之后加载。构装体和无人驾驶使用Biotech机械师系统。内置简中、英、日、法、俄五语，附带仅用于1.6的可选Multiplayer适配，支持种子滑条、搬运开关、护盾、绑定和自爆同步。更新后重启游戏，联机全员同步完整模组。1.7使用独立程序集，验证范围及记录见[1.7兼容说明](Docs/RimWorld17.md)。
 
 ## 下载与开发
 

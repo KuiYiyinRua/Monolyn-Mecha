@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Monolyn.Mecha</AssemblyName>
+    <Version>0.9.4</Version>
+    <DefineConstants>$(DefineConstants);RW17</DefineConstants>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>../../1.7/Assemblies/</OutputPath>
+    <MonolynAssembly Condition="'$(MonolynAssembly)' == ''">$(MonolynRoot)/1.7/Assemblies/ASEL.dll</MonolynAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../*.cs" />
+    <Compile Include="*.cs" />
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameRoot)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityStubs"><HintPath>$(GameRoot)/UnityStubs.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Waylith"><HintPath>$(GameRoot)/Waylith.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ASEL"><HintPath>$(MonolynAssembly)</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyAssembly)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="ValidateGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameRoot)/Assembly-CSharp.dll')" Text="GameRoot must point to a RimWorld 1.7 (Waylith) installation." />
+    <Error Condition="!Exists('$(MonolynAssembly)')" Text="Set MonolynRoot to the Monolyn Race installation with 1.7/Assemblies/ASEL.dll." />
+    <Error Condition="!Exists('$(HarmonyAssembly)')" Text="Set HarmonyAssembly to Harmony's 1.7/Assemblies/0Harmony.dll." />
+  </Target>
+</Project>

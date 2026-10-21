@@ -1,0 +1,1 @@
+<Patch><Operation Class="PatchOperationAdd"><xpath>Defs/StatDef[defName="MoveSpeed"]/parts</xpath><value><li Class="Monolyn.Mecha.StatPart_ImmortalMoveSpeed"/></value></Operation></Patch>

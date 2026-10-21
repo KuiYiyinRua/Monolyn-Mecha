@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <BodyPartDef>
+    <defName>MM_DisruptorHull</defName>
+    <label>Disruptor chassis</label>
+    <hitPoints>200</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>MovingLimbCore</li>
+      <li>MovingLimbSegment</li>
+      <li>MovingLimbDigit</li>
+      <li>ManipulationLimbCore</li>
+      <li>ManipulationLimbSegment</li>
+      <li>ManipulationLimbDigit</li>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BreathingSource</li>
+      <li>MetabolismSource</li>
+    </tags>
+  </BodyPartDef>
+  <BodyDef>
+    <defName>MM_DisruptorBody</defName>
+    <label>Disruptor chassis</label>
+    <corePart>
+      <def>MM_DisruptorHull</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+    </corePart>
+  </BodyDef>
+  <ThingDef ParentName="BasePawn">
+    <defName>MM_Disruptor</defName>
+    <label>Disruptor</label>
+    <thingClass>Monolyn.Mecha.Pawn_Disruptor</thingClass>
+    <size>(2,2)</size>
+    <description>A warframe piloted by one colonist for area attacks. It launches a homing orb that damages nearby enemies before exploding after 5 seconds. The orb only harms enemies and deals triple damage to buildings.\n\nIt cannot move or teleport while the orb is active, and needs 5 seconds to recover afterward. Occupies 2×2 cells, carries 600 kg and runs on light. When no orb is active, it can teleport with its pilot within the light network on the same map.\n\nCan bind to a mechanitor for autonomous operation at 5 bandwidth; piloted operation uses no bandwidth.</description>
+    <uiIconPath>Things/Mecha/Disruptor/Disruptor_south</uiIconPath>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <graphicData>
+      <texPath>Things/Mecha/Disruptor/Disruptor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MoveSpeed>6</MoveSpeed>
+      <Mass>450</Mass>
+      <CarryingCapacity>600</CarryingCapacity>
+      <MarketValue>16000</MarketValue>
+      <Flammability>0</Flammability>
+      <PainShockThreshold>999</PainShockThreshold>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicResistance>1</ToxicResistance>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount>
+      <LeatherAmount>0</LeatherAmount>
+      <FilthRate>0</FilthRate>
+      <Wildness>0</Wildness>
+      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">5</BandwidthCost>
+    </statBases>
+    <race>
+      <intelligence>Animal</intelligence>
+      <body>MM_DisruptorBody</body>
+      <fleshType>Mechanoid</fleshType>
+      <baseBodySize>2</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeExpectancy>2500</lifeExpectancy>
+      <hasGenders>false</hasGenders>
+      <needsRest>false</needsRest>
+      <foodType>None</foodType>
+      <packAnimal>true</packAnimal>
+      <trainability>None</trainability>
+      <canBePredatorPrey>false</canBePredatorPrey>
+      <bloodDef>Filth_MachineBits</bloodDef>
+      <thinkTreeMain>MM_ImmortalThink</thinkTreeMain>
+      <renderTree>Animal</renderTree>
+      <lifeStageAges>
+        <li>
+          <def>MM_ImmortalFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <tools>
+      <li>
+        <label>armored supports</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
+      <li Class="ASEL.CompProperties_LightStorage">
+        <maxLight>8000</maxLight>
+      </li>
+      <li Class="Monolyn.Mecha.CompProperties_MechaLightReceiver">
+        <minLighttoRecive>1</minLighttoRecive>
+        <targetOffset>(0,0.5,0)</targetOffset>
+      </li>
+      <li Class="ASEL.CompProperties_LightConsumer" />
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>1.5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.6,0.6,0.6)</color>
+        <idlePulseSpeed>3</idlePulseSpeed>
+        <minIdleAlpha>0.05</minIdleAlpha>
+        <chargeDurationTicks>1800</chargeDurationTicks>
+        <disarmedByEmpForTicks>100</disarmedByEmpForTicks>
+        <activeSound>Broadshield_Ambience</activeSound>
+        <hitPoints>100</hitPoints>
+        <rechargeHitPointsIntervalTicks>180</rechargeHitPointsIntervalTicks>
+        <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+      </li>
+      <li Class="ASEL.CompProperties_PhaseShield" />
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable" />
+    </comps>
+    <butcherProducts>
+      <MNCalcirite>120</MNCalcirite>
+      <MNPneumaCircuit>4</MNPneumaCircuit>
+    </butcherProducts>
+    <researchPrerequisites>
+      <li>MM_DisruptorResearch</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <PawnKindDef>
+    <defName>MM_Disruptor</defName>
+    <label>Disruptor</label>
+    <race>MM_Disruptor</race>
+    <combatPower>1100</combatPower>
+    <isFighter>true</isFighter>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mecha/Disruptor/Disruptor</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(2,2)</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <allowInMechClusters>false</allowInMechClusters>
+    <defaultFactionType>UrielCult</defaultFactionType>
+    <maxPerGroup>1</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.04</selectionWeight><minRaidPoints>3300</minRaidPoints><pilotKind>Monolyn_Rifleman</pilotKind></li></modExtensions>
+  </PawnKindDef>
+  <ResearchProjectDef>
+    <defName>MM_DisruptorResearch</defName>
+    <label>Disruptor warframe</label>
+    <description>Unlocks construction of the Disruptor, a warframe whose homing orb deals area damage to groups of enemies and buildings.</description>
+    <tab>MonolynAE</tab>
+    <knowledgeCategory>Information</knowledgeCategory>
+    <knowledgeCost>30000</knowledgeCost>
+    <prerequisites>
+      <li>MM_ImmortalResearch</li>
+      <li>MNGravityControl</li>
+    </prerequisites>
+    <researchViewX>10</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+  <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
+    <defName>MM_PrintDisruptor</defName>
+    <label>Build: Disruptor</label>
+    <thing>MM_Disruptor</thing>
+    <pawnKindDef>MM_Disruptor</pawnKindDef>
+    <description>Build a Disruptor at a construct formator linked to a mechanitor. A colonist pilots it to attack groups of enemies with a homing orb. Requires 5 available bandwidth and binds to the formator’s mechanitor. Boarding a pilot disconnects it and releases bandwidth.</description>
+    <recipeTime>240000</recipeTime>
+    <lightCost>60000</lightCost>
+    <costList>
+      <MNCalcirite>240</MNCalcirite>
+      <MNPneumaCircuit>8</MNPneumaCircuit>
+      <MN_Seed>60</MN_Seed>
+    </costList>
+    <researchPrerequisites>
+      <li>MM_DisruptorResearch</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MNCalcirite</li>
+          </thingDefs>
+        </filter>
+        <count>240</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MNPneumaCircuit</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MN_Seed</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+    </ingredients>
+    <products>
+      <MM_Disruptor>1</MM_Disruptor>
+    </products>
+  </ASEL.MonolynRecipeDef>
+  <DamageDef ParentName="Bomb">
+    <defName>MM_DisruptorBlast</defName>
+    <label>Disruptor orb explosion</label>
+    <defaultDamage>28</defaultDamage>
+    <defaultArmorPenetration>.35</defaultArmorPenetration>
+    <buildingDamageFactor>3</buildingDamageFactor>
+    <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+  </DamageDef>
+  <DamageDef ParentName="Bullet">
+    <defName>MM_DisruptorField</defName>
+    <label>Disruptor phase field</label>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>.45</defaultArmorPenetration>
+    <buildingDamageFactor>3</buildingDamageFactor>
+    <buildingDamageFactorImpassable>1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+  </DamageDef>
+  <ThingDef>
+    <defName>MM_DisruptorOrb</defName>
+    <label>homing light orb</label>
+    <thingClass>Monolyn.Mecha.Thing_DisruptorOrb</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>true</destroyable>
+    <selectable>false</selectable>
+    <saveCompressible>false</saveCompressible>
+    <drawerType>RealtimeOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Mote/Bullet_Disruptor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+  </ThingDef>
+</Defs>

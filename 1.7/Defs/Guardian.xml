@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BodyPartDef>
+    <defName>MM_GuardianCore</defName><label>Guardian chassis</label><hitPoints>100</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor><skinCovered>false</skinCovered><solid>true</solid><alive>false</alive><bleedRate>0</bleedRate>
+    <tags><li>ConsciousnessSource</li><li>MovingLimbCore</li><li>MovingLimbSegment</li><li>MovingLimbDigit</li><li>ManipulationLimbCore</li><li>ManipulationLimbSegment</li><li>ManipulationLimbDigit</li><li>SightSource</li><li>HearingSource</li><li>BloodPumpingSource</li><li>BreathingSource</li><li>MetabolismSource</li></tags>
+  </BodyPartDef>
+  <BodyDef><defName>MM_GuardianBody</defName><label>Guardian chassis</label><corePart><def>MM_GuardianCore</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
+  <ThinkTreeDef>
+    <defName>MM_GuardianThink</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
+      <li Class="ThinkNode_QueuedJob"/><li Class="Monolyn.Mecha.JobGiver_Guardian"/>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Mechanoid</treeDef></li>
+    </subNodes></thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>MM_GuardianConstant</defName><thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>MechConstant</treeDef></li><li Class="Monolyn.Mecha.JobGiver_Guardian"/>
+    </subNodes></thinkRoot>
+  </ThinkTreeDef>
+  <ThingDef ParentName="MNConstruct">
+    <defName>MM_Guardian</defName><label>Guardian</label>
+    <description>A small construct for defense and shield support, using 2 bandwidth. It can attack with a continuous laser or restore shields on allied units and turrets, but cannot do both at once.\n\nAutomatic shield support is enabled by default. With automatic combat off, it only provides automatic support while drafted. It also hauls up to 40 kg, cleans and fights fires. It has a 75-point shield and consumes 20 light per game hour to recharge.\n\nSpend 5 seeds to immediately create an 8-cell-radius shield for 30 seconds. Each hostile projectile touching it has a 50% chance to return along its original path; otherwise it passes through. Fields from different Guardians roll independently and can overlap.</description>
+    <uiIconPath>Things/Mecha/Guardian/Guardian_south</uiIconPath>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints><MoveSpeed>6</MoveSpeed><Mass>35</Mass><MarketValue>1600</MarketValue>
+      <BandwidthCost>2</BandwidthCost><ConstructConsumption>20</ConstructConsumption><MechEnergyUsageFactor>0.8</MechEnergyUsageFactor>
+      <CarryingCapacity>66.66667</CarryingCapacity>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp><ArmorRating_Blunt>0.76</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn><AimingDelayFactor>1</AimingDelayFactor><RangedCooldownFactor>1</RangedCooldownFactor><PainShockThreshold>999</PainShockThreshold>
+    </statBases>
+    <inspectorTabs><li>ASEL.ITab_MechWorkTypes</li></inspectorTabs>
+    <researchPrerequisites><li>MNConstructII</li></researchPrerequisites><butcherProducts><MN_Seed>7</MN_Seed></butcherProducts>
+    <race>
+      <body>MM_GuardianBody</body><baseBodySize>0.6</baseBodySize><baseHealthScale>1</baseHealthScale>
+      <renderTree>Animal</renderTree><mechWeightClass>Light</mechWeightClass>
+      <thinkTreeMain>MM_GuardianThink</thinkTreeMain><thinkTreeConstant>MM_GuardianConstant</thinkTreeConstant>
+      <mechEnabledWorkTypes><li>Hauling</li><li>Cleaning</li><li>Firefighter</li></mechEnabledWorkTypes>
+      <lifeStageAges><li><def>MechanoidFullyFormed</def><minAge>0</minAge></li></lifeStageAges>
+    </race>
+    <tools Inherit="False"><li><label>support claws</label><capacities><li>Blunt</li></capacities><power>3</power><cooldownTime>2</cooldownTime></li></tools>
+    <comps>
+      <li Class="Monolyn.Mecha.CompProperties_GuardianSeeds">
+        <fuelCapacity>30</fuelCapacity><fuelConsumptionRate>0</fuelConsumptionRate><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelFilter><thingDefs><li>MN_Seed</li></thingDefs></fuelFilter>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>30</initialConfigurableTargetFuelLevel>
+        <initialFuelPercent>0</initialFuelPercent><initialAllowAutoRefuel>true</initialAllowAutoRefuel><autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <hideGizmosIfNotPlayerFaction>true</hideGizmosIfNotPlayerFaction><fuelLabel>Seeds</fuelLabel><fuelGizmoLabel>Seed reserve</fuelGizmoLabel>
+      </li>
+      <li Class="Monolyn.Mecha.CompProperties_GuardianField"/>
+      <li Class="Monolyn.Mecha.CompProperties_Guardian"/>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>0.85</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptNonHostileProjectiles>false</interceptNonHostileProjectiles><interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.4,0.4,0.4)</color><reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect><activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>75</hitPoints><hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge><chargeDurationTicks>1800</chargeDurationTicks>
+        <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks><minIdleAlpha>0.1</minIdleAlpha><disarmedByEmpForTicks>1500</disarmedByEmpForTicks><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+      </li>
+    </comps>
+  </ThingDef>
+  <PawnKindDef ParentName="MNConstructKind">
+    <defName>MM_Guardian</defName><label>Guardian</label><race>MM_Guardian</race><isFighter>true</isFighter><combatPower>180</combatPower>
+    <allowInMechClusters>false</allowInMechClusters><defaultFactionType>RaphaelCult</defaultFactionType><weaponTags><li>MM_GuardianProjector</li></weaponTags>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Guardian/Guardian</texPath><shaderType>Cutout</shaderType><graphicClass>Graphic_Multi</graphicClass><drawSize>1.2</drawSize></bodyGraphicData></li></lifeStages>
+    <canArriveManhunter>false</canArriveManhunter>
+    <maxPerGroup>3</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.12</selectionWeight><minRaidPoints>600</minRaidPoints></li></modExtensions>
+  </PawnKindDef>
+  <ThingDef ParentName="BaseGun">
+    <defName>MM_GuardianProjector</defName><label>Guardian beam emitter</label><description>The Guardian's built-in emitter provides continuous fire or restores allied shields. It cannot attack and restore shields at the same time.</description>
+    <tradeability>None</tradeability><destroyOnDrop>true</destroyOnDrop><relicChance>0</relicChance><smeltable>false</smeltable><techLevel>Spacer</techLevel>
+    <uiIconPath>UI/Commands/Attack</uiIconPath><graphicData><texPath>Things/Mote/Bullet_Dogma</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0</drawSize></graphicData>
+    <statBases><Mass>0</Mass><MarketValue>100</MarketValue><RangedWeapon_Cooldown>0</RangedWeapon_Cooldown><AccuracyTouch>1</AccuracyTouch><AccuracyShort>1</AccuracyShort><AccuracyMedium>1</AccuracyMedium><AccuracyLong>1</AccuracyLong></statBases>
+    <weaponTags><li>MM_GuardianProjector</li></weaponTags>
+    <verbs><li>
+      <verbClass>Monolyn.Mecha.Verb_GuardianBeam</verbClass><hasStandardCommand>true</hasStandardCommand><range>25</range><warmupTime>0.2</warmupTime><defaultCooldownTime>0</defaultCooldownTime>
+      <beamDamageDef>MM_GuardianBeam</beamDamageDef><beamTotalDamage>5</beamTotalDamage>
+      <targetParams><canTargetPawns>true</canTargetPawns><canTargetBuildings>true</canTargetBuildings><canTargetLocations>false</canTargetLocations></targetParams>
+    </li></verbs>
+  </ThingDef>
+  <DamageDef>
+    <defName>MM_GuardianBeam</defName><label>Guardian laser</label><workerClass>DamageWorker_AddInjury</workerClass><externalViolence>true</externalViolence>
+    <deathMessage>{0} was killed by a Guardian laser.</deathMessage><hediff>MNBeamWound</hediff><armorCategory>Sharp</armorCategory><isRanged>true</isRanged><makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>1</defaultDamage><defaultArmorPenetration>0.3</defaultArmorPenetration><buildingDamageFactor>1</buildingDamageFactor><buildingDamageFactorImpassable>1</buildingDamageFactorImpassable><buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+  </DamageDef>
+  <JobDef><defName>MM_GuardianCombat</defName><driverClass>Monolyn.Mecha.JobDriver_Guardian</driverClass><reportString>Guarding and restoring allied shields.</reportString><alwaysShowWeapon>true</alwaysShowWeapon><allowOpportunisticPrefix>false</allowOpportunisticPrefix></JobDef>
+  <JobDef><defName>MM_GuardianRestore</defName><driverClass>Monolyn.Mecha.JobDriver_Guardian</driverClass><reportString>Restoring TargetA's shield.</reportString><alwaysShowWeapon>true</alwaysShowWeapon><allowOpportunisticPrefix>false</allowOpportunisticPrefix></JobDef>
+  <ASEL.MonolynRecipeDef ParentName="MechRecipeBase">
+    <defName>MM_PrintGuardian</defName><label>Build: Guardian</label><description>Build a Guardian. Requires 2 available bandwidth. It provides defense, restores allied shields and performs everyday work.</description>
+    <thing>MM_Guardian</thing><pawnKindDef>MM_Guardian</pawnKindDef><recipeTime>180000</recipeTime><lightCost>20000</lightCost>
+    <costList><MN_Seed>15</MN_Seed></costList><researchPrerequisites><li>MNConstructII</li></researchPrerequisites>
+    <ingredients><li><filter><thingDefs><li>MN_Seed</li></thingDefs></filter><count>15</count></li></ingredients><products><MM_Guardian>1</MM_Guardian></products>
+  </ASEL.MonolynRecipeDef>
+</Defs>

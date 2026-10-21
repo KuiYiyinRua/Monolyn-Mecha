@@ -1,6 +1,6 @@
-# Monolyn: Mecha · 0.9.3
+# Monolyn: Mecha · 0.9.4
 
-Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.3.
+Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.4.
 
 ## Warp to mechanitor
 
@@ -69,4 +69,4 @@ Research and manufacture units at the Construct Formator using materials and lig
 
 ## Requirements, languages and Multiplayer
 
-Requires RimWorld 1.6, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, plus optional Multiplayer support. All players must update the complete mod and restart.
+Requires RimWorld 1.6 / 1.7, Harmony, Humanoid Alien Races and Monolyn Race; load after these prerequisites. Constructs and autonomy require Biotech. Includes Chinese, English, Japanese, French and Russian, with optional Multiplayer support on 1.6 only. All players must update the complete mod and restart.

@@ -1,6 +1,6 @@
-# Monolyn: Mecha · 0.9.3
+# Monolyn: Mecha · 0.9.4
 
-Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.3.
+Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.4.
 
 ## Téléportation vers le mécaniteur
 
@@ -69,4 +69,4 @@ Après les recherches, fabriquez au Construct Formator avec matériaux, lumière
 
 ## Prérequis, langues et Multiplayer
 
-RimWorld 1.6, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.
+RimWorld 1.6 / 1.7, Harmony, Humanoid Alien Races et Monolyn Race requis ; chargez ce mod après eux. Biotech est nécessaire aux constructions et au contrôle autonome. Cinq langues et compatibilité Multiplayer optionnelle uniquement en 1.6. Tous les joueurs doivent mettre à jour le mod complet et redémarrer.

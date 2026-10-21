@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LifeStageDef><defName>MM_ImmortalFullyFormed</defName><label>fully assembled</label><visible>false</visible><caravanRideable>true</caravanRideable></LifeStageDef>
+  <BodyPartDef>
+    <defName>MM_ImmortalHull</defName><label>armored hull</label><hitPoints>250</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor><skinCovered>false</skinCovered><solid>true</solid><alive>false</alive><bleedRate>0</bleedRate>
+    <tags><li>ConsciousnessSource</li><li>MovingLimbCore</li><li>MovingLimbSegment</li><li>MovingLimbDigit</li><li>ManipulationLimbCore</li><li>ManipulationLimbSegment</li><li>ManipulationLimbDigit</li><li>SightSource</li><li>HearingSource</li><li>BloodPumpingSource</li><li>BreathingSource</li><li>MetabolismSource</li></tags>
+  </BodyPartDef>
+  <BodyDef><defName>MM_ImmortalBody</defName><label>Immortal chassis</label><corePart><def>MM_ImmortalHull</def><height>Middle</height><depth>Outside</depth></corePart></BodyDef>
+  <ThinkTreeDef>
+    <defName>MM_ImmortalThink</defName>
+    <thinkRoot Class="ThinkNode_Priority"><subNodes>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>Despawned</treeDef></li>
+      <li Class="ThinkNode_QueuedJob"/>
+      <li Class="Monolyn.Mecha.JobGiver_MechaCombat"/>
+      <li Class="Monolyn.Mecha.ThinkNode_MechaSubtree"><treeDef>LordDuty</treeDef></li>
+      <li Class="Monolyn.Mecha.JobGiver_WarframeEscort"/>
+      <li Class="Monolyn.Mecha.JobGiver_ImmortalIdle"/>
+    </subNodes></thinkRoot>
+  </ThinkTreeDef>
+  <ThingDef ParentName="BasePawn">
+    <defName>MM_Immortal</defName><label>Immortal</label><thingClass>Monolyn.Mecha.Pawn_Immortal</thingClass>
+    <description>A heavy warframe piloted by one colonist, used for fire support and cargo transport. Twin missiles strike targets in a small area. A phase shield intercepts incoming projectiles, and each hit to the hull is limited to 50 damage.\n\nRuns on light and recharges within the light network. Carries 500 kg and can be ridden in caravans. It can teleport with its pilot to clear ground within network coverage on the same map.\n\nCan bind to a mechanitor for autonomous operation at 4 bandwidth; piloted operation uses no bandwidth.</description>
+    <uiIconPath>Things/Mecha/Immortal/Immortal_south</uiIconPath><soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <graphicData><texPath>Things/Mecha/Immortal/Immortal</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize><drawOffsetNorth>(0,0,0.0303)</drawOffsetNorth><drawOffsetEast>(0.0191,0,0.0494)</drawOffsetEast><drawOffsetWest>(-0.0191,0,0.0494)</drawOffsetWest></graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints><MoveSpeed>3.3</MoveSpeed><Mass>450</Mass><CarryingCapacity>500</CarryingCapacity>
+      <MarketValue>7500</MarketValue><Flammability>0</Flammability><PainShockThreshold>999</PainShockThreshold>
+      <ArmorRating_Sharp>1.85</ArmorRating_Sharp><ArmorRating_Blunt>1.20</ArmorRating_Blunt><ArmorRating_Heat>2</ArmorRating_Heat>
+      <PsychicSensitivity>0</PsychicSensitivity><ToxicResistance>1</ToxicResistance><ComfyTemperatureMin>-100</ComfyTemperatureMin><ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount><LeatherAmount>0</LeatherAmount><FilthRate>0</FilthRate><Wildness>0</Wildness>
+      <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor><BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">4</BandwidthCost>
+    </statBases>
+    <race>
+      <intelligence>Animal</intelligence><body>MM_ImmortalBody</body><fleshType>Mechanoid</fleshType>
+      <baseBodySize>2</baseBodySize><baseHealthScale>1</baseHealthScale><lifeExpectancy>2500</lifeExpectancy><hasGenders>false</hasGenders>
+      <needsRest>false</needsRest><foodType>None</foodType><packAnimal>true</packAnimal><trainability>None</trainability>
+      <canBePredatorPrey>false</canBePredatorPrey><bloodDef>Filth_MachineBits</bloodDef>
+      <thinkTreeMain>MM_ImmortalThink</thinkTreeMain><renderTree>Animal</renderTree>
+      <lifeStageAges><li><def>MM_ImmortalFullyFormed</def><minAge>0</minAge></li></lifeStageAges>
+    </race>
+    <tools><li><label>armored feet</label><capacities><li>Blunt</li></capacities><power>12</power><cooldownTime>2</cooldownTime></li></tools>
+    <comps>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="Monolyn.Mecha.CompProperties_WarframeOverseer"/>
+      <li Class="ASEL.CompProperties_LightStorage"><maxLight>6000</maxLight></li>
+      <li Class="Monolyn.Mecha.CompProperties_MechaLightReceiver"><minLighttoRecive>1</minLighttoRecive><targetOffset>(0,0.5,0)</targetOffset></li>
+      <li Class="ASEL.CompProperties_LightConsumer"/>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>1.5</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptNonHostileProjectiles>false</interceptNonHostileProjectiles><interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.6,0.6,0.6)</color><idlePulseSpeed>3</idlePulseSpeed><minIdleAlpha>0.05</minIdleAlpha>
+        <chargeDurationTicks>1800</chargeDurationTicks><disarmedByEmpForTicks>100</disarmedByEmpForTicks><activeSound>Broadshield_Ambience</activeSound>
+        <hitPoints>500</hitPoints><rechargeHitPointsIntervalTicks>180</rechargeHitPointsIntervalTicks><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+      </li>
+      <li Class="ASEL.CompProperties_PhaseShield"/>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable"/>
+    </comps>
+    <butcherProducts><MNCalcirite>90</MNCalcirite><MNPneumaCircuit>1</MNPneumaCircuit></butcherProducts>
+    <researchPrerequisites><li>MM_ImmortalResearch</li></researchPrerequisites>
+  </ThingDef>
+  <PawnKindDef>
+    <defName>MM_Immortal</defName><label>Immortal</label><race>MM_Immortal</race><combatPower>900</combatPower><isFighter>true</isFighter>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Mecha/Immortal/Immortal</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize><drawOffsetNorth>(0,0,0.0303)</drawOffsetNorth><drawOffsetEast>(0.0191,0,0.0494)</drawOffsetEast><drawOffsetWest>(-0.0191,0,0.0494)</drawOffsetWest></bodyGraphicData></li></lifeStages>
+    <allowInMechClusters>false</allowInMechClusters>
+    <defaultFactionType>UrielCult</defaultFactionType>
+    <maxPerGroup>2</maxPerGroup>
+    <modExtensions><li Class="Monolyn.Mecha.MechaRaidExtension"><selectionWeight>0.07</selectionWeight><minRaidPoints>2700</minRaidPoints><pilotKind>Monolyn_Rifleman</pilotKind></li></modExtensions>
+  </PawnKindDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>MM_ImmortalMissile</defName><label>Immortal light missile</label><thingClass>Monolyn.Mecha.Projectile_ImmortalMissile</thingClass>
+    <graphicData><texPath>Things/Mote/Bullet_Phase</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>MoteGlow</shaderType><drawSize>(0.45,0.9)</drawSize></graphicData>
+    <projectile><damageDef>MM_ImmortalBlast</damageDef><damageAmountBase>10</damageAmountBase><armorPenetrationBase>1</armorPenetrationBase><explosionRadius>1</explosionRadius><speed>45</speed><explosionDamageFalloff>false</explosionDamageFalloff></projectile>
+    <modExtensions><li Class="ASEL.ASELModExtension"><trailLength>10</trailLength><trailWidth>0.09</trailWidth><trailStartPos>0.08</trailStartPos><impactEffecter>MNBulletImpactBase</impactEffecter></li></modExtensions>
+  </ThingDef>
+  <DamageDef ParentName="Bomb">
+    <defName>MM_ImmortalBlast</defName><label>light missile explosion</label><defaultDamage>12</defaultDamage><defaultArmorPenetration>1</defaultArmorPenetration>
+    <buildingDamageFactor>1</buildingDamageFactor><buildingDamageFactorImpassable>1</buildingDamageFactorImpassable><buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+  </DamageDef>
+  <JobDef><defName>MM_MechaCombat</defName><driverClass>Monolyn.Mecha.JobDriver_MechaCombat</driverClass><reportString>Fighting TargetA.</reportString><casualInterruptible>false</casualInterruptible></JobDef>
+  <JobDef><defName>MM_Board</defName><driverClass>Monolyn.Mecha.JobDriver_BoardImmortal</driverClass><reportString>Boarding TargetA.</reportString><casualInterruptible>false</casualInterruptible></JobDef>
+  <JobDef><defName>MM_Load</defName><driverClass>Monolyn.Mecha.JobDriver_LoadImmortal</driverClass><reportString>Loading TargetA into TargetB.</reportString><casualInterruptible>false</casualInterruptible></JobDef>
+</Defs>
