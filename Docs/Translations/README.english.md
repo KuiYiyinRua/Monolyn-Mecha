@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 hotfix: Mechs tab energy column · 2026-10-24
+
+- Fixes repeated null-reference errors and missing energy bars when opening the Mechs tab after creating a warframe. All four warframes now display their actual stored light.
+- The vanilla column accessed a battery need these warframes do not have. The error reproduces with or without Ancot Library’s window postfix. Ancot Library can stay enabled; energy consumption and save format are unchanged.
+- 66 checks passed in isolated 1.6 gameplay, covering all six mod units and a vanilla lifter. Both 1.6/1.7 builds passed; this hotfix has not been runtime-tested in 1.7 or multiplayer. Update the complete mod and restart.
+
 Six light-powered ground units for Monolyn Race: Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor. The four warframes support colonist pilots or autonomous mechanitor control; the two constructs are controlled by mechanitors. Version: 0.9.4.
 
 ## Warp to mechanitor

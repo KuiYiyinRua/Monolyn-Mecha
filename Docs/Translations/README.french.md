@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## Correctif 0.9.4 : énergie dans l’onglet des mécanoïdes · 2026-10-24
+
+- Corrige les erreurs répétées de référence nulle et les barres d’énergie absentes dans l’onglet des mécanoïdes après la création d’un mécha. Les quatre méchas affichent désormais leur réserve réelle de lumière.
+- La colonne du jeu lisait un besoin de batterie absent de ces méchas. Le problème se reproduit avec ou sans le postfix de fenêtre d’Ancot Library. Vous pouvez garder Ancot Library activé ; consommation et format des sauvegardes restent inchangés.
+- 66 contrôles réussis en jeu isolé sous 1.6, couvrant les six unités du mod et un transporteur du jeu de base. Compilations 1.6/1.7 réussies ; ce correctif n’a pas été testé en jeu sous 1.7 ni en multijoueur. Mettez à jour le mod complet et redémarrez.
+
 Six unités terrestres alimentées par la lumière pour Monolyn Race : Immortel, Traqueur, Colosse, Gardien, Ravageur et Disrupteur. Les quatre méchas acceptent un pilote ou le contrôle autonome d’un mécaniteur ; les deux constructions sont contrôlées par des mécaniteurs. Version : 0.9.4.
 
 ## Téléportation vers le mécaniteur
