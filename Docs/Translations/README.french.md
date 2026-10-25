@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## Correctif 0.9.4 : ciblage des ennemis à terre · 2026-10-25
+
+- Corrige la sélection automatique d’ennemis à terre par l’Immortel. Les six unités les ignorent en ciblage automatique, mais les ordres d’attaque manuels restent autorisés.
+- Les quatre méchas distinguent les cibles manuelles des cibles automatiques. L’orbe du Disrupteur peut suivre et blesser sa cible à terre désignée manuellement ; un reciblage automatique ne conserve pas cette permission. Le rayon continu manuel du Gardien peut aussi attaquer une cible à terre.
+- 120 contrôles réussis en jeu isolé sous 1.6 ; compilations 1.6/1.7 réussies. Cette révision n’a pas été testée en jeu sous 1.7, en multijoueur ni par rechargement après redémarrage. Mettez à jour le mod complet et redémarrez ; tous les joueurs doivent utiliser les mêmes fichiers.
+
 ## Correctif 0.9.4 : énergie dans l’onglet des mécanoïdes · 2026-10-24
 
 - Corrige les erreurs répétées de référence nulle et les barres d’énergie absentes dans l’onglet des mécanoïdes après la création d’un mécha. Les quatre méchas affichent désormais leur réserve réelle de lumière.

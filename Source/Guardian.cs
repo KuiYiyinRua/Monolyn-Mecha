@@ -265,7 +265,8 @@ namespace Monolyn.Mecha
         public bool AttackTick(Thing target)
         {
             if (!Operational || restoring || target == null || beamTarget != target || Pawn.pather.Moving || target.Destroyed || !InBeamRange(target)
-                || (target is Pawn p && (p.Dead || p.Downed)) || (Pawn.CurJob?.loadID ?? -1) != channelJobId) return false;
+                || (target is Pawn p && (p.Dead || (p.Downed && !ManuallyAttacking(target))))
+                || (Pawn.CurJob?.loadID ?? -1) != channelJobId) return false;
             Pawn.rotationTracker.FaceTarget(target);
             MaintainBeam();
             if (++attackTicks >= 12)
@@ -275,6 +276,8 @@ namespace Monolyn.Mecha
             }
             return true;
         }
+        bool ManuallyAttacking(Thing target) => Pawn.CurJob?.def == JobDefOf.AttackStatic
+            && Pawn.CurJob.playerForced && Pawn.CurJob.targetA.Thing == target;
         void RestoreTick()
         {
             if (!Operational || !ValidAlly(beamTarget) || !InBeamRange(beamTarget) || Pawn.pather.Moving

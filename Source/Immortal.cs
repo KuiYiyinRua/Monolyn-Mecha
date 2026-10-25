@@ -20,6 +20,8 @@ namespace Monolyn.Mecha
         public ThingOwner<Pawn> pilots;
         public readonly PilotHolder pilotHolder;
         public Thing attackTarget;
+        bool attackTargetManual;
+        public bool HasManualAttackTarget => attackTarget != null && attackTargetManual;
         public int burstRemaining, shotClock, weaponClock, teleportCooldown;
         public bool autoFire = true;
         public bool raidPrepared;
@@ -110,7 +112,7 @@ namespace Monolyn.Mecha
         protected virtual void TickWeapon()
         {
             if (pather.Moving) return;
-            if (attackTarget != null && !CanShoot(attackTarget)) { attackTarget = null; burstRemaining = 0; }
+            if (attackTarget != null && !CanKeepAttackTarget()) { SetAttackTarget(null); burstRemaining = 0; }
             if (burstRemaining > 0 && shotClock == 0)
             {
                 if (attackTarget != null && Light.currentLight >= ShotLight) FireMissile(attackTarget);
@@ -119,9 +121,9 @@ namespace Monolyn.Mecha
             }
             if (weaponClock > 0 || burstRemaining > 0) return;
             if (attackTarget == null && autoFire && this.IsHashIntervalTick(30))
-                attackTarget = Map.attackTargetsCache.GetPotentialTargetsFor(this)
-                    .Select(t => t.Thing).Where(t => t.HostileTo(this) && CanShoot(t))
-                    .OrderBy(t => t.Position.DistanceToSquared(Position)).ThenBy(t => t.thingIDNumber).FirstOrDefault();
+                SetAttackTarget(Map.attackTargetsCache.GetPotentialTargetsFor(this)
+                    .Select(t => t.Thing).Where(CanAutoShoot)
+                    .OrderBy(t => t.Position.DistanceToSquared(Position)).ThenBy(t => t.thingIDNumber).FirstOrDefault());
             if (attackTarget != null && Light.currentLight >= ShotLight * 2)
             {
                 burstRemaining = 2;
@@ -130,6 +132,12 @@ namespace Monolyn.Mecha
         }
 
         public virtual bool CanShoot(Thing target) => CanShootFrom(Position, target);
+        public void SetAttackTarget(Thing target, bool manual = false)
+        { attackTarget = target; attackTargetManual = target != null && manual; }
+        protected bool CanAutoShoot(Thing target) => CanShoot(target) && target.HostileTo(this)
+            && (!(target is Pawn pawn) || !pawn.Downed);
+        protected bool CanKeepAttackTarget() => CanShoot(attackTarget)
+            && (HasManualAttackTarget || !(attackTarget is Pawn pawn) || !pawn.Downed);
         public virtual bool CanShootFrom(IntVec3 cell, Thing target)
             => target != null && !target.Destroyed && target.Spawned && target.Map == Map && target != this
             && cell.InHorDistOf(target.Position, WeaponRange) && !cell.InHorDistOf(target.Position, MinimumWeaponRange)
@@ -168,7 +176,7 @@ namespace Monolyn.Mecha
             => Spawned && cell.InBounds(Map) && cell.Standable(Map) && cell.GetEdifice(Map) == null
             && (!rejectPawns || !cell.GetThingList(Map).OfType<Pawn>().Any(p => p != this));
 
-        public virtual void CancelWeapon() { attackTarget = null; burstRemaining = 0; }
+        public virtual void CancelWeapon() { SetAttackTarget(null); burstRemaining = 0; }
 
         public bool Board(Pawn pawn)
         {
@@ -225,6 +233,7 @@ namespace Monolyn.Mecha
             base.ExposeData();
             Scribe_Deep.Look(ref pilots, "mmPilots", pilotHolder);
             Scribe_References.Look(ref attackTarget, "mmTarget");
+            Scribe_Values.Look(ref attackTargetManual, "mmTargetManual", false);
             Scribe_Values.Look(ref burstRemaining, "mmBurst");
             Scribe_Values.Look(ref shotClock, "mmShotClock");
             Scribe_Values.Look(ref weaponClock, "mmWeaponClock");

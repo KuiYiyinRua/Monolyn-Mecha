@@ -37,7 +37,7 @@ namespace Monolyn.Mecha
             if (!Owned(map, m) || !m.Driven || target == null || !MechaAutonomy.CanCommand(m, target.Position) || !m.Powered || !m.CanShoot(target)) return;
             m.Combat.SetEnabled(false);
             if (!(m is Pawn_Colossus)) { m.pather.StopDead(); m.jobs.StopAll(); }
-            m.CancelWeapon(); m.attackTarget = target;
+            m.CancelWeapon(); m.SetAttackTarget(target, manual: true);
         }
         public static void Stop(Map map, Pawn_Immortal m)
         {

@@ -57,6 +57,7 @@ namespace Monolyn.Mecha
         public void SetEnabled(bool value)
         {
             Enabled = value; Enemy = blockedEnemy = null; blockedUntil = nextScan = 0; ResetMovement();
+            if (value && pawn.HasManualAttackTarget) pawn.CancelWeapon();
             if (!value)
             {
                 if (pawn.CurJob?.def == MechaCombatDefOf.MM_MechaCombat) pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
@@ -157,7 +158,7 @@ namespace Monolyn.Mecha
             float distance = pawn.Position.DistanceTo(Enemy.Position);
             retreating = Kites && canFire && distance < (retreating ? RetreatStop : RetreatStart);
             // Set the real weapon target without restarting an active sweep or burst.
-            if (canFire) pawn.attackTarget = Enemy;
+            if (canFire) pawn.SetAttackTarget(Enemy);
             if (move != MoveKind.None && pawn.pather.Moving)
             {
                 if (pawn.Position != lastPosition) { lastPosition = pawn.Position; lastProgress = Now; }

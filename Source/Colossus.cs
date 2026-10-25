@@ -68,7 +68,7 @@ namespace Monolyn.Mecha
             => target != null && !target.Destroyed && target.Spawned && target.Map == Map && target != this
             && cell.InHorDistOf(target.Position, BeamRange) && !cell.InHorDistOf(target.Position, MinimumWeaponRange)
             && !target.Position.Fogged(Map) && GenSight.LineOfSight(cell, target.Position, Map, skipFirstCell: true)
-            && (!(target is Pawn p) || (!p.Dead && !p.Downed));
+            && (!(target is Pawn p) || !p.Dead);
 
         protected override void TickWeapon()
         {
@@ -78,12 +78,12 @@ namespace Monolyn.Mecha
                 if (--sweepRemaining == 0) { EndEffects(); weaponClock = RecoveryTicks; }
                 return;
             }
-            if (attackTarget != null && !CanShoot(attackTarget)) { attackTarget = null; aimRemaining = 0; }
+            if (attackTarget != null && !CanKeepAttackTarget()) { SetAttackTarget(null); aimRemaining = 0; }
             if (weaponClock > 0) return;
             if (attackTarget == null && autoFire && this.IsHashIntervalTick(30))
-                attackTarget = Map.attackTargetsCache.GetPotentialTargetsFor(this).Select(t => t.Thing)
-                    .Where(t => t.HostileTo(this) && CanShoot(t)).OrderBy(t => t.Position.DistanceToSquared(Position))
-                    .ThenBy(t => t.thingIDNumber).FirstOrDefault();
+                SetAttackTarget(Map.attackTargetsCache.GetPotentialTargetsFor(this).Select(t => t.Thing)
+                    .Where(CanAutoShoot).OrderBy(t => t.Position.DistanceToSquared(Position))
+                    .ThenBy(t => t.thingIDNumber).FirstOrDefault());
             if (attackTarget == null || Light.currentLight < SweepLight) { aimRemaining = 0; return; }
             Rotation = Rot4.FromAngleFlat((MechaGeometry.Center(attackTarget) - MechaGeometry.Center(this)).AngleFlat());
             if (aimRemaining == 0) { aimRemaining = AimTicks; return; }

@@ -62,22 +62,23 @@ namespace Monolyn.Mecha
         }
 
         public override bool CanShootFrom(IntVec3 cell, Thing target)
-            => Thing_DisruptorOrb.Enemy(target, this) && !target.Position.Fogged(Map)
+            => Thing_DisruptorOrb.ValidTarget(target, this) && !target.Position.Fogged(Map)
             && cell.InHorDistOf(target.Position, OrbRange) && !cell.InHorDistOf(target.Position, MinimumWeaponRange)
             && GenSight.LineOfSight(cell, target.Position, Map, skipFirstCell: true);
 
         protected override void TickWeapon()
         {
             if (MovementLocked || weaponClock > 0 || pather.Moving) return;
-            if (!CanShoot(attackTarget)) attackTarget = null;
+            if (!CanKeepAttackTarget()) SetAttackTarget(null);
             if (attackTarget == null && autoFire && this.IsHashIntervalTick(30))
-                attackTarget = Map.attackTargetsCache.GetPotentialTargetsFor(this).Select(t => t.Thing)
-                    .Where(CanShoot).OrderBy(t => t.Position.DistanceToSquared(Position))
-                    .ThenBy(t => t.thingIDNumber).FirstOrDefault();
+                SetAttackTarget(Map.attackTargetsCache.GetPotentialTargetsFor(this).Select(t => t.Thing)
+                    .Where(CanAutoShoot).OrderBy(t => t.Position.DistanceToSquared(Position))
+                    .ThenBy(t => t.thingIDNumber).FirstOrDefault());
             if (attackTarget == null || Light.currentLight < OrbLight) return;
             Rotation = Rot4.FromAngleFlat((MechaGeometry.Center(attackTarget) - MechaGeometry.Center(this)).AngleFlat());
             var orb = (Thing_DisruptorOrb)ThingMaker.MakeThing(ThingDef.Named("MM_DisruptorOrb"));
             orb.caster = this; orb.target = attackTarget; orb.location = MechaGeometry.Center(this).Yto0() + new Vector3(0, 0, .15f);
+            orb.manualTarget = HasManualAttackTarget ? attackTarget : null;
             activeOrb = orb;
             pather.StopDead(); jobs.StopAll();
             Light.UseLight(OrbLight); shotsFired++;
@@ -114,14 +115,19 @@ namespace Monolyn.Mecha
     {
         public Pawn_Disruptor caster;
         public Thing target;
+        // Capture this orb's order independently of later orders to its caster.
+        public Thing manualTarget;
         public Vector3 location;
         public int age;
         public const float Speed = 8f;
         public override Vector3 DrawPos => new Vector3(location.x, AltitudeLayer.MoteOverhead.AltitudeFor(), location.z);
         public static bool Enemy(Thing thing, Pawn_Disruptor owner)
+            => ValidTarget(thing, owner) && (!(thing is Pawn pawn) || !pawn.Downed);
+        public static bool ValidTarget(Thing thing, Pawn_Disruptor owner)
             => owner != null && owner.Spawned && thing != null && thing != owner && !thing.Destroyed && thing.Spawned
             && thing.Map == owner.Map && thing.def.destroyable && (thing is Pawn || thing is Building)
-            && thing.HostileTo(owner) && (!(thing is Pawn pawn) || (!pawn.Dead && !pawn.Downed));
+            && thing.HostileTo(owner) && (!(thing is Pawn pawn) || !pawn.Dead);
+        bool CanAffect(Thing thing) => Enemy(thing, caster) || (thing == manualTarget && ValidTarget(thing, caster));
 
         protected override void Tick()
         {
@@ -129,9 +135,9 @@ namespace Monolyn.Mecha
             if (caster == null || caster.Dead || caster.Destroyed || !caster.Spawned || caster.Map != Map)
             { Destroy(); return; }
             age++;
-            if (!Enemy(target, caster))
+            if (!CanAffect(target))
             {
-                target = null;
+                target = null; manualTarget = null;
                 if (age % 15 == 1) target = Map.attackTargetsCache.GetPotentialTargetsFor(caster).Select(t => t.Thing)
                     .Where(t => Enemy(t, caster) && t.Position.InHorDistOf(Position, 30f)
                         && GenSight.LineOfSight(Position, t.Position, Map, skipFirstCell: true))
@@ -184,11 +190,11 @@ namespace Monolyn.Mecha
             // change which target consumes the next armor/injury random draw.
             var map = Map;
             var targets = cells.SelectMany(c => blast ? BlastCellThings(c, map) : MechaGeometry.CellThings(c, map))
-                .Where(t => Enemy(t, caster)).Distinct().OrderBy(t => t.thingIDNumber).ToArray();
+                .Where(CanAffect).Distinct().OrderBy(t => t.thingIDNumber).ToArray();
             foreach (var victim in targets)
             {
                 if (Destroyed || !Spawned) break;
-                if (!Enemy(victim, caster)) continue;
+                if (!CanAffect(victim)) continue;
                 var info = new DamageInfo(damage, damage.defaultDamage, damage.defaultArmorPenetration,
                     (MechaGeometry.Center(victim) - location).AngleFlat(), caster, intendedTarget: target);
                 if (blast && damage.explosionAffectOutsidePartsOnly)
@@ -242,6 +248,7 @@ namespace Monolyn.Mecha
         {
             base.ExposeData();
             Scribe_References.Look(ref caster, "mmCaster"); Scribe_References.Look(ref target, "mmHomingTarget");
+            Scribe_References.Look(ref manualTarget, "mmOrbManualTarget");
             Scribe_Values.Look(ref location, "mmOrbLocation"); Scribe_Values.Look(ref age, "mmOrbAge");
         }
     }

@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 hotfix: Downed target selection · 2026-10-25
+
+- Fixes Immortal automatically selecting downed enemies. Automatic targeting skips downed enemies for all six units, while manual attack orders can still target them.
+- The four warframes now distinguish manual and automatic targets. A Disruptor orb can pursue and damage its manually ordered downed target; automatic retargeting does not inherit that permission. Guardian manual sustained beams can also hit downed targets.
+- 120 checks passed in isolated 1.6 gameplay; 1.6/1.7 builds passed. This revision has not been tested in 1.7 gameplay, multiplayer or a cold save reload. Update the complete mod and restart; all players need the same files.
+
 ## 0.9.4 hotfix: Mechs tab energy column · 2026-10-24
 
 - Fixes repeated null-reference errors and missing energy bars when opening the Mechs tab after creating a warframe. All four warframes now display their actual stored light.

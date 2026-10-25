@@ -1,5 +1,7 @@
 # 墨诺灵机甲与构装体 · 0.9.4
 
+**2026-10-25 索敌热修复**：六种机体自动索敌跳过倒地敌人，手动指定倒地目标仍可攻击。[实现与验证](Docs/DownedTargets.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-downed-targets.md)。
+
 **2026-10-24 能源栏热修复**：修复制造大型战甲后机械族页面循环空引用，能源栏显示实际光芒储量。无需停用 Ancot Library。[修复与验证](Docs/MechEnergyColumn.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-mech-energy.md)。
 
 [简体中文](Docs/Translations/README.schinese.md) | [English](Docs/Translations/README.english.md) | [日本語](Docs/Translations/README.japanese.md) | [Français](Docs/Translations/README.french.md) | [Русский](Docs/Translations/README.russian.md)

@@ -26,7 +26,27 @@
     <li>brrainz.harmony</li>
     <li>ASEL.MonolynRace</li>
   </loadAfter>
-  <description>0.9.4 热修复：机械族页面能源栏 · 2026-10-24
+  <description>0.9.4 热修复：倒地目标索敌 · 2026-10-25
+修复不朽者自动索敌选中倒地敌人的问题；六种机体的自动索敌均跳过倒地敌人，手动指定倒地目标仍可攻击。
+1.6 隔离实机 120 项检查通过，1.6/1.7 编译通过。本次未做 1.7 实机、联机或冷读档测试。更新完整模组并重启；联机玩家须使用相同文件。
+
+0.9.4 hotfix: Downed target selection · 2026-10-25
+Fixes Immortal automatically selecting downed enemies. Automatic targeting skips downed enemies for all six units, while manual attack orders can still target them.
+120 checks passed in isolated 1.6 gameplay; 1.6/1.7 builds passed. This revision has not been tested in 1.7 gameplay, multiplayer or a cold save reload. Update the complete mod and restart; all players need the same files.
+
+0.9.4 修正：倒れた敵の自動照準 · 2026-10-25
+イモータルが倒れた敵を自動選択する問題を修正。全6種の自動照準は倒れた敵を除外しますが、手動の攻撃指示では引き続き攻撃できます。
+1.6の隔離実機で120項目に合格し、1.6/1.7のビルドも成功。今回の修正は1.7実機、マルチプレイ、再起動後のセーブ再読み込みは未検証です。MOD全体を更新して再起動し、全員が同じファイルを使用してください。
+
+Correctif 0.9.4 : ciblage des ennemis à terre · 2026-10-25
+Corrige la sélection automatique d’ennemis à terre par l’Immortel. Les six unités les ignorent en ciblage automatique, mais les ordres d’attaque manuels restent autorisés.
+120 contrôles réussis en jeu isolé sous 1.6 ; compilations 1.6/1.7 réussies. Cette révision n’a pas été testée en jeu sous 1.7, en multijoueur ni par rechargement après redémarrage. Mettez à jour le mod complet et redémarrez ; tous les joueurs doivent utiliser les mêmes fichiers.
+
+Исправление 0.9.4: выбор лежачих целей · 2026-10-25
+Исправлен автоматический выбор лежачих врагов Бессмертным. Все шесть типов игнорируют таких врагов при автоматическом выборе, но ручная команда атаки по-прежнему разрешена.
+В изолированной игре 1.6 пройдены 120 проверок; сборки 1.6/1.7 успешны. Эта ревизия не проверялась в игре 1.7, мультиплеере или загрузкой сохранения после перезапуска. Обновите мод целиком и перезапустите игру; у всех игроков должны быть одинаковые файлы.
+
+0.9.4 热修复：机械族页面能源栏 · 2026-10-24
 修复制造大型战甲后打开机械族页面时反复出现空引用红字、能源栏无法显示的问题。四种大型战甲现在显示实际光芒储量。
 1.6 隔离实机验证通过 66 项检查，覆盖本模组六单位和原版搬运机。1.6/1.7 编译通过；此次热修复未做 1.7 实机或联机测试。更新完整模组并重启游戏。
 
