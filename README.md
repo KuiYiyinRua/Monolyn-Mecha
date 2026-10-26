@@ -1,5 +1,7 @@
 # 墨诺灵机甲与构装体 · 0.9.4
 
+**2026-10-26 骑乘热修复**：巨像远行队正确应用 1.6 倍骑乘倍率，单人配一台约 56 格/天；同步修复其他战甲及组队、拆分、交易和世界界面的每日速度显示。[规则与验证](Docs/CaravanRiding.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-caravan-riding.md)。
+
 **2026-10-25 索敌热修复**：六种机体自动索敌跳过倒地敌人，手动指定倒地目标仍可攻击。[实现与验证](Docs/DownedTargets.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-downed-targets.md)。
 
 **2026-10-24 能源栏热修复**：修复制造大型战甲后机械族页面循环空引用，能源栏显示实际光芒储量。无需停用 Ancot Library。[修复与验证](Docs/MechEnergyColumn.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-mech-energy.md)。

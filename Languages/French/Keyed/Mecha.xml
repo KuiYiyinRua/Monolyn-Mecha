@@ -26,6 +26,6 @@
   <MM_TeleportEmpty>Le pilote doit d’abord débarquer.</MM_TeleportEmpty>
   <MM_Cooldown>Recharge : {0} s</MM_Cooldown>
   <MM_NetworkBusy>Le réseau lumineux est surchargé.</MM_NetworkBusy>
-  <MM_WorldSpeed>Vitesse du mécha : {0} tuiles du monde/jour, sans effet des routes, du terrain ou du repos nocturne. Une caravane de plusieurs types de méchas adopte la vitesse du plus lent.</MM_WorldSpeed>
+  <MM_WorldSpeed>Vitesse du mécha : {0} tuiles du monde/jour, sans effet des routes, du terrain ou du repos nocturne. Une caravane mixte utilise la vitesse de base du mécha le plus lent, puis applique le multiplicateur de monture.</MM_WorldSpeed>
   <MM_MapSpeed>Vitesse de base de l’Immortel : 3,3 cases/s.</MM_MapSpeed>
 </LanguageData>

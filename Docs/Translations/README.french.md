@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Correction de la vitesse montée · 2026-10-26
+
+- Le Colosse applique désormais le bonus de monture à sa vitesse de base de 35 cases/jour : environ 56 pour une personne et un Colosse, ou 45,5 pour deux personnes et un Colosse. Les autres méchas partagent la correction ; les groupes mixtes utilisent la vitesse de base du mécha le plus lent.
+- Les vitesses affichées lors de la formation, de la division, du commerce et pour les caravanes existantes correspondent au déplacement.
+- 76 contrôles réussis en jeu isolé sous 1.6 ; compilations 1.6/1.7 réussies. Jeu 1.7, multijoueur et rechargement après redémarrage non testés. Les estimations d’arrivée restent natives. Mettez à jour le mod complet et redémarrez.
+
 ## Correctif 0.9.4 : ciblage des ennemis à terre · 2026-10-25
 
 - Corrige la sélection automatique d’ennemis à terre par l’Immortel. Les six unités les ignorent en ciblage automatique, mais les ordres d’attaque manuels restent autorisés.

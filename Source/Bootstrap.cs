@@ -65,9 +65,47 @@ namespace Monolyn.Mecha
     public static class MechaCaravans
     {
         public const int TicksPerTile = 1714; // round(60,000 / 35), vanilla integer travel clock.
-        // A mixed convoy travels at the slowest warframe's fixed rate.
+        // The slowest warframe sets the base rate; native riding rules then
+        // allocate the fastest available mounts, at most one per humanlike.
         public static int TravelTicks(IEnumerable<Pawn> pawns)
-            => Units(pawns).Select(m => UnityEngine.Mathf.RoundToInt(60000f / m.WorldTilesPerDay)).DefaultIfEmpty(TicksPerTile).Max();
+            => TravelTicks(pawns, null);
+        internal static int TravelTicks(IEnumerable<Pawn> pawns, StringBuilder explanation)
+        {
+            var living = pawns.Where(p => !p.Dead).ToList();
+            float baseSpeed = Units(living).Select(m => m.WorldTilesPerDay).DefaultIfEmpty(35f).Min();
+            int people = 0;
+            var mounts = new List<float>();
+            foreach (var pawn in living)
+            {
+                if (pawn.RaceProps.Humanlike) people++;
+                else if (pawn.IsCaravanRideable()) mounts.Add(pawn.GetStatValue(StatDefOf.CaravanRidingSpeedFactor));
+            }
+            int available = mounts.Count;
+            float ridingFactor = 1f;
+            if (people > 0 && available > 0)
+            {
+                mounts.Sort();
+                mounts.Reverse();
+                if (mounts.Count > people) mounts.RemoveRange(people, mounts.Count - people);
+                while (mounts.Count < people) mounts.Add(1f);
+                ridingFactor = mounts.Average();
+            }
+            int ticks = UnityEngine.Mathf.Max(1, UnityEngine.Mathf.RoundToInt(60000f / (baseSpeed * ridingFactor)));
+            if (explanation != null)
+            {
+                explanation.Append("MM_WorldSpeed".Translate((60000f / ticks).ToString("0.#")));
+                explanation.AppendLine();
+                explanation.Append("  " + "StatsReport_BaseValue".Translate() + ": " + baseSpeed.ToString("0.#") + " " + "TilesPerDay".Translate());
+                explanation.AppendLine();
+                explanation.Append("  " + "RideableAnimalsPerPeople".Translate() + $": {available} / {people}");
+                if (people > 0 && available > 0)
+                {
+                    explanation.AppendLine();
+                    explanation.Append("  " + "MultiplierFromRiddenAnimals".Translate() + ": " + ridingFactor.ToStringPercent());
+                }
+            }
+            return ticks;
+        }
         public static List<Pawn_Immortal> Units(IEnumerable<Pawn> pawns)
             => pawns.OfType<Pawn_Immortal>().Where(m => !m.Dead).ToList();
         public static bool HasMecha(Caravan caravan) => caravan != null && caravan.PawnsListForReading.Any(p => p is Pawn_Immortal m && !m.Dead);
@@ -79,8 +117,7 @@ namespace Monolyn.Mecha
         static bool Prefix(List<Pawn> pawns, StringBuilder explanation, ref int __result)
         {
             if (!pawns.Any(p => p is Pawn_Immortal m && !m.Dead)) return true;
-            __result = MechaCaravans.TravelTicks(pawns);
-            explanation?.Append("MM_WorldSpeed".Translate(MechaCaravans.Units(pawns).Min(m => m.WorldTilesPerDay).ToString("0.##")));
+            __result = MechaCaravans.TravelTicks(pawns, explanation);
             return false;
         }
     }

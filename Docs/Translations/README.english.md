@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Caravan riding speed fix · 2026-10-26
+
+- Colossus now applies riding bonuses to its base speed of 35 tiles/day: about 56 with one rider and one Colossus, or 45.5 with two riders and one Colossus. Other warframes share the fix; mixed groups use the slowest warframe base speed.
+- Daily speed previews now match travel in formation, splitting, trading and existing caravans.
+- 76 checks passed in isolated 1.6 gameplay; 1.6/1.7 builds passed. No 1.7 gameplay, multiplayer or cold save reload testing. Route arrival estimates still use the native estimator. Update the complete mod and restart.
+
 ## 0.9.4 hotfix: Downed target selection · 2026-10-25
 
 - Fixes Immortal automatically selecting downed enemies. Automatic targeting skips downed enemies for all six units, while manual attack orders can still target them.

@@ -26,6 +26,6 @@
   <MM_TeleportEmpty>The pilot must disembark first.</MM_TeleportEmpty>
   <MM_Cooldown>Cooldown: {0} s</MM_Cooldown>
   <MM_NetworkBusy>The light network is overloaded.</MM_NetworkBusy>
-  <MM_WorldSpeed>Warframe travel speed: {0} world tiles/day, unaffected by roads, terrain or night rest. Caravans with several warframe types use the slowest one's speed.</MM_WorldSpeed>
+  <MM_WorldSpeed>Warframe travel speed: {0} world tiles/day, unaffected by roads, terrain or night rest. Mixed caravans use the slowest warframe's base speed, then apply the riding multiplier.</MM_WorldSpeed>
   <MM_MapSpeed>Immortal base speed: 3.3 cells/s.</MM_MapSpeed>
 </LanguageData>

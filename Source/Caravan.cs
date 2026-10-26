@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Text;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -73,5 +74,56 @@ namespace Monolyn.Mecha
 
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase __originalMethod)
             => WarframeCaravanSelection.Replace(instructions, __originalMethod);
+    }
+
+    // Native previews call the int-only CostToMove overload, which reapplies
+    // terrain/road modifiers even though mechanical travel ignores them. Use
+    // the same calculation as the actual path follower while pawns are known.
+    static class MechaCaravanSpeedPreview
+    {
+        internal static bool Prefix(IEnumerable<Pawn> pawns, bool isShuttle, StringBuilder explanation, ref float result)
+        {
+            var selected = pawns.ToList();
+            if (isShuttle || !selected.Any(p => p is Pawn_Immortal m && !m.Dead)) return true;
+            result = 60000f / MechaCaravans.TravelTicks(selected, explanation);
+            return false;
+        }
+        internal static IEnumerable<Pawn> Pawns(List<TransferableOneWay> transferables, bool remaining)
+        {
+            foreach (var transferable in transferables)
+            {
+                if (!transferable.HasAnyThing || !(transferable.AnyThing is Pawn)) continue;
+                int start = remaining ? transferable.CountToTransfer : 0;
+                int end = remaining ? transferable.things.Count : transferable.CountToTransfer;
+                for (int i = start; i < end; i++) yield return (Pawn)transferable.things[i];
+            }
+        }
+    }
+    [HarmonyPatch(typeof(TilesPerDayCalculator), nameof(TilesPerDayCalculator.ApproxTilesPerDay),
+        new Type[] { typeof(Caravan), typeof(StringBuilder) })]
+    static class MechaCaravanCurrentSpeed
+    {
+        static bool Prefix(Caravan caravan, StringBuilder explanation, ref float __result)
+            => MechaCaravanSpeedPreview.Prefix(caravan.PawnsListForReading, caravan.Shuttle != null, explanation, ref __result);
+    }
+    [HarmonyPatch(typeof(TilesPerDayCalculator), nameof(TilesPerDayCalculator.ApproxTilesPerDay),
+        new Type[] { typeof(List<TransferableOneWay>), typeof(float), typeof(float), typeof(PlanetTile), typeof(PlanetTile), typeof(bool), typeof(StringBuilder) })]
+    static class MechaCaravanFormationSpeed
+    {
+        static bool Prefix(List<TransferableOneWay> transferables, bool isShuttle, StringBuilder explanation, ref float __result)
+            => MechaCaravanSpeedPreview.Prefix(MechaCaravanSpeedPreview.Pawns(transferables, false), isShuttle, explanation, ref __result);
+    }
+    [HarmonyPatch(typeof(TilesPerDayCalculator), nameof(TilesPerDayCalculator.ApproxTilesPerDayLeftAfterTransfer))]
+    static class MechaCaravanRemainingSpeed
+    {
+        static bool Prefix(List<TransferableOneWay> transferables, bool isShuttle, StringBuilder explanation, ref float __result)
+            => MechaCaravanSpeedPreview.Prefix(MechaCaravanSpeedPreview.Pawns(transferables, true), isShuttle, explanation, ref __result);
+    }
+    [HarmonyPatch(typeof(TilesPerDayCalculator), nameof(TilesPerDayCalculator.ApproxTilesPerDay),
+        new Type[] { typeof(List<ThingCount>), typeof(float), typeof(float), typeof(PlanetTile), typeof(PlanetTile), typeof(bool), typeof(StringBuilder) })]
+    static class MechaCaravanTradeSpeed
+    {
+        static bool Prefix(List<ThingCount> thingCounts, bool isShuttle, StringBuilder explanation, ref float __result)
+            => MechaCaravanSpeedPreview.Prefix(thingCounts.Where(t => t.Count > 0).Select(t => t.Thing).OfType<Pawn>(), isShuttle, explanation, ref __result);
     }
 }

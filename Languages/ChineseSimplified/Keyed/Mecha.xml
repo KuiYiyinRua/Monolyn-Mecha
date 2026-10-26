@@ -26,6 +26,6 @@
   <MM_TeleportEmpty>请先让驾驶员离舱。</MM_TeleportEmpty>
   <MM_Cooldown>冷却：{0}秒</MM_Cooldown>
   <MM_NetworkBusy>光芒网络当前负载过高。</MM_NetworkBusy>
-  <MM_WorldSpeed>战甲远行速度：每天{0}格，不受道路、地形和夜间休息影响。多种战甲同行时，以最慢者为准。</MM_WorldSpeed>
+  <MM_WorldSpeed>战甲远行速度：每天{0}格，不受道路、地形和夜间休息影响。多种战甲同行时，以最慢者为基础，再应用骑乘倍率。</MM_WorldSpeed>
   <MM_MapSpeed>不朽基础移动速度：每秒3.3格。</MM_MapSpeed>
 </LanguageData>

@@ -26,6 +26,6 @@
   <MM_TeleportEmpty>先に操縦者を降ろしてください。</MM_TeleportEmpty>
   <MM_Cooldown>冷却：{0}秒</MM_Cooldown>
   <MM_NetworkBusy>光ネットワークが過負荷状態。</MM_NetworkBusy>
-  <MM_WorldSpeed>メカの遠行速度：1日{0}タイル。道路、地形、夜間休憩の影響を受けない。複数種のメカが同行する場合、最も遅い機体の速度を使う。</MM_WorldSpeed>
+  <MM_WorldSpeed>メカの遠行速度：1日{0}タイル。道路、地形、夜間休憩の影響を受けない。複数種のメカが同行する場合、最も遅い機体の基礎速度に騎乗倍率を適用する。</MM_WorldSpeed>
   <MM_MapSpeed>イモータルの基本移動速度：毎秒3.3マス。</MM_MapSpeed>
 </LanguageData>
