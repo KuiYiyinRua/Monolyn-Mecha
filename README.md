@@ -1,5 +1,7 @@
 # 墨诺灵机甲与构装体 · 0.9.4
 
+**2026-10-28 寻路热修复**：修复守护者在外墙及门口反复折返，优化追击、后撤与寻路失败重试。[实现与验证](Docs/CombatNavigation.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-combat-navigation.md)。
+
 **2026-10-26 骑乘热修复**：巨像远行队正确应用 1.6 倍骑乘倍率，单人配一台约 56 格/天；同步修复其他战甲及组队、拆分、交易和世界界面的每日速度显示。[规则与验证](Docs/CaravanRiding.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-caravan-riding.md)。
 
 **2026-10-25 索敌热修复**：六种机体自动索敌跳过倒地敌人，手动指定倒地目标仍可攻击。[实现与验证](Docs/DownedTargets.md) · [五语更新说明](Docs/Translations/CHANGELOG-0.9.4-downed-targets.md)。

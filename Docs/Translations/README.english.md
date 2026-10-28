@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Guardian navigation fix · 2026-10-28
+
+- Fixed Guardians repeatedly reversing outside walls and near closing doors. Pursuit routes now persist, with separate retreat and reposition decisions.
+- Failed or stalled paths retry after a delay; the continuous beam yields to retreat. Wall-detour attack regressions passed for the other five unit types.
+- 187 isolated 1.6 combat, downed-target and cold-reload checks passed. 1.6/1.7 and multiplayer adapter builds passed. No 1.7 gameplay or two-client multiplayer testing. Update the full mod and restart; synchronize all multiplayer clients.
+
 ## 0.9.4 · Caravan riding speed fix · 2026-10-26
 
 - Colossus now applies riding bonuses to its base speed of 35 tiles/day: about 56 with one rider and one Colossus, or 45.5 with two riders and one Colossus. Other warframes share the fix; mixed groups use the slowest warframe base speed.

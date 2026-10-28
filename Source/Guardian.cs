@@ -79,6 +79,10 @@ namespace Monolyn.Mecha
     public sealed class CompGuardian : ThingComp
     {
         public const float Range = 25f, ShieldPerSecond = 25f, LightPerShield = 1f;
+        const float RetreatStartRange = 19f, RetreatStopRange = 22.5f;
+        const int MoveCheckInterval = 30, RepathInterval = 90, PositionReviewInterval = 120;
+        const int StuckTicks = 240, FailedTargetRetryTicks = 300;
+        enum CombatMove { None, Pursuit, Retreat, Cover }
         public bool autoCombat, autoRestore = true;
         public Thing enemy, restoreTarget, beamTarget;
         public bool restoring;
@@ -88,6 +92,11 @@ namespace Monolyn.Mecha
         // onboard reserve supplies their shield projector and persists across save/load.
         public float raidSupportLight = 600f;
         int nextScan, nextSupportScan, nextDecision;
+        CombatMove combatMove;
+        bool retreating;
+        IntVec3 lastCombatPosition = IntVec3.Invalid;
+        int lastCombatProgressTick, nextCombatRepath, blockedEnemyUntil;
+        Thing blockedEnemy;
         MoteDualAttached beam;
         Sustainer sound;
         List<Pawn> threats = new List<Pawn>();
@@ -144,14 +153,16 @@ namespace Monolyn.Mecha
         public Thing FindEnemy(bool force = false)
         {
             int now = Find.TickManager.TicksGame;
-            if (!force && now < nextScan) return ValidEnemy(enemy) ? enemy : null;
+            if (!force && now < nextScan) return AvailableEnemy(enemy) ? enemy : null;
             nextScan = now + 90;
-            if (ValidEnemy(enemy) && (InBeamRange(enemy) || Pawn.CanReach(enemy, PathEndMode.Touch, Danger.Deadly))) return enemy;
-            enemy = Pawn.Map.attackTargetsCache.GetPotentialTargetsFor(Pawn).Select(t => t.Thing).Where(ValidEnemy)
+            if (AvailableEnemy(enemy) && (InBeamRange(enemy) || Pawn.CanReach(enemy, PathEndMode.Touch, Danger.Deadly))) return enemy;
+            enemy = Pawn.Map.attackTargetsCache.GetPotentialTargetsFor(Pawn).Select(t => t.Thing).Where(AvailableEnemy)
                 .OrderBy(t => Pawn.Position.DistanceToSquared(t.Position)).ThenBy(t => t.thingIDNumber)
                 .FirstOrDefault(t => InBeamRange(t) || Pawn.CanReach(t, PathEndMode.Touch, Danger.Deadly));
             return enemy;
         }
+        bool AvailableEnemy(Thing target) => ValidEnemy(target)
+            && (target != blockedEnemy || Find.TickManager.TicksGame >= blockedEnemyUntil);
         public Thing FindSupport(bool force = false)
         {
             if (!autoRestore || SpendableLight < LightPerShield) return restoreTarget = null;
@@ -189,8 +200,30 @@ namespace Monolyn.Mecha
             supportCandidates.Add(new SupportCandidate { Thing = target, Fraction = pool.Current / pool.Maximum,
                 Distance = Pawn.Position.DistanceToSquared(target.Position) });
         }
-        bool SafeCell(IntVec3 c) => c.InBounds(Pawn.Map) && c.Standable(Pawn.Map) && !c.Fogged(Pawn.Map)
+        bool SafeCell(IntVec3 c) => c.InBounds(Pawn.Map) && c.Standable(Pawn.Map) && c.GetDoor(Pawn.Map) == null && !c.Fogged(Pawn.Map)
             && !c.IsForbidden(Pawn) && c.GetFirstPawn(Pawn.Map) == null && c.GetFirstThing<Fire>(Pawn.Map) == null;
+        bool StableShootingPosition(IntVec3 cell, Thing target)
+        {
+            // The beam deals damage from the pawn's cell, without the native gun's
+            // corner leaning. A briefly opened door is not a sustained firing lane.
+            if (cell.GetDoor(Pawn.Map) != null || !cell.InHorDistOf(target.Position, Range)
+                || !GenSight.LineOfSight(cell, target.Position, Pawn.Map, true)
+                || !Laser.CanHitTargetFrom(cell, target)) return false;
+            foreach (var step in GenSight.PointsOnLineOfSight(cell, target.Position))
+            {
+                var door = step.GetDoor(Pawn.Map);
+                if (door != null && (!door.Open || (!door.HoldOpen && !target.OccupiedRect().Contains(step)))) return false;
+            }
+            return true;
+        }
+        bool ClearTacticalSegment(IntVec3 cell, Thing target, bool forRetreat)
+        {
+            int distanceSquared = Pawn.Position.DistanceToSquared(target.Position);
+            return GenSight.LineOfSight(Pawn.Position, cell, Pawn.Map, true,
+                step => step.WalkableBy(Pawn.Map, Pawn) && !step.IsForbidden(Pawn)
+                    && StableShootingPosition(step, target)
+                    && (!forRetreat || step.DistanceToSquared(target.Position) >= distanceSquared));
+        }
         public float PositionScore(IntVec3 cell, Thing target)
         {
             float distance = cell.DistanceTo(target.Position);
@@ -202,40 +235,125 @@ namespace Monolyn.Mecha
                 if (other != target && other.Spawned && !other.Downed && !other.Dead) score -= Mathf.Max(0, 9f - cell.DistanceTo(other.Position)) * 3f;
             return score - cell.DistanceTo(Pawn.Position) * .16f;
         }
-        public IntVec3 FindCombatCell(Thing target)
+        public IntVec3 FindCombatCell(Thing target) => FindCombatCell(target, false);
+        IntVec3 FindCombatCell(Thing target, bool forRetreat)
         {
             threats = Pawn.Map.mapPawns.AllPawnsSpawned.Where(p => p.HostileTo(Pawn) && !p.Downed && !p.Dead && p.Position.DistanceToSquared(Pawn.Position) < 400).OrderBy(p => p.thingIDNumber).ToList();
-            var candidates = GenRadial.RadialCellsAround(Pawn.Position, 10, true).Where(c => c == Pawn.Position || SafeCell(c))
+            float distance = Pawn.Position.DistanceTo(target.Position);
+            var candidates = GenRadial.RadialCellsAround(Pawn.Position, 10, true)
+                .Where(c => c == Pawn.Position || (SafeCell(c) && ClearTacticalSegment(c, target, forRetreat)))
+                .Where(c => StableShootingPosition(c, target) && (!forRetreat || c.DistanceTo(target.Position) >= distance + 2f))
                 .Select(c => new { Cell = c, Score = PositionScore(c, target) }).OrderByDescending(c => c.Score)
                 .ThenBy(c => c.Cell.x).ThenBy(c => c.Cell.z).Take(18);
             foreach (var c in candidates)
                 if (c.Cell == Pawn.Position || (Pawn.CanReserve(c.Cell) && Pawn.CanReach(c.Cell, PathEndMode.OnCell, Danger.Deadly))) return c.Cell;
             return Pawn.Position;
         }
+        bool TryFindPursuitCell(out IntVec3 cell)
+        {
+            var request = new CastPositionRequest {
+                caster = Pawn, target = enemy, verb = Laser, wantCoverFromTarget = true,
+                maxRangeFromTarget = Range,
+                maxRangeFromCaster = Pawn.Position.DistanceTo(enemy.Position) + Range,
+                validator = c => (c == Pawn.Position || SafeCell(c)) && StableShootingPosition(c, enemy)
+                    && c.DistanceToSquared(enemy.Position) >= RetreatStartRange * RetreatStartRange
+            };
+            if (CastPositionFinder.TryFindCastPosition(request, out cell)) return true;
+            request.validator = c => (c == Pawn.Position || SafeCell(c)) && StableShootingPosition(c, enemy);
+            return CastPositionFinder.TryFindCastPosition(request, out cell);
+        }
+        public void ResetCombatMovement()
+        {
+            combatMove = CombatMove.None; retreating = false; lastCombatPosition = IntVec3.Invalid;
+            lastCombatProgressTick = Find.TickManager.TicksGame;
+            nextCombatRepath = nextDecision = 0;
+        }
+        public void NotifyCombatPathFailed()
+        {
+            blockedEnemy = enemy; blockedEnemyUntil = Find.TickManager.TicksGame + FailedTargetRetryTicks;
+            enemy = null; nextScan = 0; ResetCombatMovement(); StopChannels();
+        }
+        void StartCombatMove(LocalTargetInfo destination, PathEndMode mode, CombatMove move)
+        {
+            StopChannels();
+            int now = Find.TickManager.TicksGame;
+            combatMove = move; lastCombatPosition = Pawn.Position; lastCombatProgressTick = now;
+            nextCombatRepath = now + RepathInterval; nextDecision = now + MoveCheckInterval;
+            Pawn.pather.StartPath(destination, mode);
+        }
+        void ShootEnemy()
+        {
+            if (!Pawn.pather.Moving && !Laser.Bursting && !Pawn.stances.FullBodyBusy)
+                Laser.TryStartCastOn(enemy, preventFriendlyFire: true);
+        }
         public void CombatTick()
         {
             if (!MayAct) { Pawn.jobs.EndCurrentJob(JobCondition.Succeeded); return; }
             Thing support = FindSupport();
-            if (support != null) { WorkOnShield(support); return; }
+            if (support != null) { ResetCombatMovement(); WorkOnShield(support); return; }
             if (restoring) StopChannels();
             if (!autoCombat || FindEnemy() == null || Laser == null) { Pawn.jobs.EndCurrentJob(JobCondition.Succeeded); return; }
-            if (Find.TickManager.TicksGame >= nextDecision)
+            int now = Find.TickManager.TicksGame;
+            if (Pawn.CurJob.targetA.Thing != enemy)
             {
-                nextDecision = Find.TickManager.TicksGame + 15;
-                var best = FindCombatCell(enemy);
-                bool move = !InBeamRange(enemy) || Pawn.Position.DistanceTo(enemy.Position) < 19f
-                    || PositionScore(best, enemy) > PositionScore(Pawn.Position, enemy) + 4f;
-                if (move && best != Pawn.Position)
-                {
-                    StopChannels();
-                    if (!Pawn.pather.Moving || Pawn.pather.Destination.Cell.DistanceToSquared(best) > 4) Pawn.pather.StartPath(best, PathEndMode.OnCell);
-                    return;
-                }
-                if (InBeamRange(enemy)) Pawn.pather.StopDead();
+                Pawn.CurJob.SetTarget(TargetIndex.A, enemy); Pawn.pather.StopDead(); ResetCombatMovement();
             }
-            if (!Pawn.pather.Moving && InBeamRange(enemy) && !Laser.Bursting && !Pawn.stances.FullBodyBusy)
-                Laser.TryStartCastOn(enemy, preventFriendlyFire: true);
-            else if (!Pawn.pather.Moving && !InBeamRange(enemy)) Pawn.pather.StartPath(enemy, PathEndMode.Touch);
+            // Old saves and a completed support task have no tracked combat route.
+            if (combatMove == CombatMove.None && Pawn.pather.Moving) Pawn.pather.StopDead();
+            // This beam bursts indefinitely. Its own short cooldown stance must
+            // still allow a tactical decision when an attacker closes in.
+            if (Pawn.stances.FullBodyBusy && !Laser.Bursting)
+            { lastCombatProgressTick = now; return; }
+            bool shootable = StableShootingPosition(Pawn.Position, enemy);
+            float distance = Pawn.Position.DistanceTo(enemy.Position);
+            bool wasRetreating = retreating;
+            retreating = shootable && distance < (retreating ? RetreatStopRange : RetreatStartRange);
+            if (retreating != wasRetreating) nextDecision = now;
+            if (Pawn.pather.Moving && combatMove != CombatMove.None)
+            {
+                if (Pawn.Position != lastCombatPosition) { lastCombatPosition = Pawn.Position; lastCombatProgressTick = now; }
+                else if (now - lastCombatProgressTick >= StuckTicks)
+                {
+                    Pawn.pather.StopDead();
+                    if (shootable)
+                    { combatMove = CombatMove.None; nextDecision = now + PositionReviewInterval; ShootEnemy(); return; }
+                    NotifyCombatPathFailed(); Pawn.jobs.EndCurrentJob(JobCondition.Incompletable); return;
+                }
+                bool readyToFire = shootable && !retreating && combatMove != CombatMove.Cover;
+                bool needRetreat = retreating && combatMove != CombatMove.Retreat;
+                if (!readyToFire && !needRetreat)
+                {
+                    if (now < nextDecision) return;
+                    nextDecision = now + MoveCheckInterval;
+                    var destination = Pawn.pather.Destination;
+                    bool usable = destination.IsValid && (destination.HasThing ? destination.Thing == enemy
+                        : destination.Cell == Pawn.Position || SafeCell(destination.Cell));
+                    bool stale = usable && !destination.HasThing && now >= nextCombatRepath
+                        && (!StableShootingPosition(destination.Cell, enemy)
+                            || (combatMove == CombatMove.Retreat && destination.Cell.DistanceTo(enemy.Position) <= distance));
+                    if (usable && !stale) return;
+                }
+                Pawn.pather.StopDead(); combatMove = CombatMove.None;
+                nextDecision = readyToFire ? now + PositionReviewInterval : now;
+            }
+            else if (combatMove != CombatMove.None)
+            { combatMove = CombatMove.None; nextDecision = shootable && !retreating ? now + PositionReviewInterval : now; }
+            if (!shootable) nextDecision = now;
+            if (now < nextDecision) { if (shootable) ShootEnemy(); return; }
+            nextDecision = now + PositionReviewInterval;
+            if (!shootable)
+            {
+                if (TryFindPursuitCell(out var cell) && cell != Pawn.Position)
+                    StartCombatMove(cell, PathEndMode.OnCell, CombatMove.Pursuit);
+                else if (!Pawn.CanReachImmediate(enemy, PathEndMode.Touch) && Pawn.CanReach(enemy, PathEndMode.Touch, Danger.Deadly))
+                    StartCombatMove(enemy, PathEndMode.Touch, CombatMove.Pursuit);
+                else { NotifyCombatPathFailed(); Pawn.jobs.EndCurrentJob(JobCondition.Incompletable); }
+                return;
+            }
+            var best = FindCombatCell(enemy, retreating);
+            if (best != Pawn.Position && (retreating || PositionScore(best, enemy) > PositionScore(Pawn.Position, enemy) + 4f))
+            { StartCombatMove(best, PathEndMode.OnCell, retreating ? CombatMove.Retreat : CombatMove.Cover); return; }
+            ShootEnemy();
         }
         public bool WorkOnShield(Thing target)
         {
@@ -335,6 +453,7 @@ namespace Monolyn.Mecha
         public void SetAutoCombat(bool enabled)
         {
             autoCombat = enabled; nextScan = nextSupportScan = nextDecision = 0;
+            enemy = blockedEnemy = null; blockedEnemyUntil = 0; ResetCombatMovement();
             if (Pawn.CurJob?.def == GuardianDefOf.MM_GuardianCombat) Pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
         }
         public void SetAutoRestore(bool enabled)
@@ -353,6 +472,11 @@ namespace Monolyn.Mecha
             Scribe_Values.Look(ref attackTicks, "guardianAttackTicks"); Scribe_Values.Look(ref restoreCredit, "guardianRestoreCredit");
             Scribe_Values.Look(ref attackPulses, "guardianAttackPulses"); Scribe_Values.Look(ref totalRestored, "guardianTotalRestored"); Scribe_Values.Look(ref totalLightSpent, "guardianLightSpent");
             Scribe_Values.Look(ref nextScan, "guardianNextScan"); Scribe_Values.Look(ref nextSupportScan, "guardianNextSupportScan"); Scribe_Values.Look(ref nextDecision, "guardianNextDecision");
+            Scribe_Values.Look(ref combatMove, "guardianCombatMove"); Scribe_Values.Look(ref retreating, "guardianRetreating");
+            Scribe_Values.Look(ref lastCombatPosition, "guardianLastCombatPosition", IntVec3.Invalid);
+            Scribe_Values.Look(ref lastCombatProgressTick, "guardianLastCombatProgressTick");
+            Scribe_Values.Look(ref nextCombatRepath, "guardianNextCombatRepath");
+            Scribe_References.Look(ref blockedEnemy, "guardianBlockedEnemy"); Scribe_Values.Look(ref blockedEnemyUntil, "guardianBlockedEnemyUntil");
         }
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -401,6 +525,12 @@ namespace Monolyn.Mecha
     public sealed class JobDriver_Guardian : JobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed) => true;
+        public override void Notify_Starting() { base.Notify_Starting(); pawn.GetComp<CompGuardian>().ResetCombatMovement(); }
+        public override void Notify_PatherFailed()
+        {
+            if (job.def == GuardianDefOf.MM_GuardianCombat) pawn.GetComp<CompGuardian>().NotifyCombatPathFailed();
+            EndJobWith(JobCondition.Incompletable);
+        }
         protected override IEnumerable<Toil> MakeNewToils()
         {
             AddFinishAction(condition => pawn.GetComp<CompGuardian>().StopChannels());

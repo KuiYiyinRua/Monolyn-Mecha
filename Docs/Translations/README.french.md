@@ -1,5 +1,11 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Correction du déplacement du Gardien · 2026-10-28
+
+- Le Gardien ne fait plus des allers-retours devant les murs et les portes qui se ferment. Il conserve sa poursuite et distingue retraite et repositionnement.
+- Un trajet bloqué ou échoué est réessayé après un délai ; le rayon continu permet la retraite. Les cinq autres types ont réussi les contrôles de contournement et de tir.
+- 187 contrôles en jeu isolé 1.6 : combat, cibles à terre et rechargement après redémarrage. Compilations 1.6/1.7 et adaptateur MP réussies. Jeu 1.7 et multijoueur à deux clients non testés. Mettez à jour le mod complet, redémarrez et synchronisez tous les joueurs.
+
 ## 0.9.4 · Correction de la vitesse montée · 2026-10-26
 
 - Le Colosse applique désormais le bonus de monture à sa vitesse de base de 35 cases/jour : environ 56 pour une personne et un Colosse, ou 45,5 pour deux personnes et un Colosse. Les autres méchas partagent la correction ; les groupes mixtes utilisent la vitesse de base du mécha le plus lent.
