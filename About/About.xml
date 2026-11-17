@@ -26,7 +26,27 @@
     <li>brrainz.harmony</li>
     <li>ASEL.MonolynRace</li>
   </loadAfter>
-  <description>0.9.4 · 守护者寻路修复 · 2026-10-28
+  <description>0.9.4 · 闪现音效设置与启动修复 · 2026-11-18
+模组设置新增“关闭闪现音效”，覆盖追猎者手动和自动闪现；默认保留声音，修改立即生效，保留视觉特效和其他传送声音。
+供光反馈：在仅本模组及必要前置的1.7.5011环境中未复现全网断供。六类机体生成前后、三种原版建筑及1500 tick持续充能检查通过；其他模组组合或旧存档仍需日志和复现材料。
+
+0.9.4 · Blink sound setting and startup fixes · 2026-11-18
+Added Mute blink sounds to mod settings for the Stalker's manual and automatic blink. Sound remains enabled by default; changes apply immediately without changing visual effects or other transfer sounds.
+Light-supply report: colony-wide failure was not reproduced in 1.7.5011 with only this mod and required dependencies. Supply checks passed before and after creating all six types, for three native buildings and over 1,500 ticks. Other mod combinations and old saves still require logs and reproduction details.
+
+0.9.4 · ブリンク効果音設定と起動時エラー修正 · 2026-11-18
+追跡者の手動・自動ブリンク効果音を消す設定を追加。初期状態は音ありで、変更は即時反映されます。視覚効果と他の転送音は維持されます。
+光供給の報告について：本Modと必須前提のみの1.7.5011環境では全体への供給停止を再現できませんでした。6種の生成前後、原版建築3種と1500 tickの継続充電を確認。他のMod構成や旧セーブにはログと再現情報が必要です。
+
+0.9.4 · Réglage du son de téléportation et corrections au démarrage · 2026-11-18
+Ajout du réglage permettant de couper le son des téléportations manuelles et automatiques du Traqueur. Le son reste activé par défaut ; le réglage est immédiat et conserve les effets visuels et les autres sons de transfert.
+Signalement sur la lumière : aucune panne générale reproduite en 1.7.5011 avec uniquement ce mod et ses dépendances. Vérifications avant et après la création des six types, avec trois bâtiments natifs et 1 500 ticks de recharge. Les autres combinaisons de mods et anciennes sauvegardes nécessitent encore des journaux et une reproduction.
+
+0.9.4 · Настройка звука скачка и исправления запуска · 2026-11-18
+Добавлена настройка отключения звука ручного и автоматического скачка Следопыта. По умолчанию звук включён; изменение применяется сразу, сохраняя визуальные эффекты и остальные звуки переноса.
+Питание светом: общий отказ не воспроизведён в 1.7.5011 только с этим модом и обязательными зависимостями. Пройдены проверки до и после создания шести типов, для трёх исходных зданий и за 1500 тиков. Другие наборы модов и старые сохранения требуют журналов и воспроизведения.
+
+0.9.4 · 守护者寻路修复 · 2026-10-28
 修复守护者在墙外和自动关闭的门附近反复折返；保持有效追击路线，并区分后撤与换位。
 1.6 隔离实机战斗、补刀及冷读档共187项检查通过；1.6/1.7及联机适配编译通过。未做1.7实机或双端联机测试。更新完整模组并重启，联机各端须同步。
 

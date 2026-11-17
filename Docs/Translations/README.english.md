@@ -1,5 +1,12 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Blink sound setting and startup fixes · 2026-11-18
+
+- Added Mute blink sounds to mod settings for the Stalker's manual and automatic blink. Sound remains enabled by default; changes apply immediately without changing visual effects or other transfer sounds.
+- Fixed startup configuration errors caused by missing frostbite part weights on all six chassis, for both 1.6 and 1.7.
+- Light-supply report: colony-wide failure was not reproduced in 1.7.5011 with only this mod and required dependencies. Supply checks passed before and after creating all six types, for three native buildings and over 1,500 ticks. Other mod combinations and old saves still require logs and reproduction details.
+- Passed 56 in-game 1.7 checks, one cold-start settings check and 12 checks across both body-definition sets. 1.6/1.7 builds passed; no 1.6 gameplay or two-client multiplayer test. Install the complete update and restart.
+
 ## 0.9.4 · Guardian navigation fix · 2026-10-28
 
 - Fixed Guardians repeatedly reversing outside walls and near closing doors. Pursuit routes now persist, with separate retreat and reposition decisions.

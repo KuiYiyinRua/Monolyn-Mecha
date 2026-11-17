@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <MM_MuteBlinkSounds>关闭闪现音效</MM_MuteBlinkSounds>
+  <MM_MuteBlinkSoundsDesc>关闭追猎者手动和自动闪现的音效。设置立即生效，闪现特效与其他声音保持不变。</MM_MuteBlinkSoundsDesc>
   <MM_StalkerAutoCombat>自动战斗</MM_StalkerAutoCombat>
   <MM_StalkerAutoCombatDesc>追击地图上可见且能够到达的敌人，寻找掩体，并尝试保持24至30格距离。手动命令、搬运和远行任务优先。关闭后恢复通常的工作安排。</MM_StalkerAutoCombatDesc>
   <MM_StalkerAutoBlink>自动闪现</MM_StalkerAutoBlink>

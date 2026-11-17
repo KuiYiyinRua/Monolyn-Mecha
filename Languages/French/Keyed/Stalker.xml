@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <MM_MuteBlinkSounds>Couper le son de la téléportation</MM_MuteBlinkSounds>
+  <MM_MuteBlinkSoundsDesc>Coupe les sons des téléportations manuelles et automatiques du Traqueur. Effet immédiat ; les effets visuels et les autres sons restent inchangés.</MM_MuteBlinkSoundsDesc>
   <MM_StalkerAutoCombat>Combat automatique</MM_StalkerAutoCombat>
   <MM_StalkerAutoCombatDesc>Poursuivre les ennemis visibles et accessibles, chercher un abri et tenter de rester à 24 à 30 cases. Les ordres manuels, le transport et les tâches de caravane sont prioritaires. Désactiver pour reprendre le travail normal.</MM_StalkerAutoCombatDesc>
   <MM_StalkerAutoBlink>Saut automatique</MM_StalkerAutoBlink>

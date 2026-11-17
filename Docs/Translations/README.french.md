@@ -1,5 +1,12 @@
 # Monolyn: Mecha · 0.9.4
 
+## 0.9.4 · Réglage du son de téléportation et corrections au démarrage · 2026-11-18
+
+- Ajout du réglage permettant de couper le son des téléportations manuelles et automatiques du Traqueur. Le son reste activé par défaut ; le réglage est immédiat et conserve les effets visuels et les autres sons de transfert.
+- Correction des erreurs au démarrage liées aux poids de gel manquants sur les six châssis, pour 1.6 et 1.7.
+- Signalement sur la lumière : aucune panne générale reproduite en 1.7.5011 avec uniquement ce mod et ses dépendances. Vérifications avant et après la création des six types, avec trois bâtiments natifs et 1 500 ticks de recharge. Les autres combinaisons de mods et anciennes sauvegardes nécessitent encore des journaux et une reproduction.
+- 56 contrôles en jeu 1.7, un contrôle de relecture des réglages au redémarrage et 12 contrôles des définitions corporelles réussis. Compilations 1.6/1.7 réussies ; jeu 1.6 et MP à deux clients non testés. Mettez à jour le mod complet et redémarrez.
+
 ## 0.9.4 · Correction du déplacement du Gardien · 2026-10-28
 
 - Le Gardien ne fait plus des allers-retours devant les murs et les portes qui se ferment. Il conserve sa poursuite et distingue retraite et repositionnement.

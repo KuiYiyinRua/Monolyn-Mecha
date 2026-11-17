@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Like vanilla mechanoid parts, single-part chassis need a frostbite weight
+       for BodyDef validation. This does not add an organic hediff giver. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyPartDef[defName="MM_ColossusHull" or defName="MM_DisruptorHull" or defName="MM_GuardianCore" or defName="MM_ImmortalHull" or defName="MM_ReaverHull" or defName="MM_StalkerCore"]</xpath>
+    <value>
+      <frostbiteVulnerability>1</frostbiteVulnerability>
+    </value>
+  </Operation>
+</Patch>

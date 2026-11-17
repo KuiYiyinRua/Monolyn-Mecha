@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <MM_MuteBlinkSounds>Отключить звук скачка</MM_MuteBlinkSounds>
+  <MM_MuteBlinkSoundsDesc>Отключает звук ручного и автоматического скачка Следопыта. Применяется сразу; визуальные эффекты и остальные звуки не меняются.</MM_MuteBlinkSoundsDesc>
   <MM_StalkerAutoCombat>Автоматический бой</MM_StalkerAutoCombat>
   <MM_StalkerAutoCombatDesc>Преследовать видимых и достижимых врагов, искать укрытия и стараться держаться на расстоянии от 24 до 30 клеток. Ручные приказы, переноска грузов и дела каравана имеют приоритет. Отключите, чтобы вернуться к обычной работе.</MM_StalkerAutoCombatDesc>
   <MM_StalkerAutoBlink>Автоматический скачок</MM_StalkerAutoBlink>

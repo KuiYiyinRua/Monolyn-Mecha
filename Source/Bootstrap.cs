@@ -5,6 +5,7 @@ using System.Text;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -12,11 +13,25 @@ namespace Monolyn.Mecha
 {
     public sealed class MechaMod : Mod
     {
+        public static MechaSettings Settings { get; private set; }
+
         public MechaMod(ModContentPack pack) : base(pack)
         {
-            new Harmony("local.monolyn.mecha").PatchAll();
+            Settings = GetSettings<MechaSettings>();
+            new Harmony("local.monolyn.mecha").PatchAll(typeof(MechaMod).Assembly);
             Log.Message("[Monolyn Mecha] " + typeof(MechaMod).Assembly.GetName().Version
                 + " loaded; Disruptor ordered immediate damage; Immortal, Stalker, Colossus, Guardian, Reaver and Disruptor with native Monolyn light and shielding.");
+        }
+
+        public override string SettingsCategory() => Content.Name;
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            var listing = new Listing_Standard();
+            listing.Begin(inRect);
+            listing.CheckboxLabeled("MM_MuteBlinkSounds".Translate(), ref Settings.muteBlinkSounds,
+                "MM_MuteBlinkSoundsDesc".Translate());
+            listing.End();
         }
     }
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <MM_MuteBlinkSounds>Mute blink sounds</MM_MuteBlinkSounds>
+  <MM_MuteBlinkSoundsDesc>Mute the Stalker's manual and automatic blink sounds. Takes effect immediately; visual effects and other sounds are unchanged.</MM_MuteBlinkSoundsDesc>
   <MM_StalkerAutoCombat>Automatic combat</MM_StalkerAutoCombat>
   <MM_StalkerAutoCombatDesc>Pursue visible, reachable enemies, seek cover and try to stay 24 to 30 cells away. Manual orders, hauling and caravan duties take priority. Disable to resume normal work.</MM_StalkerAutoCombatDesc>
   <MM_StalkerAutoBlink>Automatic blink</MM_StalkerAutoBlink>
